@@ -26,7 +26,7 @@
 
     self.view.backgroundColor = [UIColor whiteColor];
 
-    self.contenArray = @[@"ImagePlayController",@"图片无限轮播",@"StarViewController",@"小星星",@"LockController",@"(九宫格)手势解锁屏幕",@"TwoController",@"test!test!test!test!test!test!test!test!test!test!test!test!test!test!",@"TwoController",@"我是一段测试文字,测试自适应高度调整.就能到加拿大及纳税的结案时间你的好大声安徽大厦的建安大家看你啥动画师大会收到爱神的箭加深对加黑色的爱的氨基酸的那件事你"];
+    self.contenArray = @[@"ImagePlayController",@"图片无限轮播",@"LockController",@"(九宫格)手势解锁屏幕",@"QStarController",@"小星星",@"TwoController",@"test!test!test!test!test!test!test!test!test!test!test!test!test!test!",@"TwoController",@"我是一段测试文字,测试自适应高度调整.就能到加拿大及纳税的结案时间你的好大声安徽大厦的建安大家看你啥动画师大会收到爱神的箭加深对加黑色的爱的氨基酸的那件事你"];
 
 
 //    UIButton *button=[UIButton buttonWithType:UIButtonTypeCustom];

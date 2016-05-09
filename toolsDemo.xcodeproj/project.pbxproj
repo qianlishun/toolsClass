@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E61037A1CE093310055A3A5 /* QStarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E6103791CE093310055A3A5 /* QStarController.m */; settings = {ASSET_TAGS = (); }; };
 		3E9AED301CE06751001F77D5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E9AED2F1CE06751001F77D5 /* main.m */; };
 		3E9AED3B1CE06751001F77D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E9AED3A1CE06751001F77D5 /* Assets.xcassets */; };
 		3E9AED3E1CE06751001F77D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E9AED3C1CE06751001F77D5 /* LaunchScreen.storyboard */; };
@@ -59,6 +60,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3E6103781CE093310055A3A5 /* QStarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QStarController.h; sourceTree = "<group>"; };
+		3E6103791CE093310055A3A5 /* QStarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QStarController.m; sourceTree = "<group>"; };
 		3E9AED2B1CE06751001F77D5 /* toolsDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = toolsDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E9AED2F1CE06751001F77D5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3E9AED3A1CE06751001F77D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -318,10 +321,13 @@
 		3E9AED961CE06860001F77D5 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				3E9AED971CE06860001F77D5 /* One */,
 				3E9AED9F1CE068EE001F77D5 /* AddressBook */,
 				3E9AEDB51CE06E58001F77D5 /* ImagePlay */,
 				3E9AEDB81CE06E5F001F77D5 /* Lock */,
-				3E9AED971CE06860001F77D5 /* One */,
+				3E9AEDD01CE07016001F77D5 /* Star */,
+				3E9AEDC71CE07016001F77D5 /* Microblog */,
+				3E9AEDCB1CE07016001F77D5 /* QQ */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -442,6 +448,93 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		3E9AEDC71CE07016001F77D5 /* Microblog */ = {
+			isa = PBXGroup;
+			children = (
+				3E9AEDC81CE07016001F77D5 /* Controller */,
+				3E9AEDC91CE07016001F77D5 /* Models */,
+				3E9AEDCA1CE07016001F77D5 /* Views */,
+			);
+			path = Microblog;
+			sourceTree = "<group>";
+		};
+		3E9AEDC81CE07016001F77D5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		3E9AEDC91CE07016001F77D5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3E9AEDCA1CE07016001F77D5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3E9AEDCB1CE07016001F77D5 /* QQ */ = {
+			isa = PBXGroup;
+			children = (
+				3E9AEDCC1CE07016001F77D5 /* Controller */,
+				3E9AEDCD1CE07016001F77D5 /* Models */,
+				3E9AEDCE1CE07016001F77D5 /* Star */,
+				3E9AEDCF1CE07016001F77D5 /* Views */,
+			);
+			path = QQ;
+			sourceTree = "<group>";
+		};
+		3E9AEDCC1CE07016001F77D5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		3E9AEDCD1CE07016001F77D5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3E9AEDCE1CE07016001F77D5 /* Star */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Star;
+			sourceTree = "<group>";
+		};
+		3E9AEDCF1CE07016001F77D5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3E9AEDD01CE07016001F77D5 /* Star */ = {
+			isa = PBXGroup;
+			children = (
+				3E9AEDD11CE07016001F77D5 /* Controller */,
+			);
+			path = Star;
+			sourceTree = "<group>";
+		};
+		3E9AEDD11CE07016001F77D5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3E6103781CE093310055A3A5 /* QStarController.h */,
+				3E6103791CE093310055A3A5 /* QStarController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -504,6 +597,7 @@
 		3E9AED231CE06751001F77D5 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = Q;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "钱立顺";
 				TargetAttributes = {
@@ -581,6 +675,7 @@
 				3E9AEDBD1CE06EA8001F77D5 /* ImagePlayController.m in Sources */,
 				3E9AED731CE067D5001F77D5 /* UINavigationItem+custom.m in Sources */,
 				3E9AEDB41CE069DE001F77D5 /* Contact.m in Sources */,
+				3E61037A1CE093310055A3A5 /* QStarController.m in Sources */,
 				3E9AED941CE06827001F77D5 /* MainController.m in Sources */,
 				3E9AED741CE067D5001F77D5 /* CCNavigationController.m in Sources */,
 				3E9AEDA81CE0698A001F77D5 /* ContactViewController.m in Sources */,
@@ -817,6 +912,7 @@
 				3E9AED5A1CE06751001F77D5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3E9AED5B1CE06751001F77D5 /* Build configuration list for PBXNativeTarget "toolsDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -825,6 +921,7 @@
 				3E9AED5D1CE06751001F77D5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3E9AED5E1CE06751001F77D5 /* Build configuration list for PBXNativeTarget "toolsDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -833,6 +930,7 @@
 				3E9AED601CE06751001F77D5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
