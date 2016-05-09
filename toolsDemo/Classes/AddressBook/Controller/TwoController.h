@@ -1,5 +1,5 @@
 //
-//  AppDelegate.h
+//  TwoController.h
 //  toolsDemo
 //
 //  Created by Mr.Q on 16/5/9.
@@ -8,10 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
-
-@property (strong, nonatomic) UIWindow *window;
-
+@interface TwoController : UITableViewController
 
 @end
-

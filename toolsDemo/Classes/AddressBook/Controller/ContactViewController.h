@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  ContactViewController.h
 //  toolsDemo
 //
 //  Created by Mr.Q on 16/5/9.
@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ContactViewController : UITableViewController
 
+@property (nonatomic, copy) NSString* username;
 
 @end
-
