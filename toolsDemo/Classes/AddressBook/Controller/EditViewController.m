@@ -23,8 +23,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 
-    self.view.backgroundColor = [UIColor whiteColor];
-
+    self.view.backgroundColor = [UIColor colorWithRed:230/255.0 green:230/255.0 blue:230/255.0 alpha:(1.0)];
     self.navigationItem.title = @"编辑联系人";
 
     self.nameField = [[UITextField alloc]init];
@@ -114,7 +113,7 @@
     self.numberField.keyboardAppearance = UIKeyboardTypeNumberPad;
     self.numberField.placeholder = @"手机号";
     self.numberField.borderStyle = UITextBorderStyleRoundedRect;
-    self.numberField.sd_layout.leftSpaceToView(self.view,margin).topSpaceToView(self.nameField,margin/2).rightSpaceToView(self.view,margin).heightIs(30);
+    self.numberField.sd_layout.leftSpaceToView(self.view,margin).topSpaceToView(self.nameField,1).rightSpaceToView(self.view,margin).heightIs(30);
 
     [self.saveButton setTitle:@"完成" forState:UIControlStateNormal];
     [self.saveButton setTitleColor:[UIColor grayColor] forState:UIControlStateDisabled];

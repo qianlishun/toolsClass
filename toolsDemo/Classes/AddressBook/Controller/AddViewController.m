@@ -74,7 +74,6 @@
 
     CGFloat margin = 30;
 
-
     self.nameField.keyboardAppearance = UIKeyboardTypeNamePhonePad;
     self.nameField.placeholder = @"姓名";
     self.nameField.borderStyle = UITextBorderStyleRoundedRect;

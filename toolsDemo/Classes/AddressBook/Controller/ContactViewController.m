@@ -34,8 +34,7 @@ static NSString *const ID = @"contact_cell";
 {
     [super viewDidLoad];
 
-
-
+    self.view.backgroundColor = [UIColor colorWithRed:230/255.0 green:230/255.0 blue:230/255.0 alpha:(1.0)];
     // 添加左上角注销的按钮
     UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithTitle:@"注销" style:UIBarButtonItemStylePlain target:self action:@selector(logOut)];
     self.navigationItem.leftBarButtonItem = item;

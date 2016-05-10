@@ -68,11 +68,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = [UIColor colorWithRed:230/255.0 green:230/255.0 blue:230/255.0 alpha:(1.0)];
 
     UIView *logView = [[UIView alloc]init];
 
-    logView.backgroundColor = [UIColor lightGrayColor];
+//    logView.backgroundColor = [UIColor lightGrayColor];
 
     [self.view addSubview:logView];
     self.logView = logView;
@@ -159,45 +159,6 @@
     }
     [self textChange];
 
-
-    CGFloat margin = 30;
-    self.logView.sd_layout.leftSpaceToView(self.view,margin/10).topSpaceToView(self.view,margin+80).rightSpaceToView(self.view,margin/10).heightIs(self.view.bounds.size.height*0.3);
-
-    //    self.lblUser.text = @"账号:";
-    //    self.lblUser.sd_layout.leftSpaceToView(self.logView,margin/5).topSpaceToView(self.logView,margin).widthIs(50).heightIs(20);
-    //    self.lblPW.text = @"密码:";
-    //    self.lblPW.sd_layout.leftSpaceToView(self.logView,margin/5).topSpaceToView(self.lblUser,margin).widthIs(50).heightIs(20);
-
-    self.usernameField.placeholder = @"账号/手机号/银行卡号";
-    self.usernameField.borderStyle = UITextBorderStyleRoundedRect;
-    self.usernameField.sd_layout.leftSpaceToView(self.logView,margin/5).topSpaceToView(self.logView,margin).rightSpaceToView(self.logView,margin/5).heightIs(30);
-
-    self.passwordField.placeholder = @"密码/银行口令";
-    [self.passwordField setSecureTextEntry:YES];
-    self.passwordField.borderStyle = UITextBorderStyleRoundedRect;
-    self.passwordField.sd_layout.leftSpaceToView(self.logView,margin/5).topSpaceToView(self.usernameField,margin).rightSpaceToView(self.logView,margin/5).heightIs(30);
-
-    self.remView.sd_layout.leftSpaceToView(self.logView,self.view.bounds.size.width*0.14).topSpaceToView(self.passwordField,margin/2).heightIs(30).widthRatioToView(self.view,0.4);
-
-    self.lblRem.text = @"记住密码:";
-    self.lblRem.sd_layout.leftSpaceToView(self.remView,0).topSpaceToView(self.remView,5).heightIs(20).widthIs(80);
-    self.remPassword.sd_layout.leftSpaceToView(self.lblRem,0).topSpaceToView(self.remView,0);
-
-    self.autoView.sd_layout.leftSpaceToView(self.remView,0).topSpaceToView(self.passwordField,margin/2).heightIs(30).widthRatioToView(self.logView,0.4);
-
-    self.lblAuto.text = @"自动登录:";
-    self.lblAuto.sd_layout.leftSpaceToView(self.autoView,0).topSpaceToView(self.autoView,5).heightIs(20).widthIs(80);
-    self.autoLogin.sd_layout.leftSpaceToView(self.lblAuto,0).topSpaceToView(self.autoView,0);
-
-
-    [self.loginButton setTitle:@"登录" forState:UIControlStateNormal];
-    [self.loginButton setTitleColor:[UIColor grayColor] forState:UIControlStateDisabled];
-
-    self.loginButton.backgroundColor = [UIColor colorWithRed:88/255.0 green:183/255.0 blue:219/255.0 alpha:0.8];
-
-
-
-    self.loginButton.sd_layout.centerXEqualToView(self.logView).topSpaceToView(self.remView,margin/3).heightIs(40).widthRatioToView(self.logView,0.8);
 }
 
 // 登陆按钮的点击事件
@@ -215,7 +176,6 @@
 
         // 当用户名和密码正确的时候 进行跳转
         if ([self.usernameField.text isEqualToString:@"1"] && [self.passwordField.text isEqualToString:@"1"]) {
-            // 跳!!!
 
             ContactViewController *vc = [[ContactViewController alloc]init];
 
@@ -246,97 +206,47 @@
 // 文本框内容发生改变的时候调用
 - (void)textChange
 {
-    //    if (self.usernameField.text.length > 0 && self.passwordField.text.length > 0) {
-    //        // 两个文本框都有内容
-    //        self.loginButton.enabled = YES;
-    //    }
-    //    else {
-    //        // 两个文本框不都有内容
-    //        self.loginButton.enabled = NO;
-    //    }
-
     self.loginButton.enabled = self.usernameField.text.length > 0 && self.passwordField.text.length > 0;
 }
-//
-//-(void)viewDidLayoutSubviews{
-//
-//    NSLog(@"layout");
-//
-//    CGFloat margin = 30;
-//    self.logView.sd_layout.leftSpaceToView(self.view,margin/10).topSpaceToView(self.view,margin+80).rightSpaceToView(self.view,margin/10).heightIs(self.view.bounds.size.height*0.3);
-//
-////    self.lblUser.text = @"账号:";
-////    self.lblUser.sd_layout.leftSpaceToView(self.logView,margin/5).topSpaceToView(self.logView,margin).widthIs(50).heightIs(20);
-////    self.lblPW.text = @"密码:";
-////    self.lblPW.sd_layout.leftSpaceToView(self.logView,margin/5).topSpaceToView(self.lblUser,margin).widthIs(50).heightIs(20);
-//
-//    self.usernameField.placeholder = @"账号/手机号/银行卡号";
-//    self.usernameField.borderStyle = UITextBorderStyleRoundedRect;
-//    self.usernameField.sd_layout.leftSpaceToView(self.logView,margin/5).topSpaceToView(self.logView,margin).rightSpaceToView(self.logView,margin/5).heightIs(30);
-//
-//    self.passwordField.placeholder = @"密码/银行口令";
-//    self.passwordField.borderStyle = UITextBorderStyleRoundedRect;
-//    self.passwordField.sd_layout.leftSpaceToView(self.logView,margin/5).topSpaceToView(self.usernameField,margin).rightSpaceToView(self.logView,margin/5).heightIs(30);
-//
-//
-//    self.remView.sd_layout.leftSpaceToView(self.logView,margin*1.5).topSpaceToView(self.passwordField,margin/2).heightIs(30).widthIs(self.autoView.size.width);
-//
-//    self.lblRem.text = @"记住密码:";
-//    self.lblRem.sd_layout.leftSpaceToView(self.remView,0).topSpaceToView(self.remView,5).heightIs(20).widthIs(80);
-//    self.remPassword.sd_layout.leftSpaceToView(self.lblRem,0).topSpaceToView(self.remView,0);
-//
-//    self.autoView.sd_layout.topSpaceToView(self.passwordField,margin/2).heightIs(30).rightSpaceToView(self.logView,margin).leftSpaceToView(self.remView,margin);
-//
-//    self.lblAuto.text = @"自动登录:";
-//    self.lblAuto.sd_layout.leftSpaceToView(self.autoView,0).topSpaceToView(self.autoView,5).heightIs(20).widthIs(80);
-//     self.autoLogin.sd_layout.leftSpaceToView(self.lblAuto,0).topSpaceToView(self.autoView,0);
-//
-//
-//    [self.loginButton setTitle:@"登录" forState:UIControlStateNormal];
-//    [self.loginButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateDisabled];
-//
-//    self.loginButton.backgroundColor =  [UIColor brownColor];
-//
-//    self.loginButton.sd_layout.centerXEqualToView(self.logView).topSpaceToView(self.remView,margin/3).heightIs(25).widthIs(80);
-//
-//}
-//
-- (void)这些都是文本框的代理方法
-{
+- (void)viewDidLayoutSubviews{
+    CGFloat margin = 30;
 
-    // 是否允许这个文本框进行编辑
-    //- (BOOL)textFieldShouldBeginEditing:(UITextField*)textField
-    //{
-    //    NSLog(@"textFieldShouldBeginEditing");
-    //    NSLog(@"%@", self.usernameField.text);
-    //
-    //    return NO;
-    //}
+    self.logView.sd_layout.leftSpaceToView(self.view,margin/10).topSpaceToView(self.view,margin+80).rightSpaceToView(self.view,margin/10).heightIs(self.view.bounds.size.height*0.3);
 
-    // 文本框已经开始编辑
-    //- (void)textFieldDidBeginEditing:(UITextField *)textField{
-    //     NSLog(@"%@", self.usernameField.text);
-    //}
+    //    self.lblUser.text = @"账号:";
+    //    self.lblUser.sd_layout.leftSpaceToView(self.logView,margin/5).topSpaceToView(self.logView,margin).widthIs(50).heightIs(20);
+    //    self.lblPW.text = @"密码:";
+    //    self.lblPW.sd_layout.leftSpaceToView(self.logView,margin/5).topSpaceToView(self.lblUser,margin).widthIs(50).heightIs(20);
 
-    // 是否允许这个文本框结束编辑
-    //- (BOOL)textFieldShouldEndEditing:(UITextField*)textField
-    //{
-    //    return NO;
-    //}
+    self.usernameField.placeholder = @"账号/手机号/银行卡号";
+    self.usernameField.borderStyle = UITextBorderStyleRoundedRect;
+    self.usernameField.sd_layout.leftSpaceToView(self.logView,margin/5).topSpaceToView(self.logView,margin).rightSpaceToView(self.logView,margin/5).heightIs(30);
 
-    // 文本框已经结束编辑
-    //- (void)textFieldDidEndEditing:(UITextField*)textField
-    //{
-    //    NSLog(@"123");
-    //}
-    
-    // 是否允许文本框改变文字内容
-    //- (BOOL)textField:(UITextField*)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString*)string
-    //{
-    //    NSLog(@"%@", self.usernameField.text);
-    //    return NO;
-    //
-    //}
+    self.passwordField.placeholder = @"密码/银行口令";
+    [self.passwordField setSecureTextEntry:YES];
+    self.passwordField.borderStyle = UITextBorderStyleRoundedRect;
+    self.passwordField.sd_layout.leftSpaceToView(self.logView,margin/5).topSpaceToView(self.usernameField,1).rightSpaceToView(self.logView,margin/5).heightIs(30);
+
+    self.remView.sd_layout.leftSpaceToView(self.logView,self.view.bounds.size.width*0.14).topSpaceToView(self.passwordField,margin/2).heightIs(30).widthRatioToView(self.view,0.4);
+
+    self.lblRem.text = @"记住密码:";
+    self.lblRem.sd_layout.leftSpaceToView(self.remView,0).topSpaceToView(self.remView,5).heightIs(20).widthIs(80);
+    self.remPassword.sd_layout.leftSpaceToView(self.lblRem,0).topSpaceToView(self.remView,0);
+
+    self.autoView.sd_layout.leftSpaceToView(self.remView,0).topSpaceToView(self.passwordField,margin/2).heightIs(30).widthRatioToView(self.logView,0.4);
+
+    self.lblAuto.text = @"自动登录:";
+    self.lblAuto.sd_layout.leftSpaceToView(self.autoView,0).topSpaceToView(self.autoView,5).heightIs(20).widthIs(80);
+    self.autoLogin.sd_layout.leftSpaceToView(self.lblAuto,0).topSpaceToView(self.autoView,0);
+
+
+    [self.loginButton setTitle:@"登录" forState:UIControlStateNormal];
+    [self.loginButton setTitleColor:[UIColor grayColor] forState:UIControlStateDisabled];
+
+    self.loginButton.backgroundColor = [UIColor colorWithRed:88/255.0 green:183/255.0 blue:219/255.0 alpha:0.8];
+
+
+    self.loginButton.sd_layout.centerXEqualToView(self.logView).topSpaceToView(self.remView,margin/3).heightIs(40).widthRatioToView(self.logView,0.8);
+
 }
-
 @end
