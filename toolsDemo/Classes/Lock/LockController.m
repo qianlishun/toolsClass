@@ -9,7 +9,6 @@
 #import "LockController.h"
 #import "LockView.h"
 #import "SVProgressHUD.h"
-#define ScreenSize self.view.bounds.size
 
 @interface LockController ()
 
@@ -25,7 +24,7 @@
 
     if (!_lockView) {
 
-        _lockView = [[LockView alloc]initWithFrame:CGRectMake(0, 0, ScreenSize.width*0.9, ScreenSize.width*0.9)];
+        _lockView = [[LockView alloc]initWithFrame:CGRectMake(0, 0, kWIDTH*0.9, kWIDTH*0.9)];
 
         _lockView.center = self.view.center;
 
@@ -35,7 +34,7 @@
 }
 -(UIImageView *)imageView{
     if (!_imageView) {
-        _imageView = [[UIImageView alloc]initWithFrame:CGRectMake(ScreenSize.width *0.35, ScreenSize.width * 0.2, ScreenSize.width * 0.3, ScreenSize.width *  0.3)];
+        _imageView = [[UIImageView alloc]initWithFrame:CGRectMake(kWIDTH *0.35, kWIDTH * 0.2, kWIDTH * 0.3, kWIDTH *  0.3)];
 
         [self.view addSubview:_imageView];
     }

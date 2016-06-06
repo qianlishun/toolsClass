@@ -70,7 +70,7 @@
     self.addButton.enabled = self.nameField.text.length > 0 && self.numberField.text.length > 0;
 }
 
--(void)viewDidLayoutSubviews{
+-(void)viewWillLayoutSubviews{
 
     CGFloat margin = 30;
 

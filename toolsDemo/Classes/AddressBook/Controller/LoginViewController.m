@@ -97,7 +97,6 @@
 
     UIButton* loginButton = [[UIButton alloc]init];
 
-    [loginButton addTarget:self action:@selector(login) forControlEvents:UIControlEventTouchUpInside];
     [self.logView addSubview:loginButton];
     self.loginButton = loginButton;
     loginButton.enabled = NO;
@@ -208,7 +207,9 @@
 {
     self.loginButton.enabled = self.usernameField.text.length > 0 && self.passwordField.text.length > 0;
 }
-- (void)viewDidLayoutSubviews{
+
+-(void)viewWillLayoutSubviews{
+
     CGFloat margin = 30;
 
     self.logView.sd_layout.leftSpaceToView(self.view,margin/10).topSpaceToView(self.view,margin+80).rightSpaceToView(self.view,margin/10).heightIs(self.view.bounds.size.height*0.3);

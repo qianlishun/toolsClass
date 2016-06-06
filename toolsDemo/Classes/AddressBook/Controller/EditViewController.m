@@ -101,7 +101,7 @@
 }
 
 
--(void)viewDidLayoutSubviews{
+- (void)viewWillLayoutSubviews{
 
     CGFloat margin = 30;
 

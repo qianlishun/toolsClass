@@ -42,6 +42,8 @@
 
 -(void)layoutSubviews{
 
+    [super layoutSubviews];
+
     self.imgViewIcon.frame = self.contentView.bounds;
 }
 

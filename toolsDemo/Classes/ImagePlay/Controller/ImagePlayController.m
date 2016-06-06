@@ -11,7 +11,7 @@
 #import "UIView+SDAutoLayout.h"
 #define SectionCount 100
 #define ImageCount 4
-#define kWIDTH [UIScreen mainScreen].bounds.size.width
+
 @interface ImagePlayController ()<UICollectionViewDataSource,UICollectionViewDelegate>
 
 @property (nonatomic,assign) NSInteger index;
@@ -62,7 +62,7 @@ static NSString *const ID = @"img_cell";
 
         layout.minimumLineSpacing = 0;
         layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
-        layout.itemSize =CGSizeMake([UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height*0.912);
+        layout.itemSize = CGSizeMake([UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height - 64);
         //        NSLog(@"%f",layout.itemSize.width);
 
         // 2.初始化collctionView
