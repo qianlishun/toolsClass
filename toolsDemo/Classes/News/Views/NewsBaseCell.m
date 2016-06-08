@@ -35,6 +35,8 @@
 
         self.lblTitle = [UILabel new];
         self.lblTitle.font = [UIFont systemFontOfSize:15];
+        self.lblTitle.numberOfLines = 2;
+
         [self.contentView addSubview:self.lblTitle];
 
         self.lblSubtitle = [UILabel new];
@@ -42,6 +44,12 @@
         self.lblSubtitle.font = [UIFont systemFontOfSize:13];
         self.lblSubtitle.numberOfLines = 0;
         [self.contentView addSubview:self.lblSubtitle];
+
+        self.lblSource = [UILabel new];
+        [self.contentView addSubview:self.lblSource];
+
+        self.lblPtime = [UILabel new];
+        [self.contentView addSubview:self.lblPtime];
 
         self.lineView = [UIView new];
         self.lineView.backgroundColor = rgba(238, 238, 238, 1.0);

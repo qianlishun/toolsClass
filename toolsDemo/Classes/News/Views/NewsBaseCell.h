@@ -32,6 +32,11 @@
 
 @property (nonatomic,strong) NewsModel *newsModel;
 
+@property (nonatomic,strong) UILabel *lblPtime;
+
+@property (nonatomic,strong) UILabel *lblSource;
+
+
 + (NSString *)cellIDforRow:(NewsModel *)newsModel;
 
 @end

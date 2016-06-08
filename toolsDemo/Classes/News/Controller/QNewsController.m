@@ -99,6 +99,7 @@
     manager.responseSerializer = [AFHTTPResponseSerializer serializer];
     [manager GET:urlString parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSDictionary *dict = [XYString getObjectFromJsonString:operation.responseString];
+
         // keyEnumerator 获取所有键  objectEnumerator得到对象  keyEnumerator得到键值
 
         NSString *key = [dict.keyEnumerator nextObject];

@@ -27,7 +27,7 @@
     self.lblTitle.sd_layout
     .topSpaceToView(self.contentView,margin)
     .leftSpaceToView(self.contentView,margin)
-    .rightSpaceToView(self.contentView,margin)
+//    .rightSpaceToView(self.contentView,margin)
     .heightIs(21);
 
     self.imgIcon.sd_layout
@@ -38,7 +38,7 @@
 
     self.lblSubtitle.sd_layout
     .topSpaceToView(self.imgIcon,margin)
-    .rightSpaceToView(self.contentView,0)
+//    .rightSpaceToView(self.contentView,0)
     .leftSpaceToView(self.contentView,0)
     .autoHeightRatio(0);
 
@@ -55,12 +55,30 @@
 
 - (void)setNewsModel:(NewsModel *)newsModel{
 
+    self.lblSubtitle.text = @"";
+
     self.lblTitle.text = newsModel.title;
 
     self.lblSubtitle.text = [NSString stringWithFormat:@"%@",newsModel.digest];
 
     [self.imgIcon sd_setImageWithURL:[NSURL URLWithString:newsModel.imgsrc] placeholderImage:[UIImage imageNamed:@"0"]];
 
+}
+
+-(void)layoutSubviews{
+    [super layoutSubviews];
+    // 强制计算 label 的自动布局约束
+    [self.lblTitle layoutIfNeeded];
+
+    CGFloat titleLength = [self.newsModel.title sizeWithAttributes:@{NSFontAttributeName:self.lblTitle.font}].width;
+    NSLog(@"titleLength : %f -- %@",titleLength,self.newsModel.title);
+    NSLog(@"label width : %f ",self.lblTitle.frame.size.width);
+
+    if (titleLength > self.lblTitle.frame.size.width) {
+        self.lblSubtitle.hidden = YES;
+    }else{
+        self.lblSubtitle.hidden = NO;
+    }
 }
 
 @end
