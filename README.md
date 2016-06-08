@@ -21,3 +21,4 @@
 
 * 7.增加了一个 新闻界面 ,暂时只有163新闻主页,使用了 SDLAYOUT 布局 ,16/06/05
     * 增加了 cell  和 scrollview幻灯片点击跳转 webView  (用 webview偷懒...)
+    * 修复了新闻界面的 cell 布局错乱问题
