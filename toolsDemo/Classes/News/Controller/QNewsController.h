@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-@interface QNewsController : UIViewController
+@interface QNewsController : UITableViewController
+@property (nonatomic, copy) NSString *urlString;
 
 
 @end

@@ -47,6 +47,11 @@
     .rightSpaceToView(self.contentView,0)
     .heightIs(1);
 
+    self.lblPtime.sd_layout
+    .bottomSpaceToView(self.lineView,0)
+    .rightSpaceToView(self.contentView,margin)
+    .widthIs(50);
+
     [self setupAutoHeightWithBottomView:self.lineView bottomMargin:0];
 }
 
@@ -63,6 +68,7 @@
     self.lblPtime.text = newsModel.ptime;
 
     CGFloat titleLength = [newsModel.title sizeWithAttributes:@{NSFontAttributeName:self.lblTitle.font}].width;
+
 //    NSLog(@"titleLength : %f -- %@",titleLength,newsModel.title);
 //    NSLog(@"label width : %f ",self.lblTitle.frame.size.width);
 
