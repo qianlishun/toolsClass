@@ -23,3 +23,4 @@
     * 增加了 cell  和 scrollview幻灯片点击跳转 webView  (用 webview偷懒...) 06/06
     * 修复了新闻界面的 cell 布局错乱问题 06/07
     * 新闻界面 使用collection,但是嵌套进 NavTab会出现各种问题 , 无法 push等, 目前先这样 06/12
+    * 新闻界面写了一个 demo https://github.com/qianlishun/NewsDemo  06/13
