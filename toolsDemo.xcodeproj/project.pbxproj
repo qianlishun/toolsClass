@@ -52,6 +52,8 @@
 		3E86C64E1CE49C4700AC4BBD /* FRGWaterfallHeaderReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E86C64A1CE49C4700AC4BBD /* FRGWaterfallHeaderReusableView.m */; settings = {ASSET_TAGS = (); }; };
 		3E86C6511CE49CAD00AC4BBD /* WaterfallController1.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E86C6501CE49CAD00AC4BBD /* WaterfallController1.m */; settings = {ASSET_TAGS = (); }; };
 		3E8D84EF1D1A34CC000570C3 /* SetQRCodeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E8D84EE1D1A34CC000570C3 /* SetQRCodeController.m */; settings = {ASSET_TAGS = (); }; };
+		3E8D84F21D1A3713000570C3 /* ScanController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E8D84F11D1A3713000570C3 /* ScanController.m */; settings = {ASSET_TAGS = (); }; };
+		3E8D84F51D1A372B000570C3 /* PreView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E8D84F41D1A372B000570C3 /* PreView.m */; settings = {ASSET_TAGS = (); }; };
 		3E9AED301CE06751001F77D5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E9AED2F1CE06751001F77D5 /* main.m */; };
 		3E9AED3B1CE06751001F77D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E9AED3A1CE06751001F77D5 /* Assets.xcassets */; };
 		3E9AED3E1CE06751001F77D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E9AED3C1CE06751001F77D5 /* LaunchScreen.storyboard */; };
@@ -253,6 +255,10 @@
 		3E86C6501CE49CAD00AC4BBD /* WaterfallController1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaterfallController1.m; sourceTree = "<group>"; };
 		3E8D84ED1D1A34CC000570C3 /* SetQRCodeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetQRCodeController.h; sourceTree = "<group>"; };
 		3E8D84EE1D1A34CC000570C3 /* SetQRCodeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetQRCodeController.m; sourceTree = "<group>"; };
+		3E8D84F01D1A3713000570C3 /* ScanController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanController.h; sourceTree = "<group>"; };
+		3E8D84F11D1A3713000570C3 /* ScanController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanController.m; sourceTree = "<group>"; };
+		3E8D84F31D1A372B000570C3 /* PreView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreView.h; sourceTree = "<group>"; };
+		3E8D84F41D1A372B000570C3 /* PreView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreView.m; sourceTree = "<group>"; };
 		3E9AED2B1CE06751001F77D5 /* toolsDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = toolsDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E9AED2F1CE06751001F77D5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3E9AED3A1CE06751001F77D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -632,6 +638,8 @@
 			children = (
 				3E8D84ED1D1A34CC000570C3 /* SetQRCodeController.h */,
 				3E8D84EE1D1A34CC000570C3 /* SetQRCodeController.m */,
+				3E8D84F01D1A3713000570C3 /* ScanController.h */,
+				3E8D84F11D1A3713000570C3 /* ScanController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -639,6 +647,8 @@
 		3E8D84EC1D1A3420000570C3 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3E8D84F31D1A372B000570C3 /* PreView.h */,
+				3E8D84F41D1A372B000570C3 /* PreView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1482,6 +1492,7 @@
 				3EFFF67A1D0ABA570042ABF4 /* NSObject+MJClass.m in Sources */,
 				3E9AED941CE06827001F77D5 /* MainController.m in Sources */,
 				3EC2054E1CF5C2EE001AF96C /* QWaveController.m in Sources */,
+				3E8D84F21D1A3713000570C3 /* ScanController.m in Sources */,
 				3EDC8E421D0BA90C0007F833 /* QNewsControllerMain.m in Sources */,
 				3EC205461CF5C130001AF96C /* QLSTabBarController.m in Sources */,
 				3E9AEDA81CE0698A001F77D5 /* ContactViewController.m in Sources */,
@@ -1536,6 +1547,7 @@
 				3E9AED301CE06751001F77D5 /* main.m in Sources */,
 				3E428D3C1D02ED3F000C404C /* SDImageCache.m in Sources */,
 				3E428D471D02ED3F000C404C /* UIImageView+HighlightedWebCache.m in Sources */,
+				3E8D84F51D1A372B000570C3 /* PreView.m in Sources */,
 				3EFFF6811D0ABA570042ABF4 /* MJRefreshBackFooter.m in Sources */,
 				3E9AED8B1CE067DD001F77D5 /* SVProgressHUD.m in Sources */,
 				3EFFF6621D0ABA570042ABF4 /* AFHTTPRequestOperationManager.m in Sources */,

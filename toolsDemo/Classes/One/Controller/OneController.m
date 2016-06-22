@@ -23,6 +23,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    self.title = @"Demo";
     self.view.backgroundColor = [UIColor whiteColor];
 
     self.contenArray = @[@"ImagePlayController",@"图片无限轮播",
@@ -32,6 +33,7 @@
                          @"QWaveController",@"~~~波~~~",
                          @"QNewsHomeController",@"一个新闻界面",
                          @"SetQRCodeController",@"生成二维码",
+                         @"ScanController",@"扫描二维码",
                          ];
 
 //    UIButton *button=[UIButton buttonWithType:UIButtonTypeCustom];
