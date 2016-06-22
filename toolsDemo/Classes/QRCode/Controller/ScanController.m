@@ -132,8 +132,7 @@
     for (AVMetadataMachineReadableCodeObject *obj in metadataObjects) {
         self.label.text = obj.stringValue;
     }
-    if([self.label.text hasPrefix:@"http://"] || [self.label.text hasPrefix:@"https://"] 
-        || [self.label.text hasPrefix:@"sms://"||[self.label.text hasPrefix:@"tel://"]){
+    if([self.label.text hasPrefix:@"http://"] || [self.label.text hasPrefix:@"https://"] || [self.label.text hasPrefix:@"sms://"||[self.label.text hasPrefix:@"tel://"]){
 
         NSURL *url = [NSURL URLWithString:self.label.text];
         [[UIApplication sharedApplication]openURL:url];
