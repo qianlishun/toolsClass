@@ -41,7 +41,6 @@
 
     [super viewDidLoad];
 
-
     self.view.backgroundColor = [UIColor whiteColor];
 
     self.automaticallyAdjustsScrollViewInsets = YES;
@@ -75,19 +74,19 @@
 //    [self loadData];
 }
 
--(NSArray *)listArray{
-    if (!_listArray) {
-        _listArray = [[NSArray alloc]init];
-
-    }
-
-    return  _listArray;
-}
-
-//- (void)setListArray:(NSArray *)listArray{
-//    _listArray = listArray;
+//-(NSArray *)listArray{
+//    if (!_listArray) {
+//        _listArray = [[NSArray alloc]init];
 //
+//    }
+//
+//    return  _listArray;
 //}
+
+- (void)setListArray:(NSArray *)listArray{
+    _listArray = listArray;
+
+}
 
 #pragma mark - 请求数据
 - (void)setUrlString:(NSString *)urlString{
@@ -122,7 +121,6 @@
         [self.refreshView endRefreshing];
     }];
 }
-
 
 - (void)loadData{
 

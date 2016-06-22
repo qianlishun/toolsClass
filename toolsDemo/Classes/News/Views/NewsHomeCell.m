@@ -21,6 +21,7 @@
 - (instancetype)initWithFrame:(CGRect)frame{
 
     if (self = [super initWithFrame:frame]) {
+
         self.newsController = [[QNewsController alloc]init];
 
         [self.contentView addSubview:self.newsController.tableView];

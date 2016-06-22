@@ -51,6 +51,7 @@
 		3E86C64D1CE49C4700AC4BBD /* FRGWaterfallDecorationReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E86C6481CE49C4700AC4BBD /* FRGWaterfallDecorationReusableView.m */; settings = {ASSET_TAGS = (); }; };
 		3E86C64E1CE49C4700AC4BBD /* FRGWaterfallHeaderReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E86C64A1CE49C4700AC4BBD /* FRGWaterfallHeaderReusableView.m */; settings = {ASSET_TAGS = (); }; };
 		3E86C6511CE49CAD00AC4BBD /* WaterfallController1.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E86C6501CE49CAD00AC4BBD /* WaterfallController1.m */; settings = {ASSET_TAGS = (); }; };
+		3E8D84EF1D1A34CC000570C3 /* SetQRCodeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E8D84EE1D1A34CC000570C3 /* SetQRCodeController.m */; settings = {ASSET_TAGS = (); }; };
 		3E9AED301CE06751001F77D5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E9AED2F1CE06751001F77D5 /* main.m */; };
 		3E9AED3B1CE06751001F77D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E9AED3A1CE06751001F77D5 /* Assets.xcassets */; };
 		3E9AED3E1CE06751001F77D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E9AED3C1CE06751001F77D5 /* LaunchScreen.storyboard */; };
@@ -250,6 +251,8 @@
 		3E86C64A1CE49C4700AC4BBD /* FRGWaterfallHeaderReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRGWaterfallHeaderReusableView.m; sourceTree = "<group>"; };
 		3E86C64F1CE49CAD00AC4BBD /* WaterfallController1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaterfallController1.h; sourceTree = "<group>"; };
 		3E86C6501CE49CAD00AC4BBD /* WaterfallController1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaterfallController1.m; sourceTree = "<group>"; };
+		3E8D84ED1D1A34CC000570C3 /* SetQRCodeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetQRCodeController.h; sourceTree = "<group>"; };
+		3E8D84EE1D1A34CC000570C3 /* SetQRCodeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetQRCodeController.m; sourceTree = "<group>"; };
 		3E9AED2B1CE06751001F77D5 /* toolsDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = toolsDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E9AED2F1CE06751001F77D5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3E9AED3A1CE06751001F77D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -615,6 +618,31 @@
 			path = FRGWaterFallLayout;
 			sourceTree = "<group>";
 		};
+		3E8D84EA1D1A3420000570C3 /* QRCode */ = {
+			isa = PBXGroup;
+			children = (
+				3E8D84EB1D1A3420000570C3 /* Controller */,
+				3E8D84EC1D1A3420000570C3 /* View */,
+			);
+			path = QRCode;
+			sourceTree = "<group>";
+		};
+		3E8D84EB1D1A3420000570C3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3E8D84ED1D1A34CC000570C3 /* SetQRCodeController.h */,
+				3E8D84EE1D1A34CC000570C3 /* SetQRCodeController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		3E8D84EC1D1A3420000570C3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		3E9AED221CE06751001F77D5 = {
 			isa = PBXGroup;
 			children = (
@@ -763,6 +791,7 @@
 				3ECB77981CE32A300046BA95 /* Waterfall */,
 				3EC205481CF5C262001AF96C /* Wave */,
 				3E428C4C1D02CA40000C404C /* News */,
+				3E8D84EA1D1A3420000570C3 /* QRCode */,
 				3E9AEDC71CE07016001F77D5 /* Microblog */,
 				3E9AEDCB1CE07016001F77D5 /* QQ */,
 			);
@@ -921,7 +950,6 @@
 			children = (
 				3E9AEDCC1CE07016001F77D5 /* Controller */,
 				3E9AEDCD1CE07016001F77D5 /* Models */,
-				3E9AEDCE1CE07016001F77D5 /* Star */,
 				3E9AEDCF1CE07016001F77D5 /* Views */,
 			);
 			path = QQ;
@@ -939,13 +967,6 @@
 			children = (
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		3E9AEDCE1CE07016001F77D5 /* Star */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Star;
 			sourceTree = "<group>";
 		};
 		3E9AEDCF1CE07016001F77D5 /* Views */ = {
@@ -1346,6 +1367,7 @@
 				TargetAttributes = {
 					3E9AED2A1CE06751001F77D5 = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = 62Z6NU26G9;
 					};
 					3E9AED431CE06751001F77D5 = {
 						CreatedOnToolsVersion = 7.0;
@@ -1419,6 +1441,7 @@
 				3E428D111D02EA73000C404C /* NewsTwoCell.m in Sources */,
 				3EFFF66F1D0ABA570042ABF4 /* UIButton+AFNetworking.m in Sources */,
 				3E428D141D02EA80000C404C /* NewsThreeCell.m in Sources */,
+				3E8D84EF1D1A34CC000570C3 /* SetQRCodeController.m in Sources */,
 				3E428D5F1D02EDC3000C404C /* SDCycleScrollView.m in Sources */,
 				3EFFF6661D0ABA570042ABF4 /* AFURLConnectionOperation.m in Sources */,
 				3E428D601D02EDC3000C404C /* UIView+SDExtension.m in Sources */,
@@ -1621,7 +1644,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -1659,7 +1682,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1671,6 +1694,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PREFIX_HEADER = toolsDemo/others/toolsDemo.pch;
 				INFOPLIST_FILE = toolsDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1684,6 +1708,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PREFIX_HEADER = toolsDemo/others/toolsDemo.pch;
 				INFOPLIST_FILE = toolsDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;

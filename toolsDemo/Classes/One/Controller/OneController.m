@@ -31,8 +31,8 @@
                          @"WaterfallController",@"瀑布流",
                          @"QWaveController",@"~~~波~~~",
                          @"QNewsHomeController",@"一个新闻界面",
-                         @"QTestCollectionView",@"测试",
-                         @"TwoController",@"test!test!test!test!test!test!test!test!test!test!test!test!test!test!",@"TwoController",@"我是一段测试文字,测试自适应高度调整.就能到加拿大及纳税的结案时间你的好大声安徽大厦的建安大家看你啥动画师大会收到爱神的箭加深对加黑色的爱的氨基酸的那件事你"];
+                         @"SetQRCodeController",@"生成二维码",
+                         ];
 
 //    UIButton *button=[UIButton buttonWithType:UIButtonTypeCustom];
 //    button.frame=CGRectMake(0, 0, 200, 60);
