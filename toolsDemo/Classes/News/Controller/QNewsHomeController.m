@@ -132,10 +132,19 @@ static NSString *const ID = @"home_cell";
     }
 
     CGFloat nextScale = ABS(scrollView.contentOffset.x / scrollView.bounds.size.width - self.currentIndex);
-    CGFloat  currentScale = 1 - nextScale ;
+    CGFloat  currentScale = 1 - nextScale;
 
-    curentLabel.scale = currentScale;
+    for (id obj in self.scrollView.subviews) {
+        if ([[obj class] isSubclassOfClass:[UIButton class]]) {
+            ChannelLabel *lbl = (ChannelLabel *)obj;
+            lbl.scale = 0;
+        }
+    }
+    
     nextLabel.scale = nextScale;
+    curentLabel.scale = currentScale;
+
+    self.currentIndex = scrollView.contentOffset.x / scrollView.bounds.size.width;
 
 }
 
