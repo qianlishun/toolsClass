@@ -11,8 +11,7 @@
 #import "OneController.h"
 #import "TwoController.h"
 #import "LoginViewController.h"
-#import "QNewsControllerMain.h"
-//#import "QNewsController.h"
+#import "QNewsController1.h"
 
 @interface MainController ()
 
@@ -45,7 +44,7 @@
                                          TITLE : @"通讯录"
                                          },
                                      @{
-                                         VC_VIEWCONTROLLER : [[QNewsControllerMain alloc]init],
+                                         VC_VIEWCONTROLLER : [[QNewsController1 alloc]init],
                                          NORMAL_ICON : @"icon_discover",
                                          SELECTED_ICON : @"icon_discover_selected",
                                          TITLE : @"发现"

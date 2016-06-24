@@ -101,7 +101,6 @@ typedef enum {
 @property (nonatomic, strong) UIImage *placeholderImage;
 
 
-
 /** 是否显示分页控件 */
 @property (nonatomic, assign) BOOL showPageControl;
 

@@ -351,6 +351,7 @@ NSString * const ID = @"cycleCell";
 - (void)automaticScroll
 {
     if (0 == _totalItemsCount) return;
+
     int currentIndex = _mainView.contentOffset.x / _flowLayout.itemSize.width;
     int targetIndex = currentIndex + 1;
     if (targetIndex == _totalItemsCount) {

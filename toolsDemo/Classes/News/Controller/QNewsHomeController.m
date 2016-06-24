@@ -121,7 +121,7 @@ static NSString *const ID = @"home_cell";
     ChannelLabel *curentLabel = self.scrollView.subviews[self.currentIndex];
     ChannelLabel *nextLabel = nil;
 
-    for (NSIndexPath *indexPath in self.collectionView.indexPathsForSelectedItems) {
+    for (NSIndexPath *indexPath in self.collectionView.indexPathsForVisibleItems) {
         if (indexPath.item != self.currentIndex) {
             nextLabel = self.scrollView.subviews[indexPath.item];
             break;
