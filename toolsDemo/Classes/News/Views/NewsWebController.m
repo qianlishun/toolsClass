@@ -10,6 +10,8 @@
 
 @interface NewsWebController ()<UIWebViewDelegate>
 
+@property (nonatomic,strong) UIWebView *webView;
+
 @end
 
 @implementation NewsWebController
@@ -18,8 +20,8 @@
     [super viewDidLoad];
 
 
-    UIWebView *webView = [[UIWebView alloc]initWithFrame:[UIScreen mainScreen].bounds];
-    [self.view addSubview:webView];
+    self.webView = [[UIWebView alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    [self.view addSubview:self.webView];
     // 发送请求
     NSURL *url = [NSURL URLWithString:self.url];
     NSLog(@"url %@",url);
@@ -33,7 +35,7 @@
         // connecionError 链接错误
         // 判断请求是否有错误
         if (!connectionError) {
-            [webView loadRequest:request];
+            [self.webView loadRequest:request];
         }else{
             NSLog(@"连接错误%@",connectionError);
         }
