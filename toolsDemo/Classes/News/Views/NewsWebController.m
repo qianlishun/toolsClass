@@ -22,6 +22,9 @@
 
     self.webView = [[UIWebView alloc]initWithFrame:[UIScreen mainScreen].bounds];
     [self.view addSubview:self.webView];
+        
+    self.webView.delegate = self;
+    
     // 发送请求
     NSURL *url = [NSURL URLWithString:self.url];
     NSLog(@"url %@",url);
