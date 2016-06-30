@@ -81,22 +81,45 @@ static NSString *const ID = @"home_cell";
     CGFloat marginX = 5;
     CGFloat x = marginX;
     CGFloat h = self.scrollView.bounds.size.height;
-
+    int i = 0;
     for (Channel *channel in self.channels) {
         ChannelLabel *lbl = [ChannelLabel channelLabelWithTName:channel.tname];
         [self.scrollView addSubview:lbl];
 
-        lbl.frame = CGRectMake(x, 0, lbl.bounds.size.width, h);
+        lbl.frame = CGRectMake(x, 0, lbl.frame.size.width, h);
 
-        x += lbl.bounds.size.width + marginX;
+        [lbl addTarget:self action:@selector(didChannelClick:) forControlEvents:UIControlEventTouchUpInside];
+
+        x += lbl.frame.size.width + marginX;
+
+        lbl.tag = i;
+        i++;
     }
-
-
+    
     self.scrollView.contentSize = CGSizeMake(x, 0);
     self.scrollView.showsHorizontalScrollIndicator = NO;
 
     ChannelLabel *firstLabel = self.scrollView.subviews[0];
     firstLabel.scale = 1;
+}
+
+- (void)didChannelClick:(UIButton *)sender{
+    CGFloat cw = self.view.bounds.size.width;
+
+    [self.collectionView setContentOffset:CGPointMake(cw * sender.tag , 0)animated:NO];
+
+    self.currentIndex = sender.tag;
+
+    for (id btn in self.scrollView.subviews) {
+        if ([btn isKindOfClass:[UIButton class]]) {
+            UIButton *btn1 = (UIButton *)btn;
+            [btn1 setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+            btn1.titleLabel.font = [UIFont systemFontOfSize:14];
+            btn1.transform = CGAffineTransformMakeScale(1, 1);
+        }
+    }
+    [sender setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    sender.transform = CGAffineTransformMakeScale(1.285, 1.285);
 }
 
 #pragma mark dataSource
