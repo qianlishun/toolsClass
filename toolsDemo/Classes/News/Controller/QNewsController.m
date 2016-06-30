@@ -5,12 +5,11 @@
 //  Created by Mr.Q on 16/6/4.
 //  Copyright © 2016年 钱立顺. All rights reserved.
 //
-#import "QLSNavigationController.h"
 #import "QNewsController.h"
 #import "MJRefresh.h"
 #import "MJExtension.h"
 #import "UITableView+SDAutoTableViewCellHeight.h"
-
+#import "NewsModel.h"
 #import "NewsBaseCell.h"
 #import "NewsOneCell.h"
 #import "NewsTwoCell.h"
@@ -21,7 +20,7 @@
 
 @interface QNewsController () <SDCycleScrollViewDelegate>
 
-@property (nonatomic,strong) NSArray *listArray;
+@property (nonatomic,strong) NSMutableArray *listArray;
 
 @property (nonatomic,assign) NSInteger pageIndex;
 
@@ -30,8 +29,6 @@
 @property (nonatomic,strong) SDCycleScrollView *cycleScorllView;
 
 @property (nonatomic,copy) NSString  *url;
-
-@property (nonatomic,strong) UIWindow *window;
 
 @end
 
@@ -47,125 +44,137 @@
 
     self.tableView.separatorColor = [UIColor clearColor];
 
-
     __weak typeof (self)weakSelf = self;
 
     self.tableView.header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         weakSelf.refreshView = weakSelf.tableView.header;
         weakSelf.pageIndex = 0;
 
-        [weakSelf loadData];
+        [weakSelf loadDataFromServer];
     }];
 
-    [self.tableView.header beginRefreshing];
+    //    [self.tableView.header beginRefreshing];
 
     self.tableView.footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
         weakSelf.refreshView = weakSelf.tableView.footer;
-        weakSelf.pageIndex = weakSelf.pageIndex + 5;
 
-        [weakSelf loadData];
+        [weakSelf loadDataFromServer];
+
     }];
-
 
     self.tableView.footer.hidden = YES;
 
     self.tableView.sd_layout.spaceToSuperView(UIEdgeInsetsMake(0, 0, 0, 0));
 
-//    [self loadData];
+    //    [self loadData];
 }
 
-//-(NSArray *)listArray{
-//    if (!_listArray) {
-//        _listArray = [[NSArray alloc]init];
+-(NSMutableArray *)listArray{
+    if (!_listArray) {
+        _listArray = [NSMutableArray array];
+
+    }
+    return  _listArray;
+}
 //
-//    }
+//- (void)setListArray:(NSArray *)listArray{
+//    _listArray = li stArray;
 //
-//    return  _listArray;
+//    [self.tableView reloadData];
 //}
-
-- (void)setListArray:(NSArray *)listArray{
-    _listArray = listArray;
-
-}
 
 #pragma mark - 请求数据
 - (void)setUrlString:(NSString *)urlString{
 
     self.url = urlString;
 
+    self.pageIndex =0;
     self.listArray = nil;
 
-    [NewsModel newsWithURLString:urlString  success:^(NSArray *array) {
+    [self.tableView reloadData];
 
-//        self.listArray = array;
-        if (self.refreshView == self.tableView.header) {
-            self.listArray = array;
-            self.tableView.footer.hidden = self.listArray.count == 0 ? YES:NO;
+    [self.tableView.header beginRefreshing];
 
-        }else if (self.refreshView == self.tableView.footer){
+    [self loadDataFromServer];
+}
 
-            NSMutableArray *listArray= [NSMutableArray array];
 
-            [listArray addObjectsFromArray:array];
+- (void)loadDataFromServer{
 
-            self.listArray = listArray.copy;
+    //    NSString *urlString = [NSString stringWithFormat:@"http://c.m.163.com/nc/article/%@/%ld-20.html",@"headline/T1348647853363",self.pageIndex];
+    //    NSString *urlString = [NSString stringWithFormat:@"http://c.3g.163.com/nc/article/%@/%ld-20.html",@"list/T1414389941036",self.pageIndex];
+
+    //    NSString *urlString = [NSString stringWithFormat:@"http://c.m.163.com/nc/article/B6UKRIOE00963VRO/full.html"];
+
+    [NewsModel newsWithURLString:[NSString stringWithFormat:@"%@/%ld-10.html",self.url,self.pageIndex]  success:^(NSArray *array) {
+
+        if (self.pageIndex == 0) {
+            self.listArray=nil;
+
+            self.listArray = [NSMutableArray arrayWithArray:array];
+
+            // 拿出头条中的非轮播数据
+            NewsModel *model =  array[0];
+            NewsModel *tempModel = [NewsModel new];
+            tempModel.title = model.title;
+            tempModel.imgsrc = model.imgsrc;
+            tempModel.digest = model.digest;
+            tempModel.imgsrc = model.imgsrc;
+            tempModel.imgextra = model.imgextra;
+            tempModel.skipID = model.skipID;
+
+            [self.listArray insertObject:tempModel atIndex:1];
+
+            self.tableView.footer.hidden = self.listArray.count==0?YES:NO;
+
+        }else{
+
+            for (id obj in array) {
+                [self.listArray addObject:obj];
+            }
+            // 去除头条重复数据
+            NewsModel *model = array[0];
+            model.ads = nil;
         }
 
-        //        NSLog(@"%@",_listArray);
         [self doneWithView:self.refreshView];
 
+        self.pageIndex+=10;
 
     } errorBlock:^(NSError *error) {
         NSLog(@"请求失败,%@",error);
-
         [self.refreshView endRefreshing];
+
     }];
-}
-
-- (void)loadData{
-
-//    NSString *urlString = [NSString stringWithFormat:@"http://c.m.163.com/nc/article/%@/%ld-20.html",@"headline/T1348647853363",self.pageIndex];
-//    NSString *urlString = [NSString stringWithFormat:@"http://c.3g.163.com/nc/article/%@/%ld-20.html",@"list/T1414389941036",self.pageIndex];
-
-//    NSString *urlString = [NSString stringWithFormat:@"http://c.m.163.com/nc/article/B6UKRIOE00963VRO/full.html"];
-    [self setUrlString:self.url];
-
-    NSLog(@"%@",self.url);
 
 }
 
-#pragma mark - 回调刷新
+//#pragma mark - 回调刷新
 - (void)doneWithView:(MJRefreshComponent *)refreshView{
-    [self.tableView reloadData];
-
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.tableView reloadData];
+    });
     [self.refreshView endRefreshing];
 }
 
 #pragma mark - tableview delegate   datasource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return  self.listArray.count;
-    NSLog(@"%lu",self.listArray.count);
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
 
-    NewsBaseCell * cell = nil;
 
     NewsModel *newsModel = self.listArray[indexPath.row];
 
-    NSLog(@"%ld",indexPath.row);
     NSString *ID = [NewsBaseCell cellIDforRow:newsModel];
 
     Class class = NSClassFromString(ID);
 
-    cell = [tableView dequeueReusableCellWithIdentifier:ID];
+    NewsBaseCell * cell = [tableView dequeueReusableCellWithIdentifier:ID];
 
     if (!cell) {
         cell = [[class alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
-    }
-
-    if ([ID isEqualToString:@"NewsFourCell"]) {
-        cell.fatherVC = self;
     }
 
     cell.newsModel = newsModel;
@@ -196,22 +205,6 @@
         width = kSize.height;
     }
     return width;
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-
-
-    NewsModel *model = self.listArray[indexPath.row];
-    // 创建一个用于跳转的控制器
-    NewsWebController *vc = [[NewsWebController alloc]init];
-
-    // 把数据传递给这个控制器
-    vc.url= model.url;
-
-    vc.title= model.title;
-
-//    [nav presentViewController:vc animated:YES completion:nil];
-    [self.navigationController pushViewController:vc animated:YES];
 }
 
 

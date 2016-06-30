@@ -5,6 +5,14 @@
 //  Created by Mr.Q on 16/5/12.
 //  Copyright © 2016年 钱立顺. All rights reserved.
 //
+#ifdef DEBUG
+#define NSLog(...) NSLog(__VA_ARGS__)
+#define debugMethod() NSLog(@"%s", __func__)
+#else
+#define NSLog(...)
+#define debugMethod()
+#endif
+
 #define kWIDTH [UIScreen mainScreen].bounds.size.width
 #define kSize [UIScreen mainScreen].bounds.size
 #define ScreenFrame [UIScreen mainScreen].bounds
