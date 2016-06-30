@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ChannelLabel : UILabel
+@interface ChannelLabel : UIButton
 + (instancetype)channelLabelWithTName:(NSString *)tname;
 
 @property (nonatomic, assign) CGFloat scale;
+@property (nonatomic,copy) NSString  *url;
+
 
 @end
