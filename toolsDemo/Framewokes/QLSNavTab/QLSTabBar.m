@@ -18,17 +18,31 @@
 
     QLSTabItem *item = [[QLSTabItem alloc]init];
 
-    // 文字
-    [item setTitle:title forState:UIControlStateNormal];
-    item.titleLabel.textColor = [UIColor lightGrayColor];
-
+   // 文字
+    if (title) {
+        [item setTitle:title forState:UIControlStateNormal];
+        [item setTitleColor:[UIColor lightGrayColor]forState:UIControlStateNormal];
+        [item setTitleColor:[UIColor blackColor] forState:UIControlStateDisabled];
+    }
     // 图标
     if (icon) {
-    [item setImage:[UIImage imageNamed:icon] forState:UIControlStateNormal];
+        UIImage *iconImg = [UIImage imageNamed:icon];
+        CGSize size = CGSizeMake(25, 25);
+
+        iconImg = [self image:iconImg byScalingToSize:size];
+
+        [item setImage:iconImg forState:UIControlStateNormal];
     }
     if (icon_selected) {
-    [item setImage:[UIImage imageNamed:icon_selected] forState:UIControlStateSelected];
+
+        UIImage *iconImg = [UIImage imageNamed:icon_selected];
+        CGSize size = CGSizeMake(28, 28);
+
+        iconImg = [self image:iconImg byScalingToSize:size];
+
+        [item setImage:iconImg forState:UIControlStateDisabled];
     }
+
     // 监听点击
     [item addTarget:self action:@selector(itemClick:) forControlEvents:UIControlEventTouchDown];
 
@@ -56,15 +70,16 @@
 
 -(void)itemClick:(QLSTabItem *)item{
 
-    // 0:通知代理
+   
+    // 通知代理
     if([_delegate respondsToSelector:@selector(tabbar:to:)] ){
         [_delegate tabbar:self to:item.tag];
     }
     // 取消选中 之前选中的item
-    _selectedItem.selected = NO;
+    _selectedItem.enabled = YES;
 
     // 选中点击的item
-    item.selected = YES;
+    item.enabled = NO;
 
     // 保存当前item状态
     _selectedItem = item;
