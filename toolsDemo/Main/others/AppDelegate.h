@@ -2,8 +2,8 @@
 //  AppDelegate.h
 //  toolsDemo
 //
-//  Created by bear on 16/3/29.
-//  Copyright © 2016年 bear. All rights reserved.
+//  Created by MrQ on 15/9/17.
+//  Copyright © 2015年 QLS. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

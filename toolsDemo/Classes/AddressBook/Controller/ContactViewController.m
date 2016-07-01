@@ -2,8 +2,8 @@
 //  ContactViewController.m
 //  toolsDemo
 //
-//  Created by Mr.Q on 16/5/9.
-//  Copyright © 2016年 钱立顺. All rights reserved.
+//  Created by Mr.Q on 15/12/20.
+//  Copyright © 2015年 QLS. All rights reserved.
 //
 
 #import "ContactViewController.h"

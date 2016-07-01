@@ -71,8 +71,8 @@
     [self.lblTitle layoutIfNeeded];
 
     CGFloat titleLength = [self.newsModel.title sizeWithAttributes:@{NSFontAttributeName:self.lblTitle.font}].width;
-    NSLog(@"titleLength : %f -- %@",titleLength,self.newsModel.title);
-    NSLog(@"label width : %f ",self.lblTitle.frame.size.width);
+//    NSLog(@"titleLength : %f -- %@",titleLength,self.newsModel.title);
+//    NSLog(@"label width : %f ",self.lblTitle.frame.size.width);
 
     if (titleLength > self.lblTitle.frame.size.width) {
         self.lblSubtitle.hidden = YES;
