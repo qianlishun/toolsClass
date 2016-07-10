@@ -85,6 +85,26 @@
     _selectedItem = item;
 
 }
+
+- (UIImage *)image:(UIImage*)image byScalingToSize:(CGSize)targetSize {
+    UIImage *sourceImage = image;
+    UIImage *newImage = nil;
+
+    UIGraphicsBeginImageContext(targetSize);
+
+    CGRect thumbnailRect = CGRectZero;
+    thumbnailRect.origin = CGPointZero;
+    thumbnailRect.size.width  = targetSize.width;
+    thumbnailRect.size.height = targetSize.height;
+
+    [sourceImage drawInRect:thumbnailRect];
+
+    newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+
+    return newImage ;
+}
+
 // Block 方法
 //-(void)addButtonWithClickBlock:(void (^)(QLSTabBar *, NSInteger))code andImage:(UIImage *)image andSelectedImage:(UIImage *)imageSelected{
 //
