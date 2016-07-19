@@ -172,7 +172,9 @@
     Class class = NSClassFromString(ID);
 
     NewsBaseCell * cell = [tableView dequeueReusableCellWithIdentifier:ID];
-
+    
+    cell.newsModel = nil;
+    
     if (!cell) {
         cell = [[class alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
     }
