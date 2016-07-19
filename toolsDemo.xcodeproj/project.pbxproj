@@ -694,7 +694,6 @@
 				3E428C4C1D02CA40000C404C /* News */,
 				3E8D84EA1D1A3420000570C3 /* QRCode */,
 				3E9AEDC71CE07016001F77D5 /* Microblog */,
-				3E9AEDCB1CE07016001F77D5 /* QQ */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -840,37 +839,6 @@
 			sourceTree = "<group>";
 		};
 		3E9AEDCA1CE07016001F77D5 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		3E9AEDCB1CE07016001F77D5 /* QQ */ = {
-			isa = PBXGroup;
-			children = (
-				3E9AEDCC1CE07016001F77D5 /* Controller */,
-				3E9AEDCD1CE07016001F77D5 /* Models */,
-				3E9AEDCF1CE07016001F77D5 /* Views */,
-			);
-			path = QQ;
-			sourceTree = "<group>";
-		};
-		3E9AEDCC1CE07016001F77D5 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		3E9AEDCD1CE07016001F77D5 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		3E9AEDCF1CE07016001F77D5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 			);

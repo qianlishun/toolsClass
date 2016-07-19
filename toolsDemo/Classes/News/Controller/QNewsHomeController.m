@@ -23,7 +23,9 @@
 
 @implementation QNewsHomeController
 
-
+- (void)dealloc{
+    NSLog(@"home dealloc");
+}
 - (NSArray *)channels{
 
     if (!_channels) {
@@ -31,7 +33,6 @@
     }
     return _channels;
 }
-
 
 static NSString *const ID = @"home_cell";
 
@@ -128,7 +129,7 @@ static NSString *const ID = @"home_cell";
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-    
+
     NewsHomeCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:ID forIndexPath:indexPath];
 
     Channel *channel = self.channels[indexPath.item];

@@ -34,6 +34,7 @@
                          @"QNewsHomeController",@"一个新闻界面",
                          @"SetQRCodeController",@"生成二维码",
                          @"ScanController",@"扫描二维码",
+                         @"QZoneViewController",@"仿QQ头部下拉图片",
                          ];
 
 //    UIButton *button=[UIButton buttonWithType:UIButtonTypeCustom];

@@ -89,7 +89,10 @@
 
     self.addButton.backgroundColor = [UIColor colorWithRed:88/255.0 green:183/255.0 blue:219/255.0 alpha:0.8];
 
-    self.addButton.sd_layout.centerXEqualToView(self.view).topSpaceToView(self.numberField,margin/2).heightIs(40).widthRatioToView(self.view,0.7);
+    self.addButton.sd_layout
+    .centerXEqualToView(self.view)
+    .topSpaceToView(self.numberField,margin/2)
+    .heightIs(40).widthRatioToView(self.view,0.7);
 }
 
 
