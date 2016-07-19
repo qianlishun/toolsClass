@@ -86,7 +86,18 @@
 -(void)updateSubViewsWithScrollOffset:(CGPoint)newOffset
 {
 
-        self.frame = CGRectMake(0, 0, _scrollView.bounds.size.width, MaxHeight);
+   if (self.scrollView.contentOffset.y < -220) {
+
+    CGFloat offset = -self.scrollView.contentOffset.y-220;
+
+        self.frame = CGRectMake(0, -offset,self.scrollView.bounds.size.width + offset * 2, MaxHeight + offset*2);
+        self.backgroundImageView.frame = CGRectMake(-offset, 0, kSize.width + offset*2, MaxHeight + offset*2);
+        self.headerImageView.center = self.backgroundImageView.center;
+        self.titleLabel.alpha = self.subTitleLabel.alpha = 1 - offset/10;
+    }
+    else{
+
+        self.frame = CGRectMake(0, 0, self.scrollView.bounds.size.width, MaxHeight);
 
         CGFloat destinaOffset = -64;
         CGFloat startChangeOffset = -self.scrollView.contentInset.top;
@@ -110,7 +121,7 @@
 
         self.titleLabel.frame = CGRectMake(0, 0.6*self.frame.size.height+(subviewOffset-0.45*self.frame.size.height)*(1-alpha), self.frame.size.width, self.frame.size.height*0.2);
         self.subTitleLabel.frame = CGRectMake(0, 0.75*self.frame.size.height+(subviewOffset-0.45*self.frame.size.height)*(1-alpha), self.frame.size.width, self.frame.size.height*0.1);
-
+    }
 }
 
 - (void)tapAction:(id)sender
