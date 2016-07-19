@@ -96,24 +96,26 @@
         self.titleLabel.alpha = self.subTitleLabel.alpha = 1 - offset/10;
     }
     else{
-
-        self.frame = CGRectMake(0, 0, self.scrollView.bounds.size.width, MaxHeight);
-
+    
         CGFloat destinaOffset = -64;
         CGFloat startChangeOffset = -self.scrollView.contentInset.top;
-        newOffset = CGPointMake(newOffset.x, newOffset.y<startChangeOffset?startChangeOffset:(newOffset.y>destinaOffset?destinaOffset:newOffset.y));
+
+        self.newOffset = CGPointMake(self.newOffset.x, self.newOffset.y<startChangeOffset?startChangeOffset:(self.newOffset.y>destinaOffset?destinaOffset:self.newOffset.y));
 
         CGFloat subviewOffset = self.frame.size.height-40; // 子视图的偏移量
 
-        CGFloat newY = -newOffset.y-self.scrollView.contentInset.top;
+        CGFloat newY = -self.newOffset.y-self.scrollView.contentInset.top;
         CGFloat d = destinaOffset-startChangeOffset;
-        CGFloat alpha = 1-(newOffset.y-startChangeOffset)/d;
-        CGFloat imageReduce = 1-(newOffset.y-startChangeOffset)/(d*2);
+        CGFloat alpha = 1-(self.newOffset.y-startChangeOffset)/d;
+        CGFloat imageReduce = 1-(self.newOffset.y-startChangeOffset)/(d*2);
 
         self.subTitleLabel.alpha = alpha;
         self.titleLabel.alpha = alpha;
         self.frame = CGRectMake(0, newY, self.frame.size.width, self.frame.size.height);
-        self.backgroundImageView.frame = CGRectMake(0, -0.5*self.frame.size.height+(1.5*self.frame.size.height-64)*(1-alpha), self.backgroundImageView.frame.size.width, self.backgroundImageView.frame.size.height);
+
+        self.backgroundImageView.frame = CGRectMake(0,
+                                                    (1.5*self.frame.size.height-100)*(1-alpha),
+                                                    self.backgroundImageView.frame.size.width,self.backgroundImageView.frame.size.height);
 
         CGAffineTransform t = CGAffineTransformMakeTranslation(0,(subviewOffset-0.35*self.frame.size.height)*(1-alpha));
         _headerImageView.transform = CGAffineTransformScale(t,
@@ -121,7 +123,6 @@
 
         self.titleLabel.frame = CGRectMake(0, 0.6*self.frame.size.height+(subviewOffset-0.45*self.frame.size.height)*(1-alpha), self.frame.size.width, self.frame.size.height*0.2);
         self.subTitleLabel.frame = CGRectMake(0, 0.75*self.frame.size.height+(subviewOffset-0.45*self.frame.size.height)*(1-alpha), self.frame.size.width, self.frame.size.height*0.1);
-    }
 }
 
 - (void)tapAction:(id)sender
