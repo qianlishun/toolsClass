@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E23827A1D3E1D7E00B02A36 /* QZoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E2382751D3E1D7E00B02A36 /* QZoneViewController.m */; settings = {ASSET_TAGS = (); }; };
+		3E23827B1D3E1D7E00B02A36 /* QScalableNav.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E2382781D3E1D7E00B02A36 /* QScalableNav.m */; settings = {ASSET_TAGS = (); }; };
 		3E428CFC1D02D33A000C404C /* QNewsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E428CFB1D02D33A000C404C /* QNewsController.m */; settings = {ASSET_TAGS = (); }; };
 		3E428CFF1D02D3C8000C404C /* Ads.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E428CFE1D02D3C8000C404C /* Ads.m */; settings = {ASSET_TAGS = (); }; };
 		3E428D021D02D3D5000C404C /* Editor.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E428D011D02D3D5000C404C /* Editor.m */; settings = {ASSET_TAGS = (); }; };
@@ -164,6 +166,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3E2382741D3E1D7E00B02A36 /* QZoneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QZoneViewController.h; sourceTree = "<group>"; };
+		3E2382751D3E1D7E00B02A36 /* QZoneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QZoneViewController.m; sourceTree = "<group>"; };
+		3E2382771D3E1D7E00B02A36 /* QScalableNav.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QScalableNav.h; sourceTree = "<group>"; };
+		3E2382781D3E1D7E00B02A36 /* QScalableNav.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QScalableNav.m; sourceTree = "<group>"; };
 		3E30FB921CE4112A009E9F9C /* toolsDemo.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = toolsDemo.pch; sourceTree = "<group>"; };
 		3E428CFA1D02D33A000C404C /* QNewsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNewsController.h; sourceTree = "<group>"; };
 		3E428CFB1D02D33A000C404C /* QNewsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QNewsController.m; sourceTree = "<group>"; };
@@ -467,6 +473,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3E2382721D3E1D7E00B02A36 /* QZone */ = {
+			isa = PBXGroup;
+			children = (
+				3E2382731D3E1D7E00B02A36 /* Controller */,
+				3E2382761D3E1D7E00B02A36 /* Models */,
+				3E2382771D3E1D7E00B02A36 /* QScalableNav.h */,
+				3E2382781D3E1D7E00B02A36 /* QScalableNav.m */,
+				3E2382791D3E1D7E00B02A36 /* Views */,
+			);
+			path = QZone;
+			sourceTree = "<group>";
+		};
+		3E2382731D3E1D7E00B02A36 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3E2382741D3E1D7E00B02A36 /* QZoneViewController.h */,
+				3E2382751D3E1D7E00B02A36 /* QZoneViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		3E2382761D3E1D7E00B02A36 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3E2382791D3E1D7E00B02A36 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		3E428C4C1D02CA40000C404C /* News */ = {
 			isa = PBXGroup;
 			children = (
@@ -693,6 +734,7 @@
 				3EC205481CF5C262001AF96C /* Wave */,
 				3E428C4C1D02CA40000C404C /* News */,
 				3E8D84EA1D1A3420000570C3 /* QRCode */,
+				3E2382721D3E1D7E00B02A36 /* QZone */,
 				3E9AEDC71CE07016001F77D5 /* Microblog */,
 			);
 			path = Classes;
@@ -1473,6 +1515,7 @@
 				3EB53A1D1D1D175300840D38 /* SDWebImageDownloaderOperation.m in Sources */,
 				3E9AEDB11CE069CD001F77D5 /* TwoController.m in Sources */,
 				3EB539F71D1D175300840D38 /* MJRefreshFooter.m in Sources */,
+				3E23827B1D3E1D7E00B02A36 /* QScalableNav.m in Sources */,
 				3EB53A0E1D1D175300840D38 /* UITableView+SDAutoTableViewCellHeight.m in Sources */,
 				3E7971991D0AE13000E040A8 /* NewsHomeCell.m in Sources */,
 				3EB53A2D1D1D18A800840D38 /* QNewsController1.m in Sources */,
@@ -1498,6 +1541,7 @@
 				3E9AEDC01CE06EC9001F77D5 /* QCollectionViewCell.m in Sources */,
 				3E9AEDAB1CE069A4001F77D5 /* EditViewController.m in Sources */,
 				3EB53A151D1D175300840D38 /* SDCycleScrollView.m in Sources */,
+				3E23827A1D3E1D7E00B02A36 /* QZoneViewController.m in Sources */,
 				3E9AED9E1CE06860001F77D5 /* OneController.m in Sources */,
 				3E7971931D0AD87100E040A8 /* Channel.m in Sources */,
 				3EB539FC1D1D175300840D38 /* MJRefreshBackGifFooter.m in Sources */,
