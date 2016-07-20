@@ -27,7 +27,7 @@
     if (self) {
         self.backgroundColor = [UIColor clearColor];
 
-        _backgroundImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, -0.5*frame.size.height, frame.size.width, frame.size.height*1.5)];
+        _backgroundImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, -0, frame.size.width, MaxHeight)];
 
         _backgroundImageView.image = [UIImage imageNamed:backgroudImage];
         _backgroundImageView.contentMode = UIViewContentModeScaleAspectFill;
@@ -91,38 +91,38 @@
     CGFloat offset = -self.scrollView.contentOffset.y-220;
 
         self.frame = CGRectMake(0, -offset,self.scrollView.bounds.size.width + offset * 2, MaxHeight + offset*2);
-        self.backgroundImageView.frame = CGRectMake(-offset, 0, kSize.width + offset*2, MaxHeight + offset*2);
+        self.backgroundImageView.frame = CGRectMake(-offset, offset, kSize.width + offset*2, MaxHeight + offset*2);
         self.headerImageView.center = self.backgroundImageView.center;
         self.titleLabel.alpha = self.subTitleLabel.alpha = 1 - offset/10;
     }
     else{
-    
+
+        self.frame = CGRectMake(0, 0, self.scrollView.bounds.size.width, MaxHeight);
+
         CGFloat destinaOffset = -64;
         CGFloat startChangeOffset = -self.scrollView.contentInset.top;
-
-        self.newOffset = CGPointMake(self.newOffset.x, self.newOffset.y<startChangeOffset?startChangeOffset:(self.newOffset.y>destinaOffset?destinaOffset:self.newOffset.y));
+        newOffset = CGPointMake(newOffset.x, newOffset.y<startChangeOffset?startChangeOffset:(newOffset.y>destinaOffset?destinaOffset:newOffset.y));
 
         CGFloat subviewOffset = self.frame.size.height-40; // 子视图的偏移量
 
-        CGFloat newY = -self.newOffset.y-self.scrollView.contentInset.top;
+        CGFloat newY = -newOffset.y-self.scrollView.contentInset.top;
         CGFloat d = destinaOffset-startChangeOffset;
-        CGFloat alpha = 1-(self.newOffset.y-startChangeOffset)/d;
-        CGFloat imageReduce = 1-(self.newOffset.y-startChangeOffset)/(d*2);
+        CGFloat alpha = 1-(newOffset.y-startChangeOffset)/d;
+        CGFloat imageReduce = 1-(newOffset.y-startChangeOffset)/(d*2);
 
         self.subTitleLabel.alpha = alpha;
         self.titleLabel.alpha = alpha;
         self.frame = CGRectMake(0, newY, self.frame.size.width, self.frame.size.height);
+        self.backgroundImageView.frame = CGRectMake(0, (1.5*self.frame.size.height)*(1-alpha), self.backgroundImageView.frame.size.width, self.backgroundImageView.frame.size.height);
 
-        self.backgroundImageView.frame = CGRectMake(0,
-                                                    (1.5*self.frame.size.height-100)*(1-alpha),
-                                                    self.backgroundImageView.frame.size.width,self.backgroundImageView.frame.size.height);
-
+        NSLog(@"%f",self.backgroundImageView.frame.size.height);
         CGAffineTransform t = CGAffineTransformMakeTranslation(0,(subviewOffset-0.35*self.frame.size.height)*(1-alpha));
         _headerImageView.transform = CGAffineTransformScale(t,
                                                             imageReduce, imageReduce);
 
         self.titleLabel.frame = CGRectMake(0, 0.6*self.frame.size.height+(subviewOffset-0.45*self.frame.size.height)*(1-alpha), self.frame.size.width, self.frame.size.height*0.2);
         self.subTitleLabel.frame = CGRectMake(0, 0.75*self.frame.size.height+(subviewOffset-0.45*self.frame.size.height)*(1-alpha), self.frame.size.width, self.frame.size.height*0.1);
+    }
 }
 
 - (void)tapAction:(id)sender
