@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 static const CGFloat MaxHeight = 200;
+static const CGFloat navHeight = 0;
 
 @interface QScalableNav : UIView
 
@@ -19,4 +20,5 @@ static const CGFloat MaxHeight = 200;
 
 -(void)updateSubViewsWithScrollOffset:(CGPoint)newOffset;
 
+- (void)removeObserver;
 @end

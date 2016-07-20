@@ -26,12 +26,11 @@
     if (self) {
         self.backgroundColor = [UIColor clearColor];
 
-        _backgroundImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, -0, frame.size.width, MaxHeight)];
-
+        _backgroundImageView = [[UIImageView alloc] initWithFrame:frame];
         _backgroundImageView.image = [UIImage imageNamed:backgroudImage];
         _backgroundImageView.contentMode = UIViewContentModeScaleAspectFill;
 
-        _headerImageView = [[UIImageView alloc] initWithFrame:CGRectMake(frame.size.width*0.5-70*0.5, 0.27*frame.size.height, 70, 70)];
+        _headerImageView = [[UIImageView alloc] initWithFrame:CGRectMake(frame.size.width*0.5-70*0.5, 0.27*frame.size.height+navHeight, 70, 70)];
         _headerImageView.image = [UIImage imageNamed:headerImage];
         [_headerImageView.layer setMasksToBounds:YES];
         _headerImageView.layer.cornerRadius = _headerImageView.frame.size.width/2.0f;
@@ -57,13 +56,18 @@
         [self addSubview:_titleLabel];
         [self addSubview:_subTitleLabel];
         self.clipsToBounds = YES;
-
+//
+//        UIButton *backBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 60, 20)];
+//        backBtn.titleLabel.text = @"返回";
+//        backBtn.tintColor = [UIColor blackColor];
+//        [backBtn addTarget:self action:@selector(back:) forControlEvents:UIControlEventTouchUpInside];
+//
     }
     return self;
-
 }
 
-- (void)dealloc
+
+- (void)removeObserver
 {
     [self.scrollView removeObserver:self forKeyPath:@"contentOffset"];
 }
@@ -89,14 +93,14 @@
 
     CGFloat offset = -self.scrollView.contentOffset.y-220;
 
-        self.frame = CGRectMake(0, -offset,self.scrollView.bounds.size.width + offset * 2, MaxHeight + offset*2);
-        self.backgroundImageView.frame = CGRectMake(-offset, offset, kSize.width + offset*2, MaxHeight + offset*2);
+        self.frame = CGRectMake(0, -offset+navHeight,self.scrollView.bounds.size.width + offset * 2, MaxHeight + offset*2);
+        self.backgroundImageView.frame = CGRectMake(-offset, offset+navHeight, kSize.width + offset*2, MaxHeight + offset*2);
         self.headerImageView.center = self.backgroundImageView.center;
         self.titleLabel.alpha = self.subTitleLabel.alpha = 1 - offset/10;
     }
     else{
 
-        self.frame = CGRectMake(0, 0, self.scrollView.bounds.size.width, MaxHeight);
+        self.frame = CGRectMake(0, navHeight, self.scrollView.bounds.size.width, MaxHeight);
 
         CGFloat destinaOffset = -64;
         CGFloat startChangeOffset = -self.scrollView.contentInset.top;
@@ -111,10 +115,11 @@
 
         self.subTitleLabel.alpha = alpha;
         self.titleLabel.alpha = alpha;
-        self.frame = CGRectMake(0, newY, self.frame.size.width, self.frame.size.height);
-        self.backgroundImageView.frame = CGRectMake(0, (1.5*self.frame.size.height)*(1-alpha), self.backgroundImageView.frame.size.width, self.backgroundImageView.frame.size.height);
+        self.frame = CGRectMake(0, newY+navHeight, self.frame.size.width, self.frame.size.height);
+        self.backgroundImageView.frame = CGRectMake(0, (1.5*self.frame.size.height)*(1-alpha)+navHeight, self.backgroundImageView.frame.size.width, self.backgroundImageView.frame.size.height);
 
-        CGAffineTransform t = CGAffineTransformMakeTranslation(0,(subviewOffset-0.35*self.frame.size.height)*(1-alpha));
+        CGAffineTransform t = CGAffineTransformMakeTranslation(0,navHeight+(subviewOffset-0.35*self.frame.size.height)*(1-alpha));
+
         _headerImageView.transform = CGAffineTransformScale(t,
                                                             imageReduce, imageReduce);
 

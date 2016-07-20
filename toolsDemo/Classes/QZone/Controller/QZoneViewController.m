@@ -11,7 +11,10 @@
 
 @interface QZoneViewController ()<UITableViewDelegate,UITableViewDataSource>
 
-@property (nonatomic,strong) UITableView *tableView;
+@property (nonatomic,weak) UITableView *tableView;
+
+@property (nonatomic,weak) QScalableNav *navView;
+
 
 @end
 
@@ -51,7 +54,7 @@ static NSString *const kCellID = @"cell";
     navView.imgActionBlock = ^(){
         NSLog(@"你点了我的头像");
     };
-
+    self.navView = navView;
     [self.view addSubview:navView];
 }
 
@@ -70,6 +73,10 @@ static NSString *const kCellID = @"cell";
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 30;
+}
+
+- (void)dealloc{
+    [self.navView removeObserver];
 }
 
 @end
