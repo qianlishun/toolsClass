@@ -14,7 +14,6 @@
 @property (nonatomic, strong) UIImageView *headerImageView;
 @property (nonatomic, strong) UILabel *titleLabel;
 @property (nonatomic, strong) UILabel *subTitleLabel;
-@property (nonatomic, assign) CGPoint prePoint;
 
 @end
 
