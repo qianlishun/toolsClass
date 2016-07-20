@@ -27,7 +27,7 @@
     if (self) {
         self.backgroundColor = [UIColor clearColor];
 
-        _backgroundImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, -0.5*frame.size.height, frame.size.width, frame.size.height*1.5)];
+        _backgroundImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, -0, frame.size.width, MaxHeight)];
 
         _backgroundImageView.image = [UIImage imageNamed:backgroudImage];
         _backgroundImageView.contentMode = UIViewContentModeScaleAspectFill;
@@ -91,7 +91,7 @@
     CGFloat offset = -self.scrollView.contentOffset.y-220;
 
         self.frame = CGRectMake(0, -offset,self.scrollView.bounds.size.width + offset * 2, MaxHeight + offset*2);
-        self.backgroundImageView.frame = CGRectMake(-offset, 0, kSize.width + offset*2, MaxHeight + offset*2);
+        self.backgroundImageView.frame = CGRectMake(-offset, offset, kSize.width + offset*2, MaxHeight + offset*2);
         self.headerImageView.center = self.backgroundImageView.center;
         self.titleLabel.alpha = self.subTitleLabel.alpha = 1 - offset/10;
     }
@@ -113,8 +113,9 @@
         self.subTitleLabel.alpha = alpha;
         self.titleLabel.alpha = alpha;
         self.frame = CGRectMake(0, newY, self.frame.size.width, self.frame.size.height);
-        self.backgroundImageView.frame = CGRectMake(0, -0.5*self.frame.size.height+(1.5*self.frame.size.height-64)*(1-alpha), self.backgroundImageView.frame.size.width, self.backgroundImageView.frame.size.height);
+        self.backgroundImageView.frame = CGRectMake(0, (1.5*self.frame.size.height)*(1-alpha), self.backgroundImageView.frame.size.width, self.backgroundImageView.frame.size.height);
 
+        NSLog(@"%f",self.backgroundImageView.frame.size.height);
         CGAffineTransform t = CGAffineTransformMakeTranslation(0,(subviewOffset-0.35*self.frame.size.height)*(1-alpha));
         _headerImageView.transform = CGAffineTransformScale(t,
                                                             imageReduce, imageReduce);
