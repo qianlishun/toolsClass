@@ -114,7 +114,6 @@
         self.frame = CGRectMake(0, newY, self.frame.size.width, self.frame.size.height);
         self.backgroundImageView.frame = CGRectMake(0, (1.5*self.frame.size.height)*(1-alpha), self.backgroundImageView.frame.size.width, self.backgroundImageView.frame.size.height);
 
-        NSLog(@"%f",self.backgroundImageView.frame.size.height);
         CGAffineTransform t = CGAffineTransformMakeTranslation(0,(subviewOffset-0.35*self.frame.size.height)*(1-alpha));
         _headerImageView.transform = CGAffineTransformScale(t,
                                                             imageReduce, imageReduce);
