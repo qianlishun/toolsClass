@@ -51,6 +51,8 @@
     UIBarButtonItem *item = [[UIBarButtonItem alloc]initWithTitle:@"编辑" style:UIBarButtonItemStylePlain target:self action:@selector(editClick:)];
 
     self.navigationItem.rightBarButtonItem = item;
+    
+    [self setFrame]
 }
 
 // 保存按钮的点击事件
@@ -101,7 +103,7 @@
 }
 
 
-- (void)viewWillLayoutSubviews{
+- (void)setFrame{
 
     CGFloat margin = 30;
 
