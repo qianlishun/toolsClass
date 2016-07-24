@@ -43,6 +43,8 @@
 
     // 让姓名文本框 成为第一响应者
     [self.nameField becomeFirstResponder];
+    
+    [self setFrame]
 }
 
 // 添加按钮的点击事件
@@ -70,7 +72,7 @@
     self.addButton.enabled = self.nameField.text.length > 0 && self.numberField.text.length > 0;
 }
 
--(void)viewWillLayoutSubviews{
+- (void)setFrame{
 
     CGFloat margin = 30;
 
