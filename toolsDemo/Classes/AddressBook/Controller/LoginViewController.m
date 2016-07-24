@@ -158,6 +158,7 @@
     }
     [self textChange];
 
+    [self setFrame]
 }
 
 // 登陆按钮的点击事件
@@ -208,7 +209,7 @@
     self.loginButton.enabled = self.usernameField.text.length > 0 && self.passwordField.text.length > 0;
 }
 
--(void)viewWillLayoutSubviews{
+-(void)setFrame{
 
     CGFloat margin = 30;
 
