@@ -44,7 +44,7 @@
     // 让姓名文本框 成为第一响应者
     [self.nameField becomeFirstResponder];
     
-    [self setFrame]
+    [self setFrame];
 }
 
 // 添加按钮的点击事件
