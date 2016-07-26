@@ -38,6 +38,10 @@ static NSString *const kCellID = @"cell";
     return _tableView;
 }
 
+- (void)dealloc{
+    [self.navView removeObserver];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -56,7 +60,6 @@ static NSString *const kCellID = @"cell";
     };
     self.navView = navView;
     [self.view addSubview:navView];
-    
     
 
     UIButton *backBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 60, 20)];
@@ -86,8 +89,5 @@ static NSString *const kCellID = @"cell";
     return 30;
 }
 
-- (void)dealloc{
-    [self.navView removeObserver];
-}
 
 @end
