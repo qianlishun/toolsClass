@@ -158,7 +158,7 @@
     }
     [self textChange];
 
-    [self setFrame]
+    [self setFrame];
 }
 
 // 登陆按钮的点击事件
