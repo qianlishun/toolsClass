@@ -56,8 +56,19 @@ static NSString *const kCellID = @"cell";
     };
     self.navView = navView;
     [self.view addSubview:navView];
+    
+    
+
+    UIButton *backBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 60, 20)];
+    backBtn.center = self.view.center;
+    backBtn.titleLabel.text = @"返回";
+    backBtn.tintColor = [UIColor blackColor];
+    [backBtn addTarget:self action:@selector(back:) forControlEvents:UIControlEventTouchUpInside];
 }
 
+- (void)back:(UIButton *)sender{
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return 50;
