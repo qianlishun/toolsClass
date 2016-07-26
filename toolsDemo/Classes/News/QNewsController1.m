@@ -20,7 +20,7 @@
 #import "NewsFourCell.h"
 
 #import "NewsWebController.h"
-
+#import "QScalableNav.h"
 @interface QNewsController1 () <UITableViewDelegate,UITableViewDataSource,SDCycleScrollViewDelegate>
 
 @property (nonatomic,strong) UITableView *tableView;
