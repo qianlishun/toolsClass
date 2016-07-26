@@ -36,6 +36,10 @@
 
 @implementation QNewsController1
 
+- (void)dealloc{
+    [self.navView removeObserver];
+}
+
 - (void)viewDidLoad{
     [super viewDidLoad];
 
@@ -46,6 +50,22 @@
     [self.view addSubview:self.tableView];
 
     self.tableView.sd_layout.spaceToSuperView(UIEdgeInsetsMake(0, 0, 0, 0));
+    
+    [self.navigationController setNavigationBarHidden:YES];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+
+    self.tableView.frame = ScreenFrame;
+//
+//    self.tableView.tableHeaderView=[[UITableViewHeaderFooterView alloc]initWithFrame:CGRectMake(0, 0, kSize.width, 200)];
+
+    QScalableNav *navView = [[QScalableNav alloc]initWithFrame:CGRectMake(0, 0, kSize.width, 200) backgroundImage:@"waterfall06" headerImage:@"waterfall06" title:@"冬绒" subTitle:@"我在时光里坐深了梦"];
+
+    navView.scrollView = self.tableView;
+    navView.imgActionBlock = ^(){
+        NSLog(@"你点了我的头像");
+    };
+    self.navView = navView;
+    [self.view addSubview:navView];
 
 }
 
