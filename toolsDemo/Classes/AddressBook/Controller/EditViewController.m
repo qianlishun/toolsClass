@@ -52,7 +52,7 @@
 
     self.navigationItem.rightBarButtonItem = item;
     
-    [self setFrame]
+    [self setFrame];
 }
 
 // 保存按钮的点击事件
