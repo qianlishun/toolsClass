@@ -15,8 +15,9 @@
 #import "NewsTwoCell.h"
 #import "NewsThreeCell.h"
 #import "NewsFourCell.h"
-
 #import "NewsWebController.h"
+#import "QNetWorkTools.h"
+#import "UIView+QLSFrame.h"
 
 @interface QNewsController () <SDCycleScrollViewDelegate>
 
@@ -30,9 +31,30 @@
 
 @property (nonatomic,copy) NSString  *url;
 
+@property (nonatomic,strong) UIButton *btn;
+
+@property (nonatomic,strong) NSMutableDictionary *cacheDict;
+
 @end
 
 @implementation QNewsController
+
+
+- (UIButton *)btn{
+
+    if (!_btn) {
+
+        UIButton *btn = [[UIButton alloc]init];
+
+        [btn setTitle:@"加载失败,请刷新或检查网络连接 ☞" forState:UIControlStateNormal];
+        [btn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+        btn.titleLabel.font = [UIFont systemFontOfSize:13];
+        [btn addTarget:self action:@selector(checkNetwork) forControlEvents:UIControlEventTouchUpInside];
+
+        _btn = btn;
+    }
+    return _btn;
+}
 
 - (void)viewDidLoad{
 
@@ -53,20 +75,15 @@
         [weakSelf loadDataFromServer];
     }];
 
-    //    [self.tableView.header beginRefreshing];
-
     self.tableView.footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
         weakSelf.refreshView = weakSelf.tableView.footer;
 
-        [weakSelf loadDataFromServer];
+        [weakSelf loadMoreData];
 
     }];
 
-    self.tableView.footer.hidden = YES;
-
     self.tableView.sd_layout.spaceToSuperView(UIEdgeInsetsMake(0, 0, 0, 0));
 
-    //    [self loadData];
 }
 
 -(NSMutableArray *)listArray{
@@ -76,28 +93,38 @@
     }
     return  _listArray;
 }
-//
-//- (void)setListArray:(NSArray *)listArray{
-//    _listArray = li stArray;
-//
-//    [self.tableView reloadData];
-//}
+
 
 #pragma mark - 请求数据
+
 - (void)setUrlString:(NSString *)urlString{
+
+    QNetWorkTools *tools = [QNetWorkTools sharedNetworkTools];
+    for (NSURLSessionDataTask *task in tools.dataTasks) {
+        [task cancel];
+    }
+
+    [self.listArray removeAllObjects];
 
     self.url = urlString;
 
-    self.pageIndex =0;
-    self.listArray = nil;
+    self.pageIndex = 0;
 
     [self.tableView reloadData];
+
+    self.tableView.footer.hidden = YES;
 
     [self.tableView.header beginRefreshing];
 
     [self loadDataFromServer];
 }
 
+- (void)loadMoreData{
+
+    self.pageIndex+=10;
+
+    [self loadDataFromServer];
+}
 
 - (void)loadDataFromServer{
 
@@ -109,23 +136,23 @@
     [NewsModel newsWithURLString:[NSString stringWithFormat:@"%@/%ld-10.html",self.url,self.pageIndex]  success:^(NSArray *array) {
 
         if (self.pageIndex == 0) {
-            self.listArray=nil;
+
+            [self.listArray removeAllObjects];
 
             self.listArray = [NSMutableArray arrayWithArray:array];
 
-            // 拿出头条中的非轮播数据
-            NewsModel *model =  array[0];
-            NewsModel *tempModel = [NewsModel new];
-            tempModel.title = model.title;
-            tempModel.imgsrc = model.imgsrc;
-            tempModel.digest = model.digest;
-            tempModel.imgsrc = model.imgsrc;
-            tempModel.imgextra = model.imgextra;
-            tempModel.skipID = model.skipID;
+            // 网易新闻更新后,抓包抓到的数据变了 此代码不需要再加了...
+            // // 拿出头条中的非轮播数据
+            // NewsModel *model =  array[0];
+            // NewsModel *tempModel = [NewsModel new];
+            // tempModel.title = model.title;
+            // tempModel.imgsrc = model.imgsrc;
+            // tempModel.digest = model.digest;
+            // tempModel.imgsrc = model.imgsrc;
+            // tempModel.imgextra = model.imgextra;
+            // tempModel.skipID = model.skipID;
 
-            [self.listArray insertObject:tempModel atIndex:1];
-
-            self.tableView.footer.hidden = self.listArray.count==0?YES:NO;
+            // [self.listArray insertObject:tempModel atIndex:1];
 
         }else{
 
@@ -137,14 +164,21 @@
             model.ads = nil;
         }
 
-        [self doneWithView:self.refreshView];
 
-        self.pageIndex+=10;
+        self.btn.hidden = YES;
+
+        self.tableView.footer.hidden = self.listArray.count==0?YES:NO;
+
+        if (self.listArray.count) {
+            [self doneWithView:self.refreshView];
+        }else{
+            [self performSelector:@selector(checkData) withObject:nil afterDelay:10.0];
+        }
 
     } errorBlock:^(NSError *error) {
         NSLog(@"请求失败,%@",error);
         [self.refreshView endRefreshing];
-
+        [self performSelector:@selector(checkData) withObject:nil afterDelay:15.0];
     }];
 
 }
@@ -156,6 +190,31 @@
     });
     [self.refreshView endRefreshing];
 }
+
+- (void)checkData{
+    if (!self.listArray.count) {
+        [self timeOut];
+    }
+}
+
+- (void)timeOut{
+
+    [self.refreshView endRefreshing];
+
+    [self.tableView addSubview:_btn];
+    _btn.frame = self.refreshView.bounds;
+
+    _btn.hidden = NO;
+
+}
+
+- (void)checkNetwork{
+    //prefs:root=General&path=Network
+
+    [[UIApplication sharedApplication]openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
+
+}
+
 
 #pragma mark - tableview delegate   datasource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -172,9 +231,7 @@
     Class class = NSClassFromString(ID);
 
     NewsBaseCell * cell = [tableView dequeueReusableCellWithIdentifier:ID];
-    
-    cell.newsModel = nil;
-    
+
     if (!cell) {
         cell = [[class alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
     }
@@ -215,8 +272,5 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)dealloc{
-    NSLog(@"delloc");
-}
 
 @end

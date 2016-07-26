@@ -11,10 +11,7 @@
 
 @interface QZoneViewController ()<UITableViewDelegate,UITableViewDataSource>
 
-@property (nonatomic,weak) UITableView *tableView;
-
-@property (nonatomic,weak) QScalableNav *navView;
-
+@property (nonatomic,strong) UITableView *tableView;
 
 @end
 
@@ -38,9 +35,6 @@ static NSString *const kCellID = @"cell";
     return _tableView;
 }
 
-- (void)dealloc{
-    [self.navView removeObserver];
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -58,15 +52,16 @@ static NSString *const kCellID = @"cell";
     navView.imgActionBlock = ^(){
         NSLog(@"你点了我的头像");
     };
-    self.navView = navView;
     [self.view addSubview:navView];
     
 
-    UIButton *backBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 60, 20)];
+    UIButton *backBtn = [[UIButton alloc]init];
     backBtn.center = self.view.center;
-    backBtn.titleLabel.text = @"返回";
-    backBtn.tintColor = [UIColor blackColor];
+    [backBtn setTitle:@"返回" forState:UIControlStateNormal];
+    backBtn.backgroundColor =  [UIColor colorWithRed:arc4random_uniform (256)/255.0 green:arc4random_uniform(256)/255.0 blue:arc4random_uniform(256)/255.0 alpha:1.0];
     [backBtn addTarget:self action:@selector(back:) forControlEvents:UIControlEventTouchUpInside];
+    [backBtn sizeToFit];
+    [self.view addSubview:backBtn];
 }
 
 - (void)back:(UIButton *)sender{
@@ -74,7 +69,7 @@ static NSString *const kCellID = @"cell";
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 50;
+    return 20;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -86,7 +81,7 @@ static NSString *const kCellID = @"cell";
     return cell;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 30;
+    return 40;
 }
 
 

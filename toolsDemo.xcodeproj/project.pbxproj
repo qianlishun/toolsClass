@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E0253D11D476BA100BDE4AE /* UIView+QLSFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E0253D01D476BA100BDE4AE /* UIView+QLSFrame.m */; settings = {ASSET_TAGS = (); }; };
 		3E23827A1D3E1D7E00B02A36 /* QZoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E2382751D3E1D7E00B02A36 /* QZoneViewController.m */; settings = {ASSET_TAGS = (); }; };
 		3E428CFC1D02D33A000C404C /* QNewsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E428CFB1D02D33A000C404C /* QNewsController.m */; settings = {ASSET_TAGS = (); }; };
 		3E428CFF1D02D3C8000C404C /* Ads.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E428CFE1D02D3C8000C404C /* Ads.m */; settings = {ASSET_TAGS = (); }; };
@@ -137,7 +138,6 @@
 		3EB53A281D1D175300840D38 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3EB539CF1D1D175300840D38 /* SVProgressHUD.bundle */; settings = {ASSET_TAGS = (); }; };
 		3EB53A291D1D175300840D38 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EB539D11D1D175300840D38 /* SVProgressHUD.m */; settings = {ASSET_TAGS = (); }; };
 		3EB53A2A1D1D175300840D38 /* XYString.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EB539D41D1D175300840D38 /* XYString.m */; settings = {ASSET_TAGS = (); }; };
-		3EB53A2D1D1D18A800840D38 /* QNewsController1.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EB53A2C1D1D18A800840D38 /* QNewsController1.m */; settings = {ASSET_TAGS = (); }; };
 		3EC2054E1CF5C2EE001AF96C /* QWaveController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC2054D1CF5C2EE001AF96C /* QWaveController.m */; settings = {ASSET_TAGS = (); }; };
 		3EC205511CF5C323001AF96C /* WaveView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC205501CF5C323001AF96C /* WaveView.m */; settings = {ASSET_TAGS = (); }; };
 		3ECB779E1CE32A4C0046BA95 /* WaterfallController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ECB779D1CE32A4C0046BA95 /* WaterfallController.m */; settings = {ASSET_TAGS = (); }; };
@@ -166,6 +166,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3E0253CF1D476BA100BDE4AE /* UIView+QLSFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+QLSFrame.h"; sourceTree = "<group>"; };
+		3E0253D01D476BA100BDE4AE /* UIView+QLSFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+QLSFrame.m"; sourceTree = "<group>"; };
 		3E2382741D3E1D7E00B02A36 /* QZoneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QZoneViewController.h; sourceTree = "<group>"; };
 		3E2382751D3E1D7E00B02A36 /* QZoneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QZoneViewController.m; sourceTree = "<group>"; };
 		3E2382771D3E1D7E00B02A36 /* QScalableNav.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QScalableNav.h; sourceTree = "<group>"; };
@@ -429,8 +431,6 @@
 		3EB539D11D1D175300840D38 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
 		3EB539D31D1D175300840D38 /* XYString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYString.h; sourceTree = "<group>"; };
 		3EB539D41D1D175300840D38 /* XYString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYString.m; sourceTree = "<group>"; };
-		3EB53A2B1D1D18A800840D38 /* QNewsController1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNewsController1.h; sourceTree = "<group>"; };
-		3EB53A2C1D1D18A800840D38 /* QNewsController1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QNewsController1.m; sourceTree = "<group>"; };
 		3EC2054C1CF5C2EE001AF96C /* QWaveController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QWaveController.h; sourceTree = "<group>"; };
 		3EC2054D1CF5C2EE001AF96C /* QWaveController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QWaveController.m; sourceTree = "<group>"; };
 		3EC2054F1CF5C323001AF96C /* WaveView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaveView.h; sourceTree = "<group>"; };
@@ -476,10 +476,10 @@
 		3E2382721D3E1D7E00B02A36 /* QZone */ = {
 			isa = PBXGroup;
 			children = (
-				3E2382731D3E1D7E00B02A36 /* Controller */,
-				3E2382761D3E1D7E00B02A36 /* Models */,
 				3E2382771D3E1D7E00B02A36 /* QScalableNav.h */,
 				3EE3F9961D3F060700ACD86D /* QScalableNav.m */,
+				3E2382731D3E1D7E00B02A36 /* Controller */,
+				3E2382761D3E1D7E00B02A36 /* Models */,
 				3E2382791D3E1D7E00B02A36 /* Views */,
 			);
 			path = QZone;
@@ -511,8 +511,6 @@
 		3E428C4C1D02CA40000C404C /* News */ = {
 			isa = PBXGroup;
 			children = (
-				3EB53A2B1D1D18A800840D38 /* QNewsController1.h */,
-				3EB53A2C1D1D18A800840D38 /* QNewsController1.m */,
 				3E79718D1D0ACC7700E040A8 /* Tools */,
 				3E428C4D1D02CA40000C404C /* Controller */,
 				3E428C4E1D02CA40000C404C /* Models */,
@@ -907,6 +905,8 @@
 		3EB539131D1D175300840D38 /* Framewokes */ = {
 			isa = PBXGroup;
 			children = (
+				3E0253CF1D476BA100BDE4AE /* UIView+QLSFrame.h */,
+				3E0253D01D476BA100BDE4AE /* UIView+QLSFrame.m */,
 				3EB539141D1D175300840D38 /* AFNetworking */,
 				3EB5393E1D1D175300840D38 /* MJExtension */,
 				3EB539561D1D175300840D38 /* MJRefresh */,
@@ -1518,7 +1518,6 @@
 				3EE3F9971D3F060700ACD86D /* QScalableNav.m in Sources */,
 				3EB53A0E1D1D175300840D38 /* UITableView+SDAutoTableViewCellHeight.m in Sources */,
 				3E7971991D0AE13000E040A8 /* NewsHomeCell.m in Sources */,
-				3EB53A2D1D1D18A800840D38 /* QNewsController1.m in Sources */,
 				3EB53A211D1D175300840D38 /* UIImage+GIF.m in Sources */,
 				3EB539F11D1D175300840D38 /* NSObject+MJProperty.m in Sources */,
 				3EB539F81D1D175300840D38 /* MJRefreshHeader.m in Sources */,
@@ -1569,6 +1568,7 @@
 				3EB53A0C1D1D175300840D38 /* QLSTabBarController.m in Sources */,
 				3E86C6511CE49CAD00AC4BBD /* WaterfallController1.m in Sources */,
 				3EB539E71D1D175300840D38 /* UIWebView+AFNetworking.m in Sources */,
+				3E0253D11D476BA100BDE4AE /* UIView+QLSFrame.m in Sources */,
 				3EB539E91D1D175300840D38 /* MJExtensionConst.m in Sources */,
 				3EB53A061D1D175300840D38 /* UIView+MJExtension.m in Sources */,
 				3E86C64C1CE49C4700AC4BBD /* FRGWaterfallCollectionViewLayout.m in Sources */,

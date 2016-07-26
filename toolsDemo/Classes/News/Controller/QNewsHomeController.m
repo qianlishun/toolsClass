@@ -10,6 +10,8 @@
 #import "Channel.h"
 #import "ChannelLabel.h"
 #import "NewsHomeCell.h"
+#import "UIView+QLSFrame.h"
+//#import "QNetWorkTools.h"
 
 @interface QNewsHomeController ()<UICollectionViewDelegate,UICollectionViewDataSource>
 @property (nonatomic,strong) UICollectionView *collectionView;
@@ -23,9 +25,7 @@
 
 @implementation QNewsHomeController
 
-- (void)dealloc{
-    NSLog(@"home dealloc");
-}
+
 - (NSArray *)channels{
 
     if (!_channels) {
@@ -34,17 +34,20 @@
     return _channels;
 }
 
+
 static NSString *const ID = @"home_cell";
 
 - (void)viewDidLoad{
 
     [super viewDidLoad];
 
+    self.title = @"新闻";
+
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc]init];
     self.collectionLayout = layout;
 
-      // 2.初始化collctionView
-    UICollectionView *collectionView =  [[UICollectionView alloc]initWithFrame:CGRectMake(0, 104, kWIDTH, kSize.height - 104) collectionViewLayout:layout];
+    // 2.初始化collctionView
+    UICollectionView *collectionView =  [[UICollectionView alloc]initWithFrame:CGRectMake(0, 44, kWIDTH, kSize.height - 44) collectionViewLayout:layout];
 
     collectionView.backgroundColor = [UIColor whiteColor];
     // 注册
@@ -55,12 +58,12 @@ static NSString *const ID = @"home_cell";
     [self.view addSubview:self.collectionView];
 
 
-    self.scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 64, kWIDTH, 44)];
-
+    self.scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, kWIDTH, 44)];
     self.scrollView.backgroundColor = [UIColor whiteColor];
 
     [self.view addSubview:self.scrollView];
 
+    [self loadChannels];
 
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
@@ -73,7 +76,11 @@ static NSString *const ID = @"home_cell";
     self.collectionView.bounces = NO;
     self.collectionView.showsHorizontalScrollIndicator = NO;
 
-    [self loadChannels];
+    // 保证首次加载屏幕正确
+    // iOS8 之后的方法
+    [self viewWillTransitionToSize:[UIScreen mainScreen].bounds.size withTransitionCoordinator:self.transitionCoordinator];
+    // iOS8 之后的方法
+    //    [self willRotateToInterfaceOrientation:self.interfaceOrientation duration:0]
 }
 
 - (void)loadChannels{
@@ -96,7 +103,7 @@ static NSString *const ID = @"home_cell";
         lbl.tag = i;
         i++;
     }
-    
+
     self.scrollView.contentSize = CGSizeMake(x, 0);
     self.scrollView.showsHorizontalScrollIndicator = NO;
 
@@ -138,9 +145,8 @@ static NSString *const ID = @"home_cell";
     return cell;
 }
 
-#pragma mark     delegate
+#pragma mark    collectionView delegate
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{
-
 
     ChannelLabel *curentLabel = self.scrollView.subviews[self.currentIndex];
     ChannelLabel *nextLabel = nil;
@@ -148,13 +154,12 @@ static NSString *const ID = @"home_cell";
     for (NSIndexPath *indexPath in self.collectionView.indexPathsForVisibleItems) {
         if (indexPath.item != self.currentIndex) {
             nextLabel = self.scrollView.subviews[indexPath.item];
-            break;
         }
     }
     if (nextLabel == nil) {
         return;
     }
-
+    // 获取滚动比例
     CGFloat nextScale = ABS(scrollView.contentOffset.x / scrollView.bounds.size.width - self.currentIndex);
     CGFloat  currentScale = 1 - nextScale;
 
@@ -164,7 +169,7 @@ static NSString *const ID = @"home_cell";
             lbl.scale = 0;
         }
     }
-    
+
     nextLabel.scale = nextScale;
     curentLabel.scale = currentScale;
 
@@ -186,9 +191,9 @@ static NSString *const ID = @"home_cell";
         offset = maxOffset + label.bounds.size.width;
     }
 
-    [self.scrollView setContentOffset:CGPointMake(offset, 0)animated:YES];
-}
+    [self.scrollView setContentOffset:CGPointMake(offset, 0) animated:YES];
 
+}
 
 - (void)viewDidLayoutSubviews{
     [super viewDidLayoutSubviews];
@@ -197,5 +202,10 @@ static NSString *const ID = @"home_cell";
 
 }
 
+// 旋转适配
+- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator{
+    self.collectionView.width = size.width;
+    self.scrollView.width = size.width;
+}
 
 @end

@@ -6,6 +6,7 @@
 //  Copyright © 2016年 钱立顺. All rights reserved.
 //
 
+
 #import "NewsThreeCell.h"
 
 @implementation NewsThreeCell
@@ -26,20 +27,21 @@
 
     self.lblTitle.sd_layout
     .topSpaceToView(self.contentView,margin)
-    .leftSpaceToView(self.contentView,margin)
-//    .rightSpaceToView(self.contentView,margin)
+    .leftSpaceToView(self.contentView,margin/2)
+    .rightSpaceToView(self.contentView,0)
     .heightIs(21);
 
     self.imgIcon.sd_layout
     .topSpaceToView(self.lblTitle,margin)
     .leftSpaceToView(self.contentView,margin)
     .rightSpaceToView(self.contentView,margin)
-    .heightIs(120);
+    .heightIs(130);
 
     self.lblSubtitle.sd_layout
     .topSpaceToView(self.imgIcon,margin)
-//    .rightSpaceToView(self.contentView,0)
-    .leftSpaceToView(self.contentView,0)
+    .rightSpaceToView(self.contentView,margin)
+    .leftSpaceToView(self.contentView,margin)
+    //    .heightIs(40);
     .autoHeightRatio(0);
 
     self.lineView.sd_layout
@@ -56,13 +58,16 @@
 - (void)setNewsModel:(NewsModel *)newsModel{
 
     self.lblSubtitle.text = @"";
+    self.lblTitle.text = @"";
 
     self.lblTitle.text = newsModel.title;
 
-    self.lblSubtitle.text = [NSString stringWithFormat:@"%@",newsModel.digest];
+    if (newsModel.digest.length) {
+        self.lblSubtitle.text = [NSString stringWithFormat:@"%@...",newsModel.digest];
+    }
 
     [self.imgIcon sd_setImageWithURL:[NSURL URLWithString:newsModel.imgsrc] placeholderImage:[UIImage imageNamed:@"0"]];
-
+    //    NSLog(@"%@",newsModel.imgsrc);
 }
 
 -(void)layoutSubviews{
@@ -71,8 +76,8 @@
     [self.lblTitle layoutIfNeeded];
 
     CGFloat titleLength = [self.newsModel.title sizeWithAttributes:@{NSFontAttributeName:self.lblTitle.font}].width;
-//    NSLog(@"titleLength : %f -- %@",titleLength,self.newsModel.title);
-//    NSLog(@"label width : %f ",self.lblTitle.frame.size.width);
+    //    NSLog(@"titleLength : %f -- %@",titleLength,self.newsModel.title);
+    //    NSLog(@"label width : %f ",self.lblTitle.frame.size.width);
 
     if (titleLength > self.lblTitle.frame.size.width) {
         self.lblSubtitle.hidden = YES;
@@ -80,5 +85,8 @@
         self.lblSubtitle.hidden = NO;
     }
 }
+
+
+
 
 @end

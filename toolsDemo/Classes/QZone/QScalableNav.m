@@ -62,7 +62,7 @@
 }
 
 
-- (void)removeObserver
+- (void)removeFromSuperview
 {
     [self.scrollView removeObserver:self forKeyPath:@"contentOffset"];
 }

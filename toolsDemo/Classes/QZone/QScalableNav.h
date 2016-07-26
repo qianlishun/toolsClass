@@ -20,5 +20,4 @@ static const CGFloat navHeight = 0;
 
 -(void)updateSubViewsWithScrollOffset:(CGPoint)newOffset;
 
-- (void)removeObserver;
 @end

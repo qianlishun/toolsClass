@@ -12,9 +12,9 @@
 @implementation NewsBaseCell
 
 + (NSString *)cellIDforRow:(NewsModel *)newsModel{
-    if (newsModel.hasHead) {
+    if (newsModel.hasHead && newsModel.ads.count) {
         return @"NewsFourCell";
-    }else if (newsModel.imgType){
+    }else if (newsModel.imgType || newsModel.hasIcon){
         return @"NewsThreeCell";
     }else if (newsModel.imgextra){
         return @"NewsTwoCell";
