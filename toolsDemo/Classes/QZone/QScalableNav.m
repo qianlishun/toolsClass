@@ -56,12 +56,7 @@
         [self addSubview:_titleLabel];
         [self addSubview:_subTitleLabel];
         self.clipsToBounds = YES;
-//
-//        UIButton *backBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 60, 20)];
-//        backBtn.titleLabel.text = @"返回";
-//        backBtn.tintColor = [UIColor blackColor];
-//        [backBtn addTarget:self action:@selector(back:) forControlEvents:UIControlEventTouchUpInside];
-//
+
     }
     return self;
 }
