@@ -35,6 +35,9 @@ static NSString *const kCellID = @"cell";
     return _tableView;
 }
 
+- (void)dealloc{
+        [self.navigationController setNavigationBarHidden:NO];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
