@@ -251,4 +251,9 @@
     self.loginButton.sd_layout.centerXEqualToView(self.logView).topSpaceToView(self.remView,margin/3).heightIs(40).widthRatioToView(self.logView,0.8);
 
 }
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [self.view endEditing:YES];
+}
 @end
