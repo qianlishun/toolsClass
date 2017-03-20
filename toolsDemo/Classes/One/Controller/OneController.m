@@ -35,6 +35,7 @@
                          @"SetQRCodeController",@"生成二维码",
                          @"ScanController",@"扫描二维码",
                          @"QZoneViewController",@"仿QQ头部下拉图片",
+                         @"QColorsViewController",@"渐变色",
                          ];
 
 //    UIButton *button=[UIButton buttonWithType:UIButtonTypeCustom];

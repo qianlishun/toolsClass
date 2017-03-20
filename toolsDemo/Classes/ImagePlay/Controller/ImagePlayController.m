@@ -42,7 +42,7 @@ static NSString *const ID = @"img_cell";
     self.collectionView.showsHorizontalScrollIndicator = NO;
 
     //设置自动分页
-    self.collectionView.pagingEnabled = YES;
+//    self.collectionView.pagingEnabled = YES;
 
 
     // 滚动到第二个Cell的位置
