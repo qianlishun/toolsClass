@@ -60,6 +60,14 @@
 
     [super viewDidLoad];
 
+    unsigned int outCount = 0, i = 0;
+    objc_property_t* properties = class_copyPropertyList([Ads class], &outCount);
+    for (i=0; i<outCount; i++) {
+        objc_property_t property = properties[i];
+        NSString* propertyType = [NSString stringWithCString:property_getAttributes(property) encoding:NSUTF8StringEncoding];
+        NSLog(@"%@====",propertyType);
+    }
+    
     self.view.backgroundColor = [UIColor whiteColor];
 
     self.automaticallyAdjustsScrollViewInsets = YES;

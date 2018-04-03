@@ -23,7 +23,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.title = @"Demo";
+//    self.title = @"Demo";
     self.view.backgroundColor = [UIColor whiteColor];
 
     self.contenArray = @[@"ImagePlayController",@"图片无限轮播",

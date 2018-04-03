@@ -20,8 +20,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //
-
 
     //----------1.第一步:配置导航栏的颜色    我这里使用的是随机色---------------------------------//
     self.navigationBackgroundColor=[UIColor colorWithRed:arc4random_uniform(255)/255.0 green:arc4random_uniform(255)/255.0 blue:arc4random_uniform(255)/255.0 alpha:1];
@@ -42,12 +40,12 @@
                                          SELECTED_ICON : @"icon_me_selected",
                                          TITLE : @"通讯录"
                                          },
-//                                     @{
-//                                         VC_VIEWCONTROLLER : [[QNewsController1 alloc]init],
-//                                         NORMAL_ICON : @"icon_discover",
-//                                         SELECTED_ICON : @"icon_discover_selected",
-//                                         TITLE : @"发现"
-//                                         },
+                                     @{
+                                         VC_VIEWCONTROLLER : [[TwoController alloc]init],
+                                         NORMAL_ICON : @"icon_discover",
+                                         SELECTED_ICON : @"icon_discover_selected",
+                                         TITLE : @"发现"
+                                         },
 
                                      ];
 

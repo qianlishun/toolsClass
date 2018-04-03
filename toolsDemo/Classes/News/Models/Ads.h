@@ -16,4 +16,6 @@
 @property (nonatomic,copy) NSString  *subtitle;
 @property (nonatomic,copy) NSString  *url;
 
+@property (nonatomic,copy) NSData  *data;
+
 @end

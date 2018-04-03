@@ -18,6 +18,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
 
     UIImageView *colorsView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 60, TITLE_CONTROL_HEIGHT)];
     colorsView.center = CGPointMake(50, self.view.center.y);
