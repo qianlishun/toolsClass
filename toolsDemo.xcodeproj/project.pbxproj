@@ -146,8 +146,9 @@
 		3EE3F9971D3F060700ACD86D /* QScalableNav.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EE3F9961D3F060700ACD86D /* QScalableNav.m */; };
 		3EEA2BFC1D03BE2100D697AC /* NewsWebController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EEA2BFB1D03BE2100D697AC /* NewsWebController.m */; };
 		3EFFF6971D0ABDDE0042ABF4 /* QNewsHomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EFFF6961D0ABDDE0042ABF4 /* QNewsHomeController.m */; };
-		6E21D68E2072365000737816 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E21D68D2072365000737816 /* ExternalAccessory.framework */; };
 		6E5F91D11E5FCBD600396EB1 /* QColorsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5F91D01E5FCBD600396EB1 /* QColorsViewController.m */; };
+		6EEA4255207EFE5D00BEFEC6 /* QImageBookController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EEA4254207EFE5D00BEFEC6 /* QImageBookController.m */; };
+		6EEA4258207EFE8B00BEFEC6 /* QAnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EEA4256207EFE8B00BEFEC6 /* QAnimationView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -448,10 +449,12 @@
 		3EEA2BFB1D03BE2100D697AC /* NewsWebController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewsWebController.m; path = ../Views/NewsWebController.m; sourceTree = "<group>"; };
 		3EFFF6951D0ABDDE0042ABF4 /* QNewsHomeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNewsHomeController.h; sourceTree = "<group>"; };
 		3EFFF6961D0ABDDE0042ABF4 /* QNewsHomeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QNewsHomeController.m; sourceTree = "<group>"; };
-		6E21D68D2072365000737816 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
-		6E21D68F2072365000737816 /* toolsDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = toolsDemo.entitlements; sourceTree = "<group>"; };
 		6E5F91CF1E5FCBD600396EB1 /* QColorsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QColorsViewController.h; sourceTree = "<group>"; };
 		6E5F91D01E5FCBD600396EB1 /* QColorsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QColorsViewController.m; sourceTree = "<group>"; };
+		6EEA4253207EFE5D00BEFEC6 /* QImageBookController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QImageBookController.h; sourceTree = "<group>"; };
+		6EEA4254207EFE5D00BEFEC6 /* QImageBookController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QImageBookController.m; sourceTree = "<group>"; };
+		6EEA4256207EFE8B00BEFEC6 /* QAnimationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QAnimationView.m; sourceTree = "<group>"; };
+		6EEA4257207EFE8B00BEFEC6 /* QAnimationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QAnimationView.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -459,7 +462,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E21D68E2072365000737816 /* ExternalAccessory.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -654,7 +656,6 @@
 		3E9AED2D1CE06751001F77D5 /* toolsDemo */ = {
 			isa = PBXGroup;
 			children = (
-				6E21D68F2072365000737816 /* toolsDemo.entitlements */,
 				3E9AED961CE06860001F77D5 /* Classes */,
 				3E9AED8D1CE06827001F77D5 /* Main */,
 				3E9AED2E1CE06751001F77D5 /* Supporting Files */,
@@ -824,6 +825,8 @@
 			children = (
 				3E9AEDBB1CE06EA8001F77D5 /* ImagePlayController.h */,
 				3E9AEDBC1CE06EA8001F77D5 /* ImagePlayController.m */,
+				6EEA4253207EFE5D00BEFEC6 /* QImageBookController.h */,
+				6EEA4254207EFE5D00BEFEC6 /* QImageBookController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -833,6 +836,8 @@
 			children = (
 				3E9AEDBE1CE06EC9001F77D5 /* QCollectionViewCell.h */,
 				3E9AEDBF1CE06EC9001F77D5 /* QCollectionViewCell.m */,
+				6EEA4257207EFE8B00BEFEC6 /* QAnimationView.h */,
+				6EEA4256207EFE8B00BEFEC6 /* QAnimationView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1332,7 +1337,6 @@
 		6E21D68C2072365000737816 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				6E21D68D2072365000737816 /* ExternalAccessory.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1414,10 +1418,10 @@
 				TargetAttributes = {
 					3E9AED2A1CE06751001F77D5 = {
 						CreatedOnToolsVersion = 7.0;
-						DevelopmentTeam = 7C448R8D4P;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.WAC = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
@@ -1528,6 +1532,7 @@
 				3EB539DF1D1D175300840D38 /* README.md in Sources */,
 				3EB53A161D1D175300840D38 /* UIView+SDExtension.m in Sources */,
 				3EB539F01D1D175300840D38 /* NSObject+MJKeyValue.m in Sources */,
+				6EEA4258207EFE8B00BEFEC6 /* QAnimationView.m in Sources */,
 				3EB539EF1D1D175300840D38 /* NSObject+MJCoding.m in Sources */,
 				3EB539D71D1D175300840D38 /* AFHTTPSessionManager.m in Sources */,
 				3EB539ED1D1D175300840D38 /* MJPropertyType.m in Sources */,
@@ -1575,6 +1580,7 @@
 				3EB53A151D1D175300840D38 /* SDCycleScrollView.m in Sources */,
 				3E23827A1D3E1D7E00B02A36 /* QZoneViewController.m in Sources */,
 				3E9AED9E1CE06860001F77D5 /* OneController.m in Sources */,
+				6EEA4255207EFE5D00BEFEC6 /* QImageBookController.m in Sources */,
 				3E7971931D0AD87100E040A8 /* Channel.m in Sources */,
 				3EB539FC1D1D175300840D38 /* MJRefreshBackGifFooter.m in Sources */,
 				3EB539E01D1D175300840D38 /* AFNetworkActivityIndicatorManager.m in Sources */,
@@ -1752,15 +1758,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = toolsDemo/toolsDemo.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = 7C448R8D4P;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				GCC_PREFIX_HEADER = toolsDemo/others/toolsDemo.pch;
 				INFOPLIST_FILE = toolsDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = qls.toolsDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
@@ -1768,15 +1776,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = toolsDemo/toolsDemo.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = 7C448R8D4P;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				GCC_PREFIX_HEADER = toolsDemo/others/toolsDemo.pch;
 				INFOPLIST_FILE = toolsDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = qls.toolsDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};

@@ -22,28 +22,26 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated{
-    //调用系统默认的做法:添加UITabBarButton
     [super viewWillAppear:animated];
 
     // 删除self.tabBar中的子控件 除了自定义tabBar
     for (UIView *childView in self.tabBar.subviews) {
-        if (![childView isKindOfClass:[QLSTabBar class]]) {
+//        if (![childView isKindOfClass:[QLSTabBar class]]) {
             [childView removeFromSuperview];
-        }
+//        }
     }
-
 }
 
 #pragma mark 初始化TabBar
 -(void)initTabBar{
 
-    QLSTabBar *tabBar = [[QLSTabBar alloc]initWithFrame:self.tabBar.bounds];
+    QLSTabBar *tabBar = [[QLSTabBar alloc]initWithFrame:self.tabBar.frame];
     tabBar.delegate = self;
 
-    [self.tabBar addSubview:tabBar];
+    [self.view addSubview:tabBar];
 
-    _tabBar = tabBar;
-
+    theTabBar = tabBar;
+    
 }
 
 #pragma mark tabBar的代理方法
@@ -55,13 +53,13 @@
 
     CGFloat width = self.view.frame.size.width;
 
-    CGFloat height=height = self.view.frame.size.height;
+    CGFloat height = self.view.frame.size.height;
 
     newVc.view.frame = CGRectMake(0,0, width, height);
 
     self.selectedIndex=to;
 
-    [self.view bringSubviewToFront:_tabBar];
+    [self.view bringSubviewToFront:theTabBar];
     
 }
 
@@ -102,7 +100,7 @@
 
         [self addChildViewController:nav];
 
-        [_tabBar addItemWithIcon:[dict objectForKey:NORMAL_ICON] selectedIcon:[dict objectForKey:SELECTED_ICON]  title:[dict objectForKey:TITLE]];
+        [theTabBar addItemWithIcon:[dict objectForKey:NORMAL_ICON] selectedIcon:[dict objectForKey:SELECTED_ICON]  title:[dict objectForKey:TITLE]];
         
     }
 }

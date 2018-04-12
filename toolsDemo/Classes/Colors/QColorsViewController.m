@@ -9,6 +9,9 @@
 #import "QColorsViewController.h"
 
 @interface QColorsViewController ()
+@property (nonatomic,copy) NSTimer *timer;
+
+@property (nonatomic,assign) int i;
 
 @end
 
@@ -16,10 +19,22 @@
 
 @implementation QColorsViewController
 
+- (void)dealloc{
+    [_timer invalidate];
+    _timer = nil;
+    NSLog(@"%@ dealloc",NSStringFromClass([self class]));
+    
+}
+
+- (void)onTimer{
+    NSLog(@"%d",_i);
+    _i++;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    
+    _i = 0;
+    _timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(onTimer) userInfo:nil repeats:YES];
 
     UIImageView *colorsView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 60, TITLE_CONTROL_HEIGHT)];
     colorsView.center = CGPointMake(50, self.view.center.y);
@@ -273,5 +288,6 @@
     
     return img;
 }
+
 
 @end

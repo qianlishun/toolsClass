@@ -27,6 +27,7 @@
     self.view.backgroundColor = [UIColor whiteColor];
 
     self.contenArray = @[@"ImagePlayController",@"图片无限轮播",
+                         @"QImageBookController",@"覆盖式切换图片",
                          @"LockController",@"(九宫格)手势解锁屏幕",
                          @"QStarController",@"小星星",
                          @"WaterfallController",@"瀑布流",
