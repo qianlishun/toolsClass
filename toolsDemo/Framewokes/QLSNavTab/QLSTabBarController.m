@@ -25,14 +25,6 @@
     [super viewWillAppear:animated];
 }
 
-- (void)viewDidAppear:(BOOL)animated{
-    // 删除self.tabBar中的子控件 除了自定义tabBar
-    for (UIView *childView in self.tabBar.subviews) {
-        if (![childView isKindOfClass:[QLSTabBar class]]) {
-            [childView removeFromSuperview];
-        }
-    }
-}
 
 #pragma mark 初始化TabBar
 -(void)initTabBar{
@@ -125,7 +117,12 @@
 
 -(void)viewDidLayoutSubviews{
     [super viewDidLayoutSubviews];
-    
+    // 删除self.tabBar中的子控件 除了自定义tabBar
+    for (UIView *childView in self.tabBar.subviews) {
+        if (![childView isKindOfClass:[QLSTabBar class]]) {
+            [childView removeFromSuperview];
+        }
+    }
     [theTabBar setFrame:self.tabBar.bounds];
 }
 @end
