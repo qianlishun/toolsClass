@@ -134,21 +134,15 @@
     [self loadDataFromServer];
 }
 
-- (void)loadDataFromServer{
-
-    //    NSString *urlString = [NSString stringWithFormat:@"http://c.m.163.com/nc/article/%@/%ld-20.html",@"headline/T1348647853363",self.pageIndex];
-    //    NSString *urlString = [NSString stringWithFormat:@"http://c.3g.163.com/nc/article/%@/%ld-20.html",@"list/T1414389941036",self.pageIndex];
-
-    //    NSString *urlString = [NSString stringWithFormat:@"http://c.m.163.com/nc/article/B6UKRIOE00963VRO/full.html"];
-
+- (void)extracted {
     [NewsModel newsWithURLString:[NSString stringWithFormat:@"%@/%ld-10.html",self.url,self.pageIndex]  success:^(NSArray *array) {
-
+        
         if (self.pageIndex == 0) {
-
+            
             [self.listArray removeAllObjects];
-
+            
             self.listArray = [NSMutableArray arrayWithArray:array];
-
+            
             // 网易新闻更新后,抓包抓到的数据变了 此代码不需要再加了...
             // // 拿出头条中的非轮播数据
             // NewsModel *model =  array[0];
@@ -159,11 +153,11 @@
             // tempModel.imgsrc = model.imgsrc;
             // tempModel.imgextra = model.imgextra;
             // tempModel.skipID = model.skipID;
-
+            
             // [self.listArray insertObject:tempModel atIndex:1];
-
+            
         }else{
-
+            
             for (id obj in array) {
                 [self.listArray addObject:obj];
             }
@@ -171,23 +165,33 @@
             NewsModel *model = array[0];
             model.ads = nil;
         }
-
-
+        
+        
         self.btn.hidden = YES;
-
+        
         self.tableView.footer.hidden = self.listArray.count==0?YES:NO;
-
+        
         if (self.listArray.count) {
             [self doneWithView:self.refreshView];
         }else{
             [self performSelector:@selector(checkData) withObject:nil afterDelay:10.0];
         }
-
+        
     } errorBlock:^(NSError *error) {
         NSLog(@"请求失败,%@",error);
         [self.refreshView endRefreshing];
         [self performSelector:@selector(checkData) withObject:nil afterDelay:15.0];
     }];
+}
+
+- (void)loadDataFromServer{
+
+    //    NSString *urlString = [NSString stringWithFormat:@"http://c.m.163.com/nc/article/%@/%ld-20.html",@"headline/T1348647853363",self.pageIndex];
+    //    NSString *urlString = [NSString stringWithFormat:@"http://c.3g.163.com/nc/article/%@/%ld-20.html",@"list/T1414389941036",self.pageIndex];
+
+    //    NSString *urlString = [NSString stringWithFormat:@"http://c.m.163.com/nc/article/B6UKRIOE00963VRO/full.html"];
+
+    [self extracted];
 
 }
 

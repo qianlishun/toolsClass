@@ -56,9 +56,17 @@
 
     __weak LockController *weakSlef = self;
 
+    __block int n = 0;
     self.lockView.lockBlock = ^(NSString *pwd,UIImage *img){
         weakSlef.imageView.image = img;
 
+        if(n%2==0){
+            weakSlef.imageView.transform = CGAffineTransformMakeScale(-1,-1);
+        }else{
+            weakSlef.imageView.transform = CGAffineTransformMakeScale(1,1);
+        }
+        
+        n++;
         if ([pwd isEqualToString:@"135"]) {
             weakSlef.imageView.image = nil;
 

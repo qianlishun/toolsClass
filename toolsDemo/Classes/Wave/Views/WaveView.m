@@ -65,7 +65,7 @@
         return;
     }
     CGContextRef ctx = UIGraphicsGetCurrentContext();
-
+    
     for (int i = 0; i < self.points.count; i++) {
         NSValue *valueOfPoint = self.points[i];
 
@@ -84,7 +84,7 @@
     CGContextSetLineWidth(ctx, 1);
     CGContextDrawPath(ctx, kCGPathStroke);
 
-    NSLog(@"pointIndex:%zd", self.index);
+//    NSLog(@"pointIndex:%zd", self.index);
 
 }
 @end

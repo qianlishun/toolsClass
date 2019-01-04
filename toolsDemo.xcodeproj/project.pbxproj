@@ -61,7 +61,6 @@
 		3EB539DB1D1D175300840D38 /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EB539241D1D175300840D38 /* AFURLRequestSerialization.m */; };
 		3EB539DC1D1D175300840D38 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EB539261D1D175300840D38 /* AFURLResponseSerialization.m */; };
 		3EB539DD1D1D175300840D38 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EB539281D1D175300840D38 /* AFURLSessionManager.m */; };
-		3EB539DE1D1D175300840D38 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 3EB539291D1D175300840D38 /* LICENSE */; };
 		3EB539DF1D1D175300840D38 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 3EB5392A1D1D175300840D38 /* README.md */; };
 		3EB539E01D1D175300840D38 /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EB5392D1D1D175300840D38 /* AFNetworkActivityIndicatorManager.m */; };
 		3EB539E11D1D175300840D38 /* UIActivityIndicatorView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EB5392F1D1D175300840D38 /* UIActivityIndicatorView+AFNetworking.m */; };
@@ -82,7 +81,6 @@
 		3EB539F01D1D175300840D38 /* NSObject+MJKeyValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EB539511D1D175300840D38 /* NSObject+MJKeyValue.m */; };
 		3EB539F11D1D175300840D38 /* NSObject+MJProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EB539531D1D175300840D38 /* NSObject+MJProperty.m */; };
 		3EB539F21D1D175300840D38 /* NSString+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EB539551D1D175300840D38 /* NSString+MJExtension.m */; };
-		3EB539F31D1D175300840D38 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 3EB539571D1D175300840D38 /* LICENSE */; };
 		3EB539F41D1D175300840D38 /* MJRefreshAutoFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EB5395B1D1D175300840D38 /* MJRefreshAutoFooter.m */; };
 		3EB539F51D1D175300840D38 /* MJRefreshBackFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EB5395D1D1D175300840D38 /* MJRefreshBackFooter.m */; };
 		3EB539F61D1D175300840D38 /* MJRefreshComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EB5395F1D1D175300840D38 /* MJRefreshComponent.m */; };
@@ -1418,7 +1416,8 @@
 				TargetAttributes = {
 					3E9AED2A1CE06751001F77D5 = {
 						CreatedOnToolsVersion = 7.0;
-						ProvisioningStyle = Manual;
+						DevelopmentTeam = 7C448R8D4P;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.WAC = {
 								enabled = 0;
@@ -1464,9 +1463,7 @@
 				3E79719E1D0AEAE600E040A8 /* topic_news.json in Resources */,
 				3E9AED3E1CE06751001F77D5 /* LaunchScreen.storyboard in Resources */,
 				3EB53A021D1D175300840D38 /* MJRefresh.bundle in Resources */,
-				3EB539DE1D1D175300840D38 /* LICENSE in Resources */,
 				3E9AED3B1CE06751001F77D5 /* Assets.xcassets in Resources */,
-				3EB539F31D1D175300840D38 /* LICENSE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1760,8 +1757,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7C448R8D4P;
 				GCC_PREFIX_HEADER = toolsDemo/others/toolsDemo.pch;
 				INFOPLIST_FILE = toolsDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1778,8 +1775,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7C448R8D4P;
 				GCC_PREFIX_HEADER = toolsDemo/others/toolsDemo.pch;
 				INFOPLIST_FILE = toolsDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;

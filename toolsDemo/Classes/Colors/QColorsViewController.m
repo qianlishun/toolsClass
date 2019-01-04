@@ -51,7 +51,12 @@
     greysView.image = [self getGreyImage];
     
     
-    NSArray *colorArr = @[[UIColor colorWithRed:50/255.0 green:50/255.0 blue:50/255.0 alpha:1.0],[UIColor colorWithRed:104/255.0 green:104/255.0 blue:104/255.0 alpha:1.0],[UIColor colorWithRed:158/255.0 green:158/255.0 blue:158/255.0 alpha:1.0],[UIColor colorWithRed:211/255.0 green:211/255.0 blue:211/255.0 alpha:1.0]];
+    NSArray *colorArr = @[
+    [UIColor colorWithRed:50/255.0 green:50/255.0 blue:50/255.0 alpha:1.0],
+    [UIColor colorWithRed:104/255.0 green:104/255.0 blue:104/255.0 alpha:1.0],
+    [UIColor colorWithRed:158/255.0 green:158/255.0 blue:158/255.0 alpha:1.0],
+    [UIColor colorWithRed:211/255.0 green:211/255.0 blue:211/255.0 alpha:1.0]
+    ];
     CGRect rect = CGRectMake(0, 0, 50, 50);
     UIImage *img1 = [self getBgImgeFromstartColor:colorArr[0] endColor:colorArr[1] withFrame:rect];
     UIImage *img2 = [self getBgImgeFromstartColor:colorArr[1] endColor:colorArr[2] withFrame:rect];
