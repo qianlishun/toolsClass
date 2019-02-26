@@ -9,6 +9,8 @@
 #import "ImagePlayController.h"
 #import "QCollectionViewCell.h"
 #import "UIView+SDAutoLayout.h"
+#import <AudioToolbox/AudioToolbox.h>
+
 #define SectionCount 100
 #define ImageCount 4
 
@@ -18,11 +20,11 @@
 
 @property (nonatomic,assign) int pageIndex;
 
-
 @property (nonatomic,weak) UICollectionView *collectionView;
 
 @property (nonatomic,strong) NSTimer *timer;
 
+@property (nonatomic,assign) int scroll;
 
 @end
 
@@ -148,6 +150,17 @@ static NSString *const ID = @"img_cell";
 
 }
 
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    self.navigationItem.title = [NSString stringWithFormat:@"%d / %d",self.pageIndex+1,ImageCount];
+
+    int offset = scrollView.contentOffset.x / scrollView.bounds.size.width - 1;
+    int index = ( self.index + offset + ImageCount ) % ImageCount;
+
+    if(index != self.index){
+        AudioServicesPlaySystemSound(1157);
+    }
+}
+
 -(void)collectionViewScrollToSecondCell{
 
     NSIndexPath *idxPath = [NSIndexPath indexPathForItem:1 inSection:SectionCount/2];
@@ -201,9 +214,5 @@ static NSString *const ID = @"img_cell";
     self.pageIndex = (int)(self.pageIndex+ (self.collectionView.contentOffset.x/kWIDTH -1) + ImageCount ) % ImageCount;
 }
 
--(void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    self.navigationItem.title = [NSString stringWithFormat:@"%d / %d",self.pageIndex+1,ImageCount];
-    
-}
 
 @end

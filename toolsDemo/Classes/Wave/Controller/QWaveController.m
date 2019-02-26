@@ -18,6 +18,7 @@
 @interface QWaveController ()
 
 @property (nonatomic, strong) NSMutableArray *waveViews;
+@property (nonatomic,weak) NSTimer *timer;
 
 @end
 
@@ -54,8 +55,7 @@
 
         [self.view addSubview:waveView];
         }
-
-    [NSTimer scheduledTimerWithTimeInterval:0.04 target:self selector:@selector(changeWaveView) userInfo:nil repeats:YES];
+    _timer =  [NSTimer scheduledTimerWithTimeInterval:0.04 target:self selector:@selector(changeWaveView) userInfo:nil repeats:YES];
 }
 
 - (void)changeWaveView
@@ -80,6 +80,12 @@
     NSLog(@"内存溢出");
 }
 
+- (void)viewWillDisappear:(BOOL)animated{
+    [_timer invalidate];
+}
 
+- (void)dealloc{
+    NSLog(@"%@ dealloc",NSStringFromClass([self class]));
+}
 
 @end

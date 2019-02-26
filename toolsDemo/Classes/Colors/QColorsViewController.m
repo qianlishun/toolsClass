@@ -7,11 +7,13 @@
 //
 
 #import "QColorsViewController.h"
+#import "USGestureRecognizer.h"
 
-@interface QColorsViewController ()
+@interface QColorsViewController ()<USGestureRecognizerDelegate>
 @property (nonatomic,copy) NSTimer *timer;
 
 @property (nonatomic,assign) int i;
+@property (nonatomic,strong) UIView *testView;
 
 @end
 
@@ -33,8 +35,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _i = 0;
-    _timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(onTimer) userInfo:nil repeats:YES];
+    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.userInteractionEnabled = YES;
+    self.view.multipleTouchEnabled = YES;
+    
+//    _timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(onTimer) userInfo:nil repeats:YES];
 
     UIImageView *colorsView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 60, TITLE_CONTROL_HEIGHT)];
     colorsView.center = CGPointMake(50, self.view.center.y);
@@ -72,6 +77,21 @@
             imgView.image = img3;
         }
     }
+    
+    UIView *testView = [[UIView alloc]initWithFrame:CGRectMake(200, 300, 200, 200)];
+    
+    testView.backgroundColor = [UIColor redColor];
+    _testView = testView;
+    [self.view addSubview:testView];
+
+    USGestureRecognizer *qGesRec = [[USGestureRecognizer alloc]init];
+    [qGesRec setDelegate:self];
+    
+    [_testView addGestureRecognizer:qGesRec];
+
+    [self.view addGestureRecognizer:qGesRec];
+        
+    NSLog(@"%d",qGesRec.enabled);
 }
 
 
@@ -294,5 +314,15 @@
     return img;
 }
 
+- (void)onUSGestureTranslation:(CGPoint)translation withUSGestureType:(USGestureType)gestureType{
+    UIView *view = _testView;
+    if(gestureType==USGestureTypePinch){
+        CGFloat scaleX = 1 + translation.x/view.frame.size.width;
+        CGFloat scaleY = 1 + translation.y/view.frame.size.height;
+        view.transform = CGAffineTransformScale(view.transform, scaleX, scaleY);
+    }else{
+        [view setCenter:(CGPoint){view.center.x + translation.x, view.center.y + translation.y}];
+    }
+}
 
 @end

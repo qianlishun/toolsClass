@@ -14,6 +14,7 @@
 #define selfSize self.bounds.size
 @interface WaveView ()
 
+@property (nonatomic,strong) CAShapeLayer *shapeLayer;
 
 @property (nonatomic,copy) NSMutableArray  *points;
 
@@ -22,6 +23,24 @@
 @end
 
 @implementation WaveView
+
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        self.backgroundColor = [UIColor clearColor];
+        self.clipsToBounds = YES;
+        if(!_shapeLayer){
+            _shapeLayer = [CAShapeLayer layer];
+            _shapeLayer.backgroundColor = [UIColor clearColor].CGColor;
+            [_shapeLayer setFrame:self.bounds];
+            _shapeLayer.strokeColor = [UIColor blackColor].CGColor;
+            _shapeLayer.fillColor = [UIColor clearColor].CGColor;
+            [self.layer addSublayer:_shapeLayer];
+        }
+    }
+    return self;
+}
 
 - (NSMutableArray *)points{
     if (!_points) {
@@ -52,39 +71,33 @@
         // 在这里保存数据
     }
 
-    [self setNeedsDisplay];
-
+    [self updateLayer];
 }
 
-
 // 绘图
-- (void)drawRect:(CGRect)rect{
-    [ super drawRect:rect];
-
+- (void)updateLayer{
     if (self.points.count == 0) {
         return;
     }
-    CGContextRef ctx = UIGraphicsGetCurrentContext();
+
+    UIBezierPath *path = [UIBezierPath bezierPath];
     
     for (int i = 0; i < self.points.count; i++) {
         NSValue *valueOfPoint = self.points[i];
-
+        
         CGPoint point = [valueOfPoint CGPointValue];
-
-        float x = point.x;
-        float y = point.y;
-
+    
         if (i == 0) {
-            CGContextMoveToPoint(ctx, x, y);
+            [path moveToPoint:point];
+        }else{
+            [path addLineToPoint:point];
         }
-
-        CGContextAddLineToPoint(ctx, x, y);
     }
-
-    CGContextSetLineWidth(ctx, 1);
-    CGContextDrawPath(ctx, kCGPathStroke);
-
-//    NSLog(@"pointIndex:%zd", self.index);
-
+    self.shapeLayer.path = path.CGPath;
 }
+
+- (void)dealloc{
+    NSLog(@"%@ dealloc",NSStringFromClass([self class]));
+}
+
 @end

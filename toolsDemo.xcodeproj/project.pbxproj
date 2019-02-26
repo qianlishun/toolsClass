@@ -147,6 +147,7 @@
 		6E5F91D11E5FCBD600396EB1 /* QColorsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5F91D01E5FCBD600396EB1 /* QColorsViewController.m */; };
 		6EEA4255207EFE5D00BEFEC6 /* QImageBookController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EEA4254207EFE5D00BEFEC6 /* QImageBookController.m */; };
 		6EEA4258207EFE8B00BEFEC6 /* QAnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EEA4256207EFE8B00BEFEC6 /* QAnimationView.m */; };
+		6EF6909921E73C290080A2CB /* USGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF6909821E73C290080A2CB /* USGestureRecognizer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -453,6 +454,8 @@
 		6EEA4254207EFE5D00BEFEC6 /* QImageBookController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QImageBookController.m; sourceTree = "<group>"; };
 		6EEA4256207EFE8B00BEFEC6 /* QAnimationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QAnimationView.m; sourceTree = "<group>"; };
 		6EEA4257207EFE8B00BEFEC6 /* QAnimationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QAnimationView.h; sourceTree = "<group>"; };
+		6EF6909721E73C290080A2CB /* USGestureRecognizer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USGestureRecognizer.h; sourceTree = "<group>"; };
+		6EF6909821E73C290080A2CB /* USGestureRecognizer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USGestureRecognizer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1344,6 +1347,8 @@
 			children = (
 				6E5F91CF1E5FCBD600396EB1 /* QColorsViewController.h */,
 				6E5F91D01E5FCBD600396EB1 /* QColorsViewController.m */,
+				6EF6909721E73C290080A2CB /* USGestureRecognizer.h */,
+				6EF6909821E73C290080A2CB /* USGestureRecognizer.m */,
 			);
 			path = Colors;
 			sourceTree = "<group>";
@@ -1525,6 +1530,7 @@
 				3EB53A001D1D175300840D38 /* MJRefreshNormalHeader.m in Sources */,
 				3EB539E81D1D175300840D38 /* MJDictionaryCache.m in Sources */,
 				3EC2054E1CF5C2EE001AF96C /* QWaveController.m in Sources */,
+				6EF6909921E73C290080A2CB /* USGestureRecognizer.m in Sources */,
 				3E8D84F21D1A3713000570C3 /* ScanController.m in Sources */,
 				3EB539DF1D1D175300840D38 /* README.md in Sources */,
 				3EB53A161D1D175300840D38 /* UIView+SDExtension.m in Sources */,
@@ -1766,6 +1772,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = qls.toolsDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1784,6 +1791,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = qls.toolsDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
