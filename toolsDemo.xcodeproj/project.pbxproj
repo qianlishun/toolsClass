@@ -145,6 +145,10 @@
 		3EEA2BFC1D03BE2100D697AC /* NewsWebController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EEA2BFB1D03BE2100D697AC /* NewsWebController.m */; };
 		3EFFF6971D0ABDDE0042ABF4 /* QNewsHomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EFFF6961D0ABDDE0042ABF4 /* QNewsHomeController.m */; };
 		6E5F91D11E5FCBD600396EB1 /* QColorsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5F91D01E5FCBD600396EB1 /* QColorsViewController.m */; };
+		6E89D6932251D1EE00B1C650 /* QEatController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E89D6922251D1EE00B1C650 /* QEatController.m */; };
+		6E89D6952251D38200B1C650 /* wrgo.html in Resources */ = {isa = PBXBuildFile; fileRef = 6E89D6942251D38200B1C650 /* wrgo.html */; };
+		6E89D6982251E28C00B1C650 /* turntable.css in Resources */ = {isa = PBXBuildFile; fileRef = 6E89D6962251E28C00B1C650 /* turntable.css */; };
+		6E89D6992251E28C00B1C650 /* turntable.js in Resources */ = {isa = PBXBuildFile; fileRef = 6E89D6972251E28C00B1C650 /* turntable.js */; };
 		6EEA4255207EFE5D00BEFEC6 /* QImageBookController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EEA4254207EFE5D00BEFEC6 /* QImageBookController.m */; };
 		6EEA4258207EFE8B00BEFEC6 /* QAnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EEA4256207EFE8B00BEFEC6 /* QAnimationView.m */; };
 		6EF6909921E73C290080A2CB /* USGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF6909821E73C290080A2CB /* USGestureRecognizer.m */; };
@@ -450,6 +454,11 @@
 		3EFFF6961D0ABDDE0042ABF4 /* QNewsHomeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QNewsHomeController.m; sourceTree = "<group>"; };
 		6E5F91CF1E5FCBD600396EB1 /* QColorsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QColorsViewController.h; sourceTree = "<group>"; };
 		6E5F91D01E5FCBD600396EB1 /* QColorsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QColorsViewController.m; sourceTree = "<group>"; };
+		6E89D6912251D1EE00B1C650 /* QEatController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QEatController.h; sourceTree = "<group>"; };
+		6E89D6922251D1EE00B1C650 /* QEatController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QEatController.m; sourceTree = "<group>"; };
+		6E89D6942251D38200B1C650 /* wrgo.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = wrgo.html; sourceTree = "<group>"; };
+		6E89D6962251E28C00B1C650 /* turntable.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = turntable.css; sourceTree = "<group>"; };
+		6E89D6972251E28C00B1C650 /* turntable.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = turntable.js; sourceTree = "<group>"; };
 		6EEA4253207EFE5D00BEFEC6 /* QImageBookController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QImageBookController.h; sourceTree = "<group>"; };
 		6EEA4254207EFE5D00BEFEC6 /* QImageBookController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QImageBookController.m; sourceTree = "<group>"; };
 		6EEA4256207EFE8B00BEFEC6 /* QAnimationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QAnimationView.m; sourceTree = "<group>"; };
@@ -735,6 +744,7 @@
 			isa = PBXGroup;
 			children = (
 				3E9AED971CE06860001F77D5 /* One */,
+				6E89D6902251D1BE00B1C650 /* Eat */,
 				3E9AED9F1CE068EE001F77D5 /* AddressBook */,
 				3E9AEDB51CE06E58001F77D5 /* ImagePlay */,
 				3E9AEDB81CE06E5F001F77D5 /* Lock */,
@@ -1353,6 +1363,18 @@
 			path = Colors;
 			sourceTree = "<group>";
 		};
+		6E89D6902251D1BE00B1C650 /* Eat */ = {
+			isa = PBXGroup;
+			children = (
+				6E89D6912251D1EE00B1C650 /* QEatController.h */,
+				6E89D6922251D1EE00B1C650 /* QEatController.m */,
+				6E89D6942251D38200B1C650 /* wrgo.html */,
+				6E89D6962251E28C00B1C650 /* turntable.css */,
+				6E89D6972251E28C00B1C650 /* turntable.js */,
+			);
+			path = Eat;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1464,7 +1486,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E89D6992251E28C00B1C650 /* turntable.js in Resources */,
 				3EB53A281D1D175300840D38 /* SVProgressHUD.bundle in Resources */,
+				6E89D6982251E28C00B1C650 /* turntable.css in Resources */,
+				6E89D6952251D38200B1C650 /* wrgo.html in Resources */,
 				3E79719E1D0AEAE600E040A8 /* topic_news.json in Resources */,
 				3E9AED3E1CE06751001F77D5 /* LaunchScreen.storyboard in Resources */,
 				3EB53A021D1D175300840D38 /* MJRefresh.bundle in Resources */,
@@ -1513,6 +1538,7 @@
 				3E7971961D0ADBCB00E040A8 /* ChannelLabel.m in Sources */,
 				3EB53A011D1D175300840D38 /* MJRefreshStateHeader.m in Sources */,
 				3EB539E31D1D175300840D38 /* UIButton+AFNetworking.m in Sources */,
+				6E89D6932251D1EE00B1C650 /* QEatController.m in Sources */,
 				3EB539FD1D1D175300840D38 /* MJRefreshBackNormalFooter.m in Sources */,
 				3EB53A121D1D175300840D38 /* TADotView.m in Sources */,
 				3E9AEDC61CE06F88001F77D5 /* LockController.m in Sources */,

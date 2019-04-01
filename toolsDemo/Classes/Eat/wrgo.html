@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="UTF-8">
+<title>Drawing sector</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<link rel="stylesheet" href="./turntable.css">
+<script src="./turntable.js"></script>
+<style>
+    .center {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -ms-transform: translate(-50%,-50%);
+        -moz-transform: translate(-50%,-50%);
+        -o-transform: translate(-50%,-50%);
+        transform: translate(-50%,-50%);
+    }
+</style>
+</head>
+<body>
+    <div class="center">
+            <section id="turntable" class="gb-turntable">
+                    <div class="gb-turntable-container">
+                      <canvas class="gb-turntable-canvas" width="300" height="300px">抱歉！浏览器不支持。</canvas>
+                    </div>
+                 <a class="gb-turntable-btn" href="javascript:;">去哪儿</a>
+            </section>
+    </div>
+   
+    <script>
+       gbTurntable.init({
+        id: 'turntable',
+        config: function(callback){
+            // 获取奖品信息
+            // 奖项 text 属性不能为空，用于显示或抽中奖品提示
+            // img 为奖品图片地址，如果不为空则转盘奖品按图片方式显示
+            callback && callback([{
+                text: '寻客',
+                }, {
+                text: 'V道'
+                }, {
+                text: '多味'
+                }, {
+                text: '桂林',
+                }, {
+                text: '张记'
+                }, {
+                text: '地下'
+                },{
+                text: '米粟'
+                },
+            
+            ])
+        },
+        getPrize: function(callback) {
+            // 获取中奖信息
+            var num = Math.floor(Math.random()*7);  //奖品ID
+                chances = 100;  // 可抽奖次数
+                callback && callback([num, chances]); 
+        },
+        gotBack: function(data) {
+            // alert(data);
+        }
+    });
+    </script>
+</body>
+</html>

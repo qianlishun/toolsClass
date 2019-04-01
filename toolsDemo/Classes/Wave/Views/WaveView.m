@@ -37,6 +37,13 @@
             _shapeLayer.strokeColor = [UIColor blackColor].CGColor;
             _shapeLayer.fillColor = [UIColor clearColor].CGColor;
             [self.layer addSublayer:_shapeLayer];
+
+            UIImage *image = [UIImage imageNamed:@"icon_me"];
+            CALayer *imgLayer = [CALayer layer];
+            [imgLayer setFrame:CGRectMake(100, 30, 30, 30)];
+            imgLayer.contents = (id)image.CGImage;
+            
+            [self.shapeLayer addSublayer:imgLayer];
         }
     }
     return self;
