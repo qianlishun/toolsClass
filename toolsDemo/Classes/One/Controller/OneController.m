@@ -28,15 +28,15 @@
 
     self.contenArray = @[
                          @"QEatController",@"去哪吃",
+                         @"SetQRCodeController",@"生成二维码",
+                         @"ScanController",@"扫描二维码",
+                         @"QNewsHomeController",@"一个新闻界面",
                          @"ImagePlayController",@"图片无限轮播",
                          @"QImageBookController",@"覆盖式切换图片",
                          @"LockController",@"(九宫格)手势解锁屏幕",
                          @"QStarController",@"小星星",
                          @"WaterfallController",@"瀑布流",
                          @"QWaveController",@"~~~波~~~",
-                         @"QNewsHomeController",@"一个新闻界面",
-                         @"SetQRCodeController",@"生成二维码",
-                         @"ScanController",@"扫描二维码",
                          @"QZoneViewController",@"仿QQ头部下拉图片",
                          @"QColorsViewController",@"渐变色",
                          ];

@@ -149,6 +149,12 @@
 		6E89D6952251D38200B1C650 /* wrgo.html in Resources */ = {isa = PBXBuildFile; fileRef = 6E89D6942251D38200B1C650 /* wrgo.html */; };
 		6E89D6982251E28C00B1C650 /* turntable.css in Resources */ = {isa = PBXBuildFile; fileRef = 6E89D6962251E28C00B1C650 /* turntable.css */; };
 		6E89D6992251E28C00B1C650 /* turntable.js in Resources */ = {isa = PBXBuildFile; fileRef = 6E89D6972251E28C00B1C650 /* turntable.js */; };
+		6E911597225C92520061690D /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E911595225C92510061690D /* GCDAsyncSocket.m */; };
+		6E91159D225C995C0061690D /* TJLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E911599225C995C0061690D /* TJLSessionManager.m */; };
+		6E91159E225C995C0061690D /* LocalNetworkView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E91159A225C995C0061690D /* LocalNetworkView.m */; };
+		6E9115A4225CA6A80061690D /* GCDAsyncSocket+category.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E9115A2225CA6A70061690D /* GCDAsyncSocket+category.m */; };
+		6E9115A7225CA6C50061690D /* SerViceAPP.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E9115A6225CA6C50061690D /* SerViceAPP.m */; };
+		6E9115A8225CA8260061690D /* TwoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E9AEDB01CE069CD001F77D5 /* TwoController.m */; };
 		6EEA4255207EFE5D00BEFEC6 /* QImageBookController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EEA4254207EFE5D00BEFEC6 /* QImageBookController.m */; };
 		6EEA4258207EFE8B00BEFEC6 /* QAnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EEA4256207EFE8B00BEFEC6 /* QAnimationView.m */; };
 		6EF6909921E73C290080A2CB /* USGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF6909821E73C290080A2CB /* USGestureRecognizer.m */; };
@@ -459,6 +465,16 @@
 		6E89D6942251D38200B1C650 /* wrgo.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = wrgo.html; sourceTree = "<group>"; };
 		6E89D6962251E28C00B1C650 /* turntable.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = turntable.css; sourceTree = "<group>"; };
 		6E89D6972251E28C00B1C650 /* turntable.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = turntable.js; sourceTree = "<group>"; };
+		6E911595225C92510061690D /* GCDAsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncSocket.m; sourceTree = "<group>"; };
+		6E911596225C92510061690D /* GCDAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncSocket.h; sourceTree = "<group>"; };
+		6E911599225C995C0061690D /* TJLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TJLSessionManager.m; sourceTree = "<group>"; };
+		6E91159A225C995C0061690D /* LocalNetworkView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalNetworkView.m; sourceTree = "<group>"; };
+		6E91159B225C995C0061690D /* TJLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TJLSessionManager.h; sourceTree = "<group>"; };
+		6E91159C225C995C0061690D /* LocalNetworkView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalNetworkView.h; sourceTree = "<group>"; };
+		6E9115A2225CA6A70061690D /* GCDAsyncSocket+category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GCDAsyncSocket+category.m"; sourceTree = "<group>"; };
+		6E9115A3225CA6A80061690D /* GCDAsyncSocket+category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GCDAsyncSocket+category.h"; sourceTree = "<group>"; };
+		6E9115A5225CA6C50061690D /* SerViceAPP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SerViceAPP.h; sourceTree = "<group>"; };
+		6E9115A6225CA6C50061690D /* SerViceAPP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SerViceAPP.m; sourceTree = "<group>"; };
 		6EEA4253207EFE5D00BEFEC6 /* QImageBookController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QImageBookController.h; sourceTree = "<group>"; };
 		6EEA4254207EFE5D00BEFEC6 /* QImageBookController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QImageBookController.m; sourceTree = "<group>"; };
 		6EEA4256207EFE8B00BEFEC6 /* QAnimationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QAnimationView.m; sourceTree = "<group>"; };
@@ -792,6 +808,8 @@
 		3E9AEDA01CE068EE001F77D5 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				6E9115A5225CA6C50061690D /* SerViceAPP.h */,
+				6E9115A6225CA6C50061690D /* SerViceAPP.m */,
 				3E9AEDA31CE0693B001F77D5 /* AddViewController.h */,
 				3E9AEDA41CE0693B001F77D5 /* AddViewController.m */,
 				3E9AEDA61CE0698A001F77D5 /* ContactViewController.h */,
@@ -931,8 +949,13 @@
 		3EB539131D1D175300840D38 /* Framewokes */ = {
 			isa = PBXGroup;
 			children = (
+				6E9115A3225CA6A80061690D /* GCDAsyncSocket+category.h */,
+				6E9115A2225CA6A70061690D /* GCDAsyncSocket+category.m */,
+				6E911596225C92510061690D /* GCDAsyncSocket.h */,
+				6E911595225C92510061690D /* GCDAsyncSocket.m */,
 				3E0253CF1D476BA100BDE4AE /* UIView+QLSFrame.h */,
 				3E0253D01D476BA100BDE4AE /* UIView+QLSFrame.m */,
+				6E911598225C995C0061690D /* LocalNetworkManager */,
 				3EB539141D1D175300840D38 /* AFNetworking */,
 				3EB5393E1D1D175300840D38 /* MJExtension */,
 				3EB539561D1D175300840D38 /* MJRefresh */,
@@ -1375,6 +1398,17 @@
 			path = Eat;
 			sourceTree = "<group>";
 		};
+		6E911598225C995C0061690D /* LocalNetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				6E91159B225C995C0061690D /* TJLSessionManager.h */,
+				6E911599225C995C0061690D /* TJLSessionManager.m */,
+				6E91159C225C995C0061690D /* LocalNetworkView.h */,
+				6E91159A225C995C0061690D /* LocalNetworkView.m */,
+			);
+			path = LocalNetworkManager;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1466,6 +1500,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -1530,6 +1565,7 @@
 				3E8D84EF1D1A34CC000570C3 /* SetQRCodeController.m in Sources */,
 				3EB539E11D1D175300840D38 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				3EB539F21D1D175300840D38 /* NSString+MJExtension.m in Sources */,
+				6E91159D225C995C0061690D /* TJLSessionManager.m in Sources */,
 				3EB53A191D1D175300840D38 /* SDImageCache.m in Sources */,
 				3EB539EB1D1D175300840D38 /* MJProperty.m in Sources */,
 				3EB53A131D1D175300840D38 /* TAPageControl.m in Sources */,
@@ -1573,7 +1609,9 @@
 				3EB53A291D1D175300840D38 /* SVProgressHUD.m in Sources */,
 				3EB53A1F1D1D175300840D38 /* SDWebImagePrefetcher.m in Sources */,
 				3EB53A221D1D175300840D38 /* UIImage+MultiFormat.m in Sources */,
+				6E9115A4225CA6A80061690D /* GCDAsyncSocket+category.m in Sources */,
 				3EB53A071D1D175300840D38 /* README.md in Sources */,
+				6E911597225C92520061690D /* GCDAsyncSocket.m in Sources */,
 				3EB53A0A1D1D175300840D38 /* QLSNavigationController.m in Sources */,
 				3EB539F61D1D175300840D38 /* MJRefreshComponent.m in Sources */,
 				3EB539FE1D1D175300840D38 /* MJRefreshBackStateFooter.m in Sources */,
@@ -1587,6 +1625,7 @@
 				3E7971991D0AE13000E040A8 /* NewsHomeCell.m in Sources */,
 				3EB53A211D1D175300840D38 /* UIImage+GIF.m in Sources */,
 				3EB539F11D1D175300840D38 /* NSObject+MJProperty.m in Sources */,
+				6E91159E225C995C0061690D /* LocalNetworkView.m in Sources */,
 				3EB539F81D1D175300840D38 /* MJRefreshHeader.m in Sources */,
 				3EB539D91D1D175300840D38 /* AFSecurityPolicy.m in Sources */,
 				3EB539E51D1D175300840D38 /* UIProgressView+AFNetworking.m in Sources */,
@@ -1599,6 +1638,7 @@
 				3E428D081D02D9B0000C404C /* NewsModel.m in Sources */,
 				3ECB779E1CE32A4C0046BA95 /* WaterfallController.m in Sources */,
 				3E428D0B1D02EA53000C404C /* NewsBaseCell.m in Sources */,
+				6E9115A7225CA6C50061690D /* SerViceAPP.m in Sources */,
 				3E9AED951CE06827001F77D5 /* AppDelegate.m in Sources */,
 				3EB53A111D1D175300840D38 /* TAAnimatedDotView.m in Sources */,
 				3EB53A041D1D175300840D38 /* UIScrollView+MJExtension.m in Sources */,
@@ -1668,6 +1708,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E9115A8225CA8260061690D /* TwoController.m in Sources */,
 				3E9AED541CE06751001F77D5 /* toolsDemoUITests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

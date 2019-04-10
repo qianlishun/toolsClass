@@ -5,7 +5,14 @@
 <title>Drawing sector</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 <link rel="stylesheet" href="./turntable.css">
-<script src="./turntable.js"></script>
+<script src="./turntable.js">
+    function load(){
+        var url = window.location.href;
+        if(url.endsWith('html')|url.endsWith('/')){
+            url = url + '?' + Math.random().toString(36).substr(2);
+        }
+    }
+</script>
 <style>
     .center {
         position: absolute;
@@ -27,7 +34,6 @@
                  <a class="gb-turntable-btn" href="javascript:;">去哪儿</a>
             </section>
     </div>
-   
     <script>
        gbTurntable.init({
         id: 'turntable',
