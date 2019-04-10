@@ -37,17 +37,17 @@
     <script>
        function setList(jsonStr){
             var json = JSON.parse(jsonStr);
-            var list = new Array();
-            var node=document.createElement("div");
-            var textnode=document.createTextNode(json);
-            node.appendChild(textnode);
+            // var node=document.createElement("div");
+            // var textnode=document.createTextNode(json);
+            // node.appendChild(textnode);
+            // document.getElementById("turntable").appendChild(node);
             gbTurntable.init({
             id: 'turntable',
             config: function(callback){
                 // 获取奖品信息
                 // 奖项 text 属性不能为空，用于显示或抽中奖品提示
                 // img 为奖品图片地址，如果不为空则转盘奖品按图片方式显示
-                document.getElementById("turntable").appendChild(node);
+                var list = new Array();
                 for (let index = 0; index < json.length; index++) {
                     const element = json[index];
                     var dict = {text:element};
