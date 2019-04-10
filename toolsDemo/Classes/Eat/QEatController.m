@@ -8,9 +8,13 @@
 
 #import "QEatController.h"
 #import <WebKit/WebKit.h>
+#import "QEatEditView.h"
+#import "QCoverView.h"
+#import "UIView+SDAutoLayout.h"
+
 @interface QEatController ()<WKUIDelegate,WKNavigationDelegate,UIScrollViewDelegate>
 @property (nonatomic,strong)  WKWebView *webView;
-
+@property (nonatomic,strong) QEatEditView *editView;
 @end
 
 @implementation QEatController
@@ -63,6 +67,52 @@
     NSString *htmlString = [[NSString alloc]initWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
     //加载本地html文件
     [_webView loadHTMLString:htmlString baseURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] bundlePath]]];
+    
+    UIBarButtonItem *item = [[UIBarButtonItem alloc]initWithTitle:@"编辑" style:UIBarButtonItemStylePlain target:self action:@selector(edit:)];
+    self.navigationItem.rightBarButtonItem = item;
+}
+
+- (void)edit:(id)sender{
+    __weak typeof(self) weakself = self;
+    if(!_editView){
+        CGFloat h = 300;
+        _editView = [[QEatEditView alloc]initWithFrame:CGRectMake(0, self.view.bounds.size.height-h, self.view.bounds.size.width, h)];
+        NSArray *list = [self getDefaultList];
+        [_editView setList:list];
+        _editView.doneBlock = ^(NSArray *list) {
+            [weakself reloadWebView:list];
+            [QCoverView hide];
+        };
+    }
+    
+    [QCoverView transparentCoverFrom:self.view content:_editView animated:YES touchHideBlock:^(UIView *view) {
+        [weakself reloadWebView: [weakself.editView getList]];
+    }];
+    
+    _editView.bottom = self.view.bottom;
+    _editView.centerX = self.view.centerX;
+}
+
+- (void)reloadWebView:(NSArray*)list{
+    [self updateDefaultList:list];
+    
+    [_editView setList:list];
+}
+
+static NSString *udKey = @"QEatListKey";
+- (void)updateDefaultList:(NSArray*)list{
+    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+    [ud setObject:list forKey:udKey];
+}
+
+- (NSArray*)getDefaultList{
+    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+    NSArray *list = [ud objectForKey:udKey];
+    if(!list){
+        list = @[@"寻客",@"V道",@"桂林",@"地下",@"张记",@"米粟",@"多味"];
+        [self updateDefaultList:list];
+    }
+    return list;
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{

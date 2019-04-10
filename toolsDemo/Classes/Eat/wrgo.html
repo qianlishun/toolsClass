@@ -35,40 +35,37 @@
             </section>
     </div>
     <script>
-       gbTurntable.init({
-        id: 'turntable',
-        config: function(callback){
-            // 获取奖品信息
-            // 奖项 text 属性不能为空，用于显示或抽中奖品提示
-            // img 为奖品图片地址，如果不为空则转盘奖品按图片方式显示
-            callback && callback([{
-                text: '寻客',
-                }, {
-                text: 'V道'
-                }, {
-                text: '多味'
-                }, {
-                text: '桂林',
-                }, {
-                text: '张记'
-                }, {
-                text: '地下'
-                },{
-                text: '米粟'
-                },
-            
-            ])
-        },
-        getPrize: function(callback) {
-            // 获取中奖信息
-            var num = Math.floor(Math.random()*7);  //奖品ID
-                chances = 100;  // 可抽奖次数
-                callback && callback([num, chances]); 
-        },
-        gotBack: function(data) {
-            // alert(data);
-        }
-    });
+       function setList(object){
+            alert(object);
+            var json = JSON.parse(jsonStr);
+            alert(json);
+            gbTurntable.init({
+            id: 'turntable',
+            config: function(callback){
+                // 获取奖品信息
+                // 奖项 text 属性不能为空，用于显示或抽中奖品提示
+                // img 为奖品图片地址，如果不为空则转盘奖品按图片方式显示
+                var list = new Array();
+                for (const key in object) {
+                    if (object.hasOwnProperty(key)) {
+                        const element = object[key];
+                        var dict = {text:element};
+                        list.push(dict);
+                    }
+                }
+                callback && callback(list);
+            },
+            getPrize: function(callback) {
+                // 获取中奖信息
+                var num = Math.floor(Math.random()*7);  //奖品ID
+                    chances = 100;  // 可抽奖次数
+                    callback && callback([num, chances]); 
+            },
+            gotBack: function(data) {
+                // alert(data);
+            }
+        });
+     } 
     </script>
 </body>
 </html>
