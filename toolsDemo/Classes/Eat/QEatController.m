@@ -72,6 +72,10 @@
     self.navigationItem.rightBarButtonItem = item;
 }
 
+- (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation{
+    [self updateWebView:[self getDefaultList]];
+}
+
 - (void)edit:(id)sender{
     __weak typeof(self) weakself = self;
     if(!_editView){
@@ -94,9 +98,24 @@
 }
 
 - (void)reloadWebView:(NSArray*)list{
+    [self updateWebView:list];
+    
     [self updateDefaultList:list];
     
     [_editView setList:list];
+}
+
+- (void)updateWebView:(NSArray*)list{
+    
+//    NSDictionary *dict = @{@"list":list};
+    NSData *jsonData =  [NSJSONSerialization dataWithJSONObject:list options:0 error:NULL];
+    NSString *jsonStr = [[NSString alloc]initWithData:jsonData encoding:NSUTF8StringEncoding];
+    jsonStr = [jsonStr stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+    NSString *methodStr = @"setList";
+    jsonStr = [NSString stringWithFormat:@"%@('%@')",methodStr,jsonStr];
+    [self.webView evaluateJavaScript:jsonStr completionHandler:^(id _Nullable obj, NSError * _Nullable error){
+        NSLog(@"evaluateJavaScript, obj = %@, error = %@", obj, error);
+     }];
 }
 
 static NSString *udKey = @"QEatListKey";

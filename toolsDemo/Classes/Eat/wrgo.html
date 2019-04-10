@@ -35,23 +35,23 @@
             </section>
     </div>
     <script>
-       function setList(object){
-            alert(object);
+       function setList(jsonStr){
             var json = JSON.parse(jsonStr);
-            alert(json);
+            var list = new Array();
+            var node=document.createElement("div");
+            var textnode=document.createTextNode(json);
+            node.appendChild(textnode);
             gbTurntable.init({
             id: 'turntable',
             config: function(callback){
                 // 获取奖品信息
                 // 奖项 text 属性不能为空，用于显示或抽中奖品提示
                 // img 为奖品图片地址，如果不为空则转盘奖品按图片方式显示
-                var list = new Array();
-                for (const key in object) {
-                    if (object.hasOwnProperty(key)) {
-                        const element = object[key];
-                        var dict = {text:element};
-                        list.push(dict);
-                    }
+                document.getElementById("turntable").appendChild(node);
+                for (let index = 0; index < json.length; index++) {
+                    const element = json[index];
+                    var dict = {text:element};
+                    list.push(dict);
                 }
                 callback && callback(list);
             },
