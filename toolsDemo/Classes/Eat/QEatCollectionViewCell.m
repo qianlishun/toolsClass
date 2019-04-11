@@ -29,7 +29,7 @@
         self.descLabel.textAlignment = NSTextAlignmentCenter;
         [self addSubview:self.descLabel];
         
-        self.deleteButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        self.deleteButton = [UIButton buttonWithType:UIButtonTypeSystem];
         [self.deleteButton setFrame:CGRectMake(frame.size.width-20, 0, 20, 20)];
         [self addSubview:self.deleteButton];
         [_deleteButton setImage:[UIImage imageNamed:@"clear"] forState:UIControlStateNormal];

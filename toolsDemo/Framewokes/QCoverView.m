@@ -72,7 +72,8 @@ static hideBlock _hideBlock;
     // 创建遮罩
     QCoverView *cover = [self cover];
     cover.frame = fromView.bounds;
-    cover.backgroundColor = [UIColor clearColor];
+    cover.backgroundColor = [UIColor blackColor];
+    cover.alpha = 0.3;
     [fromView addSubview:cover];
     _cover = cover;
     
@@ -110,6 +111,7 @@ static hideBlock _hideBlock;
         return;
     }else{
         [QCoverView hide];
+        _hideBlock(_contentView);
     }
 }
 @end

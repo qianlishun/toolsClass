@@ -27,7 +27,7 @@ static NSString *cellID = @"CollectionCell";
         //设置布局方向为垂直流布局
         layout.scrollDirection = UICollectionViewScrollDirectionVertical;
         //设置每个item的大小为100*100
-        layout.itemSize = CGSizeMake(50, 50);
+        layout.itemSize = CGSizeMake(70, 50);
         
         _collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(20, 50, frame.size.width-40, frame.size.height-50) collectionViewLayout:layout];
         _collectionView.backgroundColor = self.backgroundColor;
@@ -39,8 +39,9 @@ static NSString *cellID = @"CollectionCell";
         [self.collectionView registerClass:[QEatCollectionViewCell class] forCellWithReuseIdentifier:cellID];
 
         UIButton *done = [UIButton buttonWithType:UIButtonTypeSystem];
-        [done setFrame:CGRectMake(frame.size.width-60, 0, 60, 30)];
+        [done setFrame:CGRectMake(frame.size.width-80, 0, 80, 40)];
         [done setTitle:@"完成" forState:UIControlStateNormal];
+        [done.titleLabel setFont:[UIFont systemFontOfSize:20]];
         [done addTarget:self action:@selector(done:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:done];
     }

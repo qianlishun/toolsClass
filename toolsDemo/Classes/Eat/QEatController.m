@@ -107,7 +107,6 @@
 
 - (void)updateWebView:(NSArray*)list{
     
-//    NSDictionary *dict = @{@"list":list};
     NSData *jsonData =  [NSJSONSerialization dataWithJSONObject:list options:0 error:NULL];
     NSString *jsonStr = [[NSString alloc]initWithData:jsonData encoding:NSUTF8StringEncoding];
     jsonStr = [jsonStr stringByReplacingOccurrencesOfString:@"\n" withString:@""];

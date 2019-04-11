@@ -113,7 +113,11 @@
       canvas = ele.querySelector('.gb-turntable-canvas');
       container = ele.querySelector('.gb-turntable-container');
       btn = ele.querySelector('.gb-turntable-btn');
-  
+      
+      var textlist = ele.querySelector('.gb-turntalbe-list');
+      if(textlist)
+        container.removeChild(textlist);
+
       if (!canvas.getContext) {
         showMsg('抱歉！浏览器不支持。');
         return;
