@@ -135,7 +135,7 @@
 }
 
 - (void)extracted {
-    [NewsModel newsWithURLString:[NSString stringWithFormat:@"%@/%ld-10.html",self.url,self.pageIndex]  success:^(NSArray *array) {
+    [NewsModel newsWithURLString:[NSString stringWithFormat:@"%@/%ld-10.html",self.url,(long)self.pageIndex]  success:^(NSArray *array) {
         
         if (self.pageIndex == 0) {
             

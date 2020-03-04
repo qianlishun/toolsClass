@@ -58,6 +58,9 @@
         // 0.2 计算高度  新的H = 新的W * 原始H / 原始W
 
         CGFloat itemH = [self itemHWithOriginSize:CGSizeMake(image.size.width,image.size.height) itemW:itemW];
+        if(image.size.width<100){
+            itemH = [self itemHWithOriginSize:CGSizeMake(500,1000) itemW:itemW];
+        }
 
         //累加每个item的高度
         itemH_sum += itemH;

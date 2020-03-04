@@ -115,9 +115,9 @@ static int count = 0;
     [button addTarget:self action:@selector(socketTest) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button];
     
-    UITextView *textFiled = [[UITextView alloc]initWithFrame:CGRectMake(self.view.width/2, 100, 200, 30)];
-    textFiled.backgroundColor = [UIColor lightGrayColor];
-    [self.view addSubview:textFiled];
+//    UITextView *textFiled = [[UITextView alloc]initWithFrame:CGRectMake(self.view.width/2, 100, 200, 30)];
+//    textFiled.backgroundColor = [UIColor lightGrayColor];
+//    [self.view addSubview:textFiled];
     
     
     UIBarButtonItem *item1 = [[UIBarButtonItem alloc]initWithTitle:@"LocalNetwork" style:UIBarButtonItemStylePlain target:self action:@selector(onClicklocalNetwork:)];
@@ -137,6 +137,16 @@ static int count = 0;
     
 //    [self scanWifiInfos];
     
+    UILabel *timeLabel = [[UILabel alloc]initWithFrame:CGRectMake(30, 100, 150, 30)];
+    [timeLabel setTintColor:[UIColor blackColor]];
+    [self.view addSubview:timeLabel];
+    
+    __block UILabel *bT = timeLabel;
+    __block int index = 0;
+    [NSTimer scheduledTimerWithTimeInterval:1.0 repeats:YES block:^(NSTimer * _Nonnull timer) {
+        index++;
+        bT.text = [NSString stringWithFormat:@"%d",index];
+    }];
 }
 
 - (void)openServer{

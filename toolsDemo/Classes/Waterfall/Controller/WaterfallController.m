@@ -23,7 +23,7 @@
 @end
 
 #define Count 101
-#define imageCount 6
+static int imageCount = 6;
 
 @implementation WaterfallController
 
@@ -93,6 +93,25 @@ static NSString *const ID = @"water_cell";
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
 
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeSystem];
+    [btn setFrame:CGRectMake(0, 100, 60, 30)];
+    [btn setTitle:@"test" forState:UIControlStateNormal];
+    [btn addTarget:self action:@selector(test:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:btn];
+}
+
+- (void)test:(id)s{
+    imageCount++;
+    
+    UIImage *i = [UIImage imageNamed:@"spark_blue"];
+
+    NSMutableArray *a = [NSMutableArray arrayWithObject:i];
+    [a addObjectsFromArray:self.images];
+    self.images = a.copy;
+    self.layout.dataArray = self.images;
+
+    [self.collectionView reloadData];
+    
 }
 
 - (void)didReceiveMemoryWarning {

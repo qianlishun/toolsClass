@@ -17,4 +17,9 @@
 @property (nonatomic, assign) CGFloat centerY;
 @property (nonatomic, assign) CGSize size;
 @property (nonatomic, assign) CGPoint origin;
+
+- (void)addLineWithRect:(CGRect)rect color:(UIColor*)color;
+
+
+- (CATextLayer*)createTextLayerWithString:(NSString*)string Frame:(CGRect)frame fontsize:(float)fontsize color:(UIColor*)color;
 @end

@@ -13,6 +13,8 @@
 #define debugMethod()
 #endif
 
+#import "UIView+QLSFrame.h"
+
 #define kWIDTH [UIScreen mainScreen].bounds.size.width
 #define kSize [UIScreen mainScreen].bounds.size
 #define ScreenFrame [UIScreen mainScreen].bounds

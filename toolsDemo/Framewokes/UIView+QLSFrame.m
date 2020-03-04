@@ -106,4 +106,30 @@
     return self.frame.origin;
 }
 
+- (void)addLineWithRect:(CGRect)rect color:(UIColor *)color{
+    CAShapeLayer *l = [CAShapeLayer layer];
+    l.strokeColor = color.CGColor;
+    l.lineWidth = rect.size.height;
+    UIBezierPath *path = [UIBezierPath bezierPath];
+    [path moveToPoint:CGPointMake(rect.origin.x, rect.origin.y)];
+    [path addLineToPoint:CGPointMake(rect.origin.x + rect.size.width , rect.origin.y)];
+    l.path = path.CGPath;
+    [self.layer addSublayer:l];
+}
+
+
+- (CATextLayer*)createTextLayerWithString:(NSString*)string Frame:(CGRect)frame fontsize:(float)fontsize color:(UIColor*)color{
+    CATextLayer *textLayer = [CATextLayer layer];
+    NSMutableParagraphStyle *paragraph = [[NSMutableParagraphStyle alloc] init];
+    paragraph.lineSpacing = 1;
+    NSMutableAttributedString *attributedStr = [[NSMutableAttributedString alloc] initWithString:string attributes:@{NSForegroundColorAttributeName:color,NSParagraphStyleAttributeName:paragraph}];
+    [attributedStr addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:fontsize] range:NSMakeRange(0, string.length)];
+    textLayer.string = attributedStr;
+    textLayer.bounds = [attributedStr boundingRectWithSize:CGSizeMake(frame.size.width, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading context:nil];
+    [textLayer setPosition:CGPointMake(frame.origin.x + textLayer.bounds.size.width/2+2,  frame.origin.y)];
+    textLayer.alignmentMode = kCAAlignmentCenter;
+    textLayer.backgroundColor = [UIColor clearColor].CGColor;
+    textLayer.contentsScale = [UIScreen mainScreen].scale;
+    return textLayer;
+}
 @end

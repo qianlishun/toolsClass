@@ -10,7 +10,11 @@
 #import "DemoCell.h"
 #import "UITableView+SDAutoTableViewCellHeight.h"
 #import "QLSNavigationController.h"
-@interface OneController ()
+#import <CoreLocation/CoreLocation.h>
+
+@interface OneController (){
+    CLLocationManager *localtionmgr;
+}
 
 @property (nonatomic,copy) NSArray  *contenArray;
 
@@ -30,6 +34,7 @@
                          @"QEatController",@"去哪吃",
                          @"SetQRCodeController",@"生成二维码",
                          @"ScanController",@"扫描二维码",
+                         @"QTestStoryboard",@"Test",
                          @"QNewsHomeController",@"一个新闻界面",
                          @"ImagePlayController",@"图片无限轮播",
                          @"QImageBookController",@"覆盖式切换图片",
@@ -76,11 +81,15 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     NSString *str = self.contenArray[indexPath.row * 2 ];
-
-    UIViewController *vc = [NSClassFromString(str) new];
+    UIViewController *vc;
+    if([str containsString:@"Storyboard"]){
+        UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:str bundle:[NSBundle mainBundle]];
+        vc = [storyBoard instantiateViewControllerWithIdentifier:@"QTestViewController"];
+    }else{
+        vc = [NSClassFromString(str) new];
+    }
     vc.navigationItem.title = self.contenArray[indexPath.row * 2 + 1];
     [self.navigationController pushViewController:vc animated:YES];
-
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{

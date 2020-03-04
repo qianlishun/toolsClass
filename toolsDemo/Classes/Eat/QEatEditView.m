@@ -25,11 +25,11 @@ static NSString *cellID = @"CollectionCell";
         //创建一个layout布局类
         UICollectionViewFlowLayout * layout = [[UICollectionViewFlowLayout alloc]init];
         //设置布局方向为垂直流布局
-        layout.scrollDirection = UICollectionViewScrollDirectionVertical;
+        layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
         //设置每个item的大小为100*100
         layout.itemSize = CGSizeMake(70, 50);
         
-        _collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(20, 50, frame.size.width-40, frame.size.height-50) collectionViewLayout:layout];
+        _collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(20, 50, frame.size.width-40, 120) collectionViewLayout:layout];
         _collectionView.backgroundColor = self.backgroundColor;
         [self addSubview:_collectionView];
         
@@ -100,7 +100,6 @@ static NSString *cellID = @"CollectionCell";
     
     return cell;
 }
-
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     
