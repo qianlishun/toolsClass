@@ -95,10 +95,7 @@
 
 - (void)setDetailColor:(UIColor *)color forState:(UIControlState)state{
     NSDictionary *dics = [NSDictionary dictionaryWithObjectsAndKeys:color,NSForegroundColorAttributeName,nil];
-    if( !kISiPad && [StateModel sharedInstance].orientation != ScreenOrientation_Vertical ){
-        UIFont *font = [UIFont boldSystemFontOfSize:9];
-        dics = [NSDictionary dictionaryWithObjectsAndKeys:color,NSForegroundColorAttributeName,font, NSFontAttributeName,nil];
-    }
+   
     [self.segmentedControl setTitleTextAttributes:dics forState:state];
 }
 
@@ -168,7 +165,7 @@
     _segmentedControl.height = self.height*0.8;
     
     _titleLabel.x = 0;
-    _segmentedControl.right = self.width;
+    _segmentedControl.x = self.width - _segmentedControl.width;
     _titleLabel.centerY = _segmentedControl.centerY = self.height/2;
 }
 

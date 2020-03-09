@@ -178,6 +178,7 @@
 		6EAAED1523C2D48700256846 /* QTestStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EAAED1423C2D48700256846 /* QTestStoryboard.storyboard */; };
 		6EAAED1823C2DE0500256846 /* QSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EAAED1723C2DE0500256846 /* QSlider.m */; };
 		6EAAED1B23C2ED4E00256846 /* UIColor+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EAAED1923C2ED4E00256846 /* UIColor+Common.m */; };
+		6EBF16EF24124BFC002A3BB6 /* UIImage+AssetUrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EBF16EE24124BFC002A3BB6 /* UIImage+AssetUrl.m */; };
 		6ED9B11923C8373A0052FD1A /* QScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED9B11823C8373A0052FD1A /* QScrollView.m */; };
 		6ED9B11C23C8390C0052FD1A /* USSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED9B11B23C8390C0052FD1A /* USSlider.m */; };
 		6ED9B11F23C898110052FD1A /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6ED9B11E23C898110052FD1A /* NetworkExtension.framework */; };
@@ -552,6 +553,8 @@
 		6EAAED1723C2DE0500256846 /* QSlider.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QSlider.m; sourceTree = "<group>"; };
 		6EAAED1923C2ED4E00256846 /* UIColor+Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Common.m"; sourceTree = "<group>"; };
 		6EAAED1A23C2ED4E00256846 /* UIColor+Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Common.h"; sourceTree = "<group>"; };
+		6EBF16ED24124BFB002A3BB6 /* UIImage+AssetUrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+AssetUrl.h"; sourceTree = "<group>"; };
+		6EBF16EE24124BFC002A3BB6 /* UIImage+AssetUrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+AssetUrl.m"; sourceTree = "<group>"; };
 		6ED9B11723C8373A0052FD1A /* QScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QScrollView.h; sourceTree = "<group>"; };
 		6ED9B11823C8373A0052FD1A /* QScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QScrollView.m; sourceTree = "<group>"; };
 		6ED9B11A23C8390C0052FD1A /* USSlider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USSlider.h; sourceTree = "<group>"; };
@@ -1526,6 +1529,8 @@
 		6EAAED1023C2D44100256846 /* Test */ = {
 			isa = PBXGroup;
 			children = (
+				6EBF16ED24124BFB002A3BB6 /* UIImage+AssetUrl.h */,
+				6EBF16EE24124BFC002A3BB6 /* UIImage+AssetUrl.m */,
 				6E8945EA240F97C5005948ED /* USQButton.h */,
 				6E8945E9240F97C4005948ED /* USQButton.m */,
 				6E8945E7240F97C4005948ED /* USQSegmentedView.h */,
@@ -1811,6 +1816,7 @@
 				3EB53A261D1D175300840D38 /* UIView+WebCacheOperation.m in Sources */,
 				3EB53A141D1D175300840D38 /* SDCollectionViewCell.m in Sources */,
 				3E428D021D02D3D5000C404C /* Editor.m in Sources */,
+				6EBF16EF24124BFC002A3BB6 /* UIImage+AssetUrl.m in Sources */,
 				3E86C64B1CE49C4700AC4BBD /* FRGWaterfallCollectionViewCell.m in Sources */,
 				3EB539DD1D1D175300840D38 /* AFURLSessionManager.m in Sources */,
 				3EB539D81D1D175300840D38 /* AFNetworkReachabilityManager.m in Sources */,

@@ -48,15 +48,13 @@
     pageControl.isSliderBallMoved = ^(BOOL isUpadte, NSNumber *value) {
         if (isUpadte == YES) {
             NSLog(@"%@", value);
-            for(int i = 0; i < 15; i ++){
                 int maxVlue = wR.maxValue;
-                maxVlue++;
+                maxVlue+=20;
                 wR.maxValue = maxVlue;
                 wR.defaultValue = maxVlue;
                 isScrollCallBack = NO;
                 [wR updateRuler];
                 isScrollCallBack = YES;
-            }
         }
     };
     

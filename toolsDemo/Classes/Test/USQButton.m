@@ -7,6 +7,7 @@
 //
 
 #import "USQButton.h"
+#import "UIColor+Common.h"
 
 static BOOL highLight = NO;
 static UIColor *originColor;
@@ -63,13 +64,9 @@ static UIColor *originColor;
 - (void)layoutSubviews{
     [super layoutSubviews];
     
-    if( !kISiPad && [StateModel sharedInstance].orientation != ScreenOrientation_Vertical ){
-        self.titleLabel.font = [UIFont systemFontOfSize:13];
-    }
-    
     CGFloat w = self.width/10.0;
     CGFloat h = self.height;
-    float imageScale = kISiPad ? 1.25 : 1.2;
+    float imageScale =  1.25;
     [self.imageBgView setFrame:self.bounds];
     if(self.imageView.image==nil){
         self.imageView.hidden = YES;
@@ -85,7 +82,7 @@ static UIColor *originColor;
         if(titlePostion == USQButton_Left){
             self.titleLabel.x = w;
         }else if(titlePostion == USQButton_Right){
-            self.titleLabel.right = self.width-w;
+            self.titleLabel.x = self.width-w - self.titleLabel.width;
         }
         float imageH = self.titleLabel.height*imageScale;
         [self.imageView setFrame:CGRectMake(0, (h - imageH)/2.0, self.width/4, imageH)];
