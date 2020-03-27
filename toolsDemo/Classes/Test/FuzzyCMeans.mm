@@ -116,6 +116,7 @@
        }
     }];
 
+    NSLog(@"b-line count %d", [self sortArray:array]);
     
     
     return array.copy;
@@ -296,4 +297,25 @@ void myFCMeans(int* pSamples,int* pClusterResult,int clusterNum,int sampleNum,in
     pUArr=NULL;
 }
 
++ (int)sortArray:(NSArray*)arr {
+    int count = 0;
+    if (!arr.count) {
+        return 0;
+    }else {
+        NSMutableArray *temp = [NSMutableArray arrayWithObject:arr[0]];
+        
+        for (int i = 1; i < arr.count; i++) {
+            if ([arr[i] intValue] == [arr[i - 1] intValue] + 1) {
+                [temp addObject:arr[i]];
+            }else {
+                if(temp.count >= 5)
+                    count++;
+                temp = [NSMutableArray arrayWithObject:arr[i]];
+            }
+        }
+        if(temp.count >= 5)
+            count++;
+    }
+    return count;
+}
 @end
