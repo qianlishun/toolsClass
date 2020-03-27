@@ -62,4 +62,63 @@
     return theImage;
 }
 
+
+- (Byte *)pixelRGBBytes{
+//    CGImageRef imageRef = [self nsImageToCGImageRef:image];
+    CGImageRef imageRef = self.CGImage;
+    NSUInteger iWidth = CGImageGetWidth(imageRef);
+    NSUInteger iHeight = CGImageGetHeight(imageRef);
+    NSUInteger iBytesPerPixel = 4;
+    NSUInteger iBytesPerRow = iBytesPerPixel * iWidth;
+    NSUInteger iBitsPerComponent = 8;
+    Byte *imageBytes = (Byte *) calloc(iWidth * iHeight * iBytesPerPixel, sizeof(Byte));
+    
+    CGColorSpaceRef colorspace = CGImageGetColorSpace(imageRef);
+    
+    CGContextRef context = CGBitmapContextCreate(imageBytes,
+                                                 iWidth,
+                                                 iHeight,
+                                                 iBitsPerComponent,
+                                                 iBytesPerRow,
+                                                 colorspace,
+                                                 kCGImageAlphaPremultipliedLast);
+    
+    CGRect rect = CGRectMake(0 , 0 , iWidth , iHeight);
+    CGContextDrawImage(context , rect ,imageRef);
+    CGContextRelease(context);
+    CGImageRelease(imageRef);
+    return imageBytes;
+}
+
++ (UIImage *)initWithRgbBytes:(unsigned char [])bytes with:(CGSize)size{
+    NSUInteger w = size.width;
+    NSUInteger h = size.height;
+    NSUInteger bytesPerPixel = 4;
+    NSUInteger bytesPerRow = bytesPerPixel * w;
+    NSUInteger bitsPerComponent = 8;
+    
+    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+    CGContextRef bitmapContext = CGBitmapContextCreate(bytes, w, h, bitsPerComponent, bytesPerRow,
+                                                       colorSpace,   kCGImageAlphaPremultipliedLast);
+    
+    CGImageRef cgRef;
+    UIImage *img;
+    
+    if (!bitmapContext)
+    {
+        CGContextRelease(bitmapContext);
+        CGColorSpaceRelease(colorSpace);
+        NSLog(@"位图上下文为空！");
+        return nil;
+    }
+    cgRef = CGBitmapContextCreateImage(bitmapContext);
+    img = [[UIImage alloc]initWithCGImage:cgRef];
+    CGImageRelease(cgRef);
+    CGContextRelease(bitmapContext);
+    CGColorSpaceRelease(colorSpace);
+//    free(bytes); // 释放内存
+//    bytes = NULL;
+//    NSLog(@"end");
+    return img;
+}
 @end

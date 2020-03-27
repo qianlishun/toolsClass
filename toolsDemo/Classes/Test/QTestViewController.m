@@ -13,6 +13,7 @@
 #import "USSlider.h"
 #import <NetworkExtension/NEHotspotConfigurationManager.h>
 #import "QRulerView.h"
+#import "FuzzyCMeans.h"
 
 @interface QTestViewController ()
 @property (nonatomic,strong) QRulerView *rulerView;
@@ -24,6 +25,31 @@
 @implementation QTestViewController
 
 - (void)viewDidLoad{
+    
+    
+    UIImage *image = [UIImage imageNamed:@"blineTest2.jpg"];
+    NSArray *array = [FuzzyCMeans testFCMeauns:image];
+    
+    UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, image.size.width, image.size.height)];
+    imageView.image = image;
+    [self.view addSubview:imageView];
+    
+    imageView.center = CGPointMake(self.view.width/2, self.view.height/2);
+    
+    CAShapeLayer *layer = [CAShapeLayer layer];
+    layer.strokeColor = [UIColor colorWithRGBA:@[@30,@160,@30,@0.6]].CGColor;
+    [imageView.layer addSublayer:layer];
+
+    CGFloat h = image.size.height;
+    UIBezierPath *path = [UIBezierPath bezierPath];
+    for (NSNumber *num in array) {
+        [path moveToPoint:CGPointMake(num.intValue, 0)];
+        [path addLineToPoint:CGPointMake(num.intValue, h)];
+    }
+
+    layer.path = path.CGPath;
+    
+    return;
     CGSize thumbSize = CGSizeMake(15, 15);
     
     QSlider *pageControl = [[QSlider alloc] initWithFrame:CGRectMake(0, 0,201, 50) list:@[@30,@45,@60,@75,@90,@105]];
@@ -75,24 +101,6 @@
     
     [slider drawDotWithColor:[UIColor blackColor]];
     
-//
-//    NSString *ssid = @"SL-2C GMBJDA035";
-//    NSString *password = @"wlpbjda035";
-//
-//    if (@available(iOS 11.0, *)) {
-//        NEHotspotConfiguration * config = [[NEHotspotConfiguration alloc] initWithSSID:ssid passphrase:password isWEP:NO];
-//
-//        [[NEHotspotConfigurationManager sharedManager] getConfiguredSSIDsWithCompletionHandler:^(NSArray<NSString *> * _Nonnull list) {
-////            if( ![list containsObject:ssid] ){
-//                [[NEHotspotConfigurationManager sharedManager] applyConfiguration:config completionHandler:^(NSError * _Nullable error) {
-//                    NSLog(@"%@",error);
-//                }];
-////            }
-//        }];
-//    } else {
-//        // Fallback on earlier versions
-//    }
-
 }
 
 static bool isScrollCallBack = YES;

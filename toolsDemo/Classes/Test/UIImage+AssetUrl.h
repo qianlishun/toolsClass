@@ -9,4 +9,8 @@
 
 + (UIImage*)createImageWithColor:(UIColor*)color;
 
+
+- (Byte *)pixelRGBBytes;
+
++ (UIImage*)initWithRgbBytes:(unsigned char[])bytes with:(CGSize)size;
 @end
