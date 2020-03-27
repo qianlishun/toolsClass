@@ -21,7 +21,8 @@
     int top = 30;
     
     int* sourceBuf = (int*)malloc(width*2 * sizeof(int));
-    int* destBuf =  (int*)malloc(width * sizeof(int));
+
+    int invalidCount = 0;
 
     for (int l=0;l<width;l++) {
         int dotCount = 0;
@@ -34,10 +35,19 @@
             int dot = 0.30*r + 0.59*g + 0.11*b;
             dotCount += dot;
         }
-        sourceBuf[l*2] = l;
-        sourceBuf[l*2+1] = dotCount;
+        // 去除无效数据（黑色区域）
+        if(dotCount<20*height){
+            invalidCount++;
+            continue;
+        }
+        sourceBuf[(l-invalidCount)*2] = l;
+        sourceBuf[(l-invalidCount)*2+1] = dotCount;
     }
     
+    width = width - invalidCount;
+
+    int* destBuf =  (int*)malloc(width * sizeof(int));
+
     myFCMeans(sourceBuf, destBuf, 2, width, 2, 2);
     
     NSLog(@"b-line END");
