@@ -64,7 +64,6 @@
 
 
 - (Byte *)pixelRGBBytes{
-//    CGImageRef imageRef = [self nsImageToCGImageRef:image];
     CGImageRef imageRef = self.CGImage;
     NSUInteger iWidth = CGImageGetWidth(imageRef);
     NSUInteger iHeight = CGImageGetHeight(imageRef);
@@ -85,8 +84,9 @@
     
     CGRect rect = CGRectMake(0 , 0 , iWidth , iHeight);
     CGContextDrawImage(context , rect ,imageRef);
+//    CGImageRelease(imageRef);
     CGContextRelease(context);
-    CGImageRelease(imageRef);
+    CGColorSpaceRelease(colorspace);
     return imageBytes;
 }
 

@@ -18,7 +18,7 @@
     
     int height = image.size.height;
     int width = image.size.width;
-    int top = 30;
+    int top = 80;
     
     int* sourceBuf = (int*)malloc(width*2 * sizeof(int));
 
@@ -36,10 +36,10 @@
             dotCount += dot;
         }
         // 去除无效数据（黑色区域）
-        if(dotCount<20*height){
-            invalidCount++;
-            continue;
-        }
+//        if(dotCount<20*height){
+//            invalidCount++;
+//            continue;
+//        }
         sourceBuf[(l-invalidCount)*2] = l;
         sourceBuf[(l-invalidCount)*2+1] = dotCount;
     }
@@ -99,37 +99,52 @@
     if(error)
         NSLog(@"%@",error);
     
-    // 连续性 校验
-    [array enumerateObjectsWithOptions:NSEnumerationReverse usingBlock:^(NSNumber *num, NSUInteger idx, BOOL * _Nonnull stop) {
-       int x = num.intValue;
-       int avgGrey = sourceBuf[x*2+1] / height * 0.8;
-       int lianxuCount = 0;
-       int lianxuCountMax = 0;
-       int notLianxuCount = 0;
-       for (int y = 0; y < height; y++) {
-           int grey = pBytes[x*height + y];
-           if(grey > 50 && grey > avgGrey){
-               lianxuCount ++;
-               notLianxuCount = 0;
-           }else{
-               notLianxuCount++;
-           }
-           if(notLianxuCount>5){
-               lianxuCount = 0;
-               notLianxuCount = 0;
-           }
-           if(lianxuCount > lianxuCountMax)
-                lianxuCountMax = lianxuCount;
-        }
-       if(lianxuCountMax<50){
-           [array removeObject:num];
-       }
-    }];
+    NSArray *sortArray = [self sortArray:array];
 
-    NSLog(@"b-line count %d", [self sortArray:array]);
+    for (NSArray *arr in sortArray) {
+        float aver  = 0, greyCountXY = 0.0 , vari = 0;
+        unsigned short grey = 0;
+        
+        int start = [arr.firstObject intValue];
+        int end = [arr.lastObject intValue];
+        for (int y = top; y < height; y++) {
+            for (int x = start; x < end; x++) {
+                grey = pBytes[(width*y+x)*4];
+                greyCountXY+=grey;
+            }
+        }
+        
+        int gWidth = (end - start);
+        int gHeight = (height-top);
+        
+        // 平均值
+         aver = (float) greyCountXY / ( gWidth * gHeight );
+        
+        //  方差
+          for (int y = top; y < height; y++) {
+              for (int x = start; x < end; x++) {
+                  grey = pBytes[(width*y+x)*4];
+                  if(grey<aver/2)
+                      grey = aver;
+                  vari = vari + (grey - aver) * (grey - aver);
+              }
+          }
+          
+          vari = vari / (gWidth * gHeight);
+
+          float vaScale =  (vari / aver);
+          
+          NSLog(@"平均 %.2f 方差 %.2f .. %.2f ", aver , vari ,  (vari / aver) );
+      
+          if(vaScale>8){
+//              [array removeObjectsInArray:arr];
+          }
+    }
+    sortArray = [self sortArray:array];
+    NSLog(@"b-line count %lu", (unsigned long)sortArray.count);
     
     
-    return array.copy;
+    return sortArray.copy;
 }
 
 
@@ -307,8 +322,9 @@ void myFCMeans(int* pSamples,int* pClusterResult,int clusterNum,int sampleNum,in
     pUArr=NULL;
 }
 
-+ (int)sortArray:(NSArray*)arr {
++ (NSArray*)sortArray:(NSArray*)arr {
     int count = 0;
+    NSMutableArray *array = [NSMutableArray array];
     if (!arr.count) {
         return 0;
     }else {
@@ -318,14 +334,19 @@ void myFCMeans(int* pSamples,int* pClusterResult,int clusterNum,int sampleNum,in
             if ([arr[i] intValue] == [arr[i - 1] intValue] + 1) {
                 [temp addObject:arr[i]];
             }else {
-                if(temp.count >= 5)
+                if(temp.count >= 5){
+                    [array addObject:temp.copy];
                     count++;
+                }
                 temp = [NSMutableArray arrayWithObject:arr[i]];
             }
         }
-        if(temp.count >= 5)
+        if(temp.count >= 5){
+            [array addObject:temp.copy];
             count++;
+        }
     }
-    return count;
+    return array.copy;
 }
+
 @end

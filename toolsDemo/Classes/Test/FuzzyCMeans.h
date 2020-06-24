@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSArray*)testFCMeauns:(UIImage*)image;
 
+//+ (void)detect:(Byte*)pImgData size:(CGSize)size;
 @end
 
 NS_ASSUME_NONNULL_END

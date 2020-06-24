@@ -34,6 +34,8 @@
                          @"QEatController",@"去哪吃",
                          @"SetQRCodeController",@"生成二维码",
                          @"ScanController",@"扫描二维码",
+                         @"QMeasureController",@"Measure",
+                         @"QFindLineStoryboard",@"血管处理测试",
                          @"QTestStoryboard",@"Test",
                          @"QNewsHomeController",@"一个新闻界面",
                          @"ImagePlayController",@"图片无限轮播",
@@ -84,7 +86,8 @@
     UIViewController *vc;
     if([str containsString:@"Storyboard"]){
         UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:str bundle:[NSBundle mainBundle]];
-        vc = [storyBoard instantiateViewControllerWithIdentifier:@"QTestViewController"];
+        NSString *classStr = [str stringByReplacingOccurrencesOfString:@"Storyboard" withString:@"ViewController"];
+        vc = [storyBoard instantiateViewControllerWithIdentifier:classStr];
     }else{
         vc = [NSClassFromString(str) new];
     }
