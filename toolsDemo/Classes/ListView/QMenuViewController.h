@@ -1,8 +1,8 @@
 //
-//  QScrollView.h
+//  QMenuViewController.h
 //  toolsDemo
 //
-//  Created by mrq on 2020/1/10.
+//  Created by mrq on 2020/12/11.
 //  Copyright © 2020 钱立顺. All rights reserved.
 //
 
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface QScrollView : UIScrollView
+@interface QMenuViewController : UIViewController
 
 @end
 

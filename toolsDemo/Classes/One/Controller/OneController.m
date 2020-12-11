@@ -46,6 +46,8 @@
                          @"QWaveController",@"~~~波~~~",
                          @"QZoneViewController",@"仿QQ头部下拉图片",
                          @"QColorsViewController",@"渐变色",
+                         @"QFangzuViewController",@"房",
+                         @"QMenuViewController",@"List",
                          ];
 
 //    UIButton *button=[UIButton buttonWithType:UIButtonTypeCustom];

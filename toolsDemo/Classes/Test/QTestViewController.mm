@@ -44,10 +44,10 @@
     layer.path = path.CGPath;
     
     
-    return;
+//    return;
     @autoreleasepool {
         
-    UIImage *image = [UIImage imageNamed:@"test222.jpeg"];
+    UIImage *image = [UIImage imageNamed:@"blineTest2.jpg"];
     int height = image.size.height;
     int width = image.size.width;
     
@@ -89,6 +89,7 @@
     CGFloat h = image.size.height;
     UIBezierPath *path = [UIBezierPath bezierPath];
    
+        /*
      boundingbox_t bbox = { 0,0,width,height };
 
      std::vector<line_float_t> lines;
@@ -128,12 +129,13 @@
             [path addLineToPoint:CGPointMake(line.endx + start, line.endy)];
         }
     }
-//    for (NSArray *arr in array) {
-//        for (NSNumber *num in arr) {
-//            [path moveToPoint:CGPointMake(num.intValue, 0)];
-//            [path addLineToPoint:CGPointMake(num.intValue, h)];
-//        }
-//    }
+        */
+    for (NSArray *arr in array) {
+        for (NSNumber *num in arr) {
+            [path moveToPoint:CGPointMake(num.intValue, 0)];
+            [path addLineToPoint:CGPointMake(num.intValue, h)];
+        }
+    }
 
     layer.path = path.CGPath;
 }

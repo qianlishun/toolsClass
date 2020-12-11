@@ -30,6 +30,7 @@
 
 @property (nonatomic,strong) USScrawl *creatingScrawl;
 
+@property (nonatomic,assign) BOOL autoEndScrawl;
 
 - (UIImage*)getAnchorImage:(int)anchorType selected:(BOOL)selected;
 
@@ -45,4 +46,5 @@
 
 - (void)addMark:(USMark*)marker;
 
+- (void)endScrawl;
 @end

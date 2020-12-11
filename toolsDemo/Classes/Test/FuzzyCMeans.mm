@@ -23,6 +23,7 @@
     int* sourceBuf = (int*)malloc(width*2 * sizeof(int));
 
     int invalidCount = 0;
+    int allDotCount = 0;
 
     for (int l=0;l<width;l++) {
         int dotCount = 0;
@@ -42,9 +43,19 @@
 //        }
         sourceBuf[(l-invalidCount)*2] = l;
         sourceBuf[(l-invalidCount)*2+1] = dotCount;
+        allDotCount+=dotCount;
     }
     
     width = width - invalidCount;
+    
+    float avgDotCount = allDotCount / ((height - top) * width);
+    
+    int gain = 80, zoom = 3;
+    
+    float avgThreshold = (15 * (gain/80.0)*(gain/80.0) + zoom * 5);
+    
+    if(avgDotCount <=  avgThreshold)
+        return nil;
 
     int* destBuf =  (int*)malloc(width * sizeof(int));
 
@@ -99,8 +110,79 @@
     if(error)
         NSLog(@"%@",error);
     
-    NSArray *sortArray = [self sortArray:array];
+    // 分组
+    NSArray<NSArray*> *sortArray = [self sortArray:array];
+    
+    for( int i = 0; i < sortArray.count; i++){
+        NSArray *arr = sortArray[i];
+        if(arr.count<2){
+            [array removeObjectsInArray:arr];
+            continue;
+        }
+        int start = [arr.firstObject intValue] - 5;
+        if(start<0) start = 0;
+        int end = [arr.lastObject intValue]+5;
+        if(end>width-1) end = width-1;
+        
+        int gWidth = (end - start);
+        int gHeight = (height-top);
+        
+        int nnIndex = 0;
+        
+        float aver  = 0, greyCountXY = 0.0;// vari = 0;
+        unsigned short grey = 0;
 
+        for (int y = top; y < height; y++) {
+            for (int x = start; x < end; x++) {
+                grey = pBytes[x*height + y];
+                greyCountXY+=grey;
+                nnIndex++;
+            }
+        }
+        
+        // 平均值
+        aver = (float) greyCountXY / ( gWidth * gHeight );
+        
+        if( aver < avgDotCount + 5){
+            if(array.count == arr.count)
+                [array removeAllObjects];
+            else
+                [array removeObjectsInArray:arr];
+            continue;
+        }
+        
+                
+        if(arr.count > width / 1.6){
+            NSMutableArray *peakSource = [NSMutableArray array];
+             for (NSNumber *n in arr) {
+                 int l = n.intValue;
+                 int y = sourceBuf[l*2+1];
+                 [peakSource addObject:[NSNumber numberWithInt:y]];
+             }
+            
+//            NSArray *troughIndexs = [self findPeakAndTrough:peakSource];
+//            NSLog(@"%lu",(unsigned long)troughIndexs.count);
+            
+            // 查找波谷 (考虑是否做波谷阈值的筛选，去除小的波谷, 阈值设多少合适?)
+             NSArray *troughIndexs = [self findTrough:peakSource];
+             if(troughIndexs.count){
+                 int minIndex = [troughIndexs[0] intValue];
+                 for (int j = 0; j < troughIndexs.count; j++) {
+                     int index = [troughIndexs[j] intValue];
+                     int y0 = [peakSource[index] intValue];
+                     int y1 = [peakSource[minIndex] intValue];
+                     if(y0 < y1 && minIndex > 5 && minIndex < troughIndexs.count-5)
+                         minIndex = index;
+                 }
+                 if([array containsObject:arr[minIndex]])
+                     [array removeObject: arr[minIndex]];
+             }
+            [peakSource removeAllObjects];
+            peakSource = nil;
+        }
+
+    }
+    /*
     for (NSArray *arr in sortArray) {
         float aver  = 0, greyCountXY = 0.0 , vari = 0;
         unsigned short grey = 0;
@@ -140,6 +222,7 @@
 //              [array removeObjectsInArray:arr];
           }
     }
+     */
     sortArray = [self sortArray:array];
     NSLog(@"b-line count %lu", (unsigned long)sortArray.count);
     
@@ -348,5 +431,47 @@ void myFCMeans(int* pSamples,int* pClusterResult,int clusterNum,int sampleNum,in
     }
     return array.copy;
 }
+
+
+// 查询波谷
++ (NSArray*)findTrough:(NSArray*)v{
+    
+    int width = (int)v.count;
+    
+    NSMutableArray *diff_v = [NSMutableArray array];
+    for (int i = 0; i < width; i++) {
+        diff_v[i] = @0;
+    }
+    // 计算V的一阶差分和符号函数trend
+    for (int i = 0; i < width-1; i++){
+        if ([v[i + 1] intValue] - [v[i] intValue] > 0){
+            diff_v[i] = @1;
+        }else if ([v[i + 1] intValue] - [v[i] intValue] < 0){
+            diff_v[i] = @-1;
+        }else{
+            diff_v[i] = @0;
+        }
+     }
+     // 对Trend作了一个遍历
+     for (int i = width - 1; i >= 0; i--){
+         if ([diff_v[i] intValue] == 0 && i ==width-1){
+             diff_v[i] = @1;
+         }else if (diff_v[i] == 0){
+             if ([diff_v[i + 1] intValue] >= 0){
+                 diff_v[i] = @1;
+             }else{
+                 diff_v[i] = @-1;
+             }
+         }
+     }
+    NSMutableArray *array = [NSMutableArray array];
+     for (int i = 0; i < width - 1; i++)
+     {
+         if ([diff_v[i + 1] intValue] - [diff_v[i] intValue] == 2) // 2 为波谷
+            [array addObject:[NSNumber numberWithInt:i+1]];
+     }
+    
+    return array.copy;
+ }
 
 @end

@@ -403,16 +403,20 @@ static int moveCount = 0;
     }
 }
 
+- (void)endScrawl{
+    [(USScrawl*)_creatingScrawl scrawlEnd];
+    _creatingScrawl = nil;
+}
+
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     if(_creatingScrawl && !_creatingScrawl.isCreatYet){
         [_creatingScrawl addPoint:[[USPoint alloc]initWith:-1 and:-1]];
-        
-        /*
-         // 开启此代码表示手指抬起即结束此次涂鸦
-        [(USScrawl*)_creatingScrawl scrawlEnd];
-        _creatingScrawl = nil;
-        [self updateLayer];
-         */
+
+        if(self.autoEndScrawl){
+             // 开启此代码表示手指抬起即结束此次涂鸦
+            [self endScrawl];
+            [self updateLayer];
+        }
     }
     if (_creatingMeasure.isCreatYet) {
         _creatingMeasure = nil;

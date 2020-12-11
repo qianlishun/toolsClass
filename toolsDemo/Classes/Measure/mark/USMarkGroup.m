@@ -72,9 +72,9 @@
 }
 
 - (void)draw:(CAShapeLayer*)layer{
+    [scrawlGroup draw:layer];
     [measureGroup draw:layer];
     [annotateGroup draw:layer];
-    [scrawlGroup draw:layer];
 }
 
 - (BOOL)isCreatYet{

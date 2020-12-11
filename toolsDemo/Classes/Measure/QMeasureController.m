@@ -56,6 +56,12 @@
     _markView = [[USMarkView alloc]initWithFrame:_imageView.frame];
      [self.view addSubview:_markView];
     
+    /*
+     设置为抬起手就结束自由涂鸦，
+     如果 autoEndScrawl 设置为NO，则需要调用endScrawl结束当前涂鸦
+     */
+    _markView.autoEndScrawl = YES;
+    
     // 设置测量结果标签位置
     USRect *rect = [[USRect alloc]initWithLeft:15 top:self.markView.bounds.size.height-100 width:150 height:60];
     [USMeasureGroup setTopResultRect:rect];
@@ -81,6 +87,8 @@
 }
 
 - (void)onMeasureMenu:(id)sender{
+    if([self checkMarkCreating])
+        return;
     _measureMenuView.hidden = !_measureMenuView.hidden;
 }
  
@@ -121,10 +129,10 @@
 - (BOOL)checkMarkCreating{
     if(self.markView.creatingScrawl){
         /*
-         结束自由涂鸦绘制,
-         如果要设置为抬起手就结束，前往USMarkView.m  touchesEnded处修改
+         如果 autoEndScrawl 设置为NO，则需要调用endScrawl结束此次涂鸦
          */
-        [self.markView.creatingScrawl scrawlEnd];
+        [self.markView endScrawl];
+        return YES;
     }
     if (self.markView.creatingAnnotate) {
         NSLog(@"请先完成标签的添加.");
@@ -142,9 +150,6 @@
 #pragma mark - MeasureMenu Delegate
 - (void)measureSelect:(NSUInteger)tag menuView:(MeasureMenuView *)view{
     _measureMenuView.hidden = YES;
-    
-    if([self checkMarkCreating])
-        return;
     
     tag = [MeasureHeader str2Tag:_measureMenuView.list[tag]];
     
