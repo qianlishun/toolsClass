@@ -61,8 +61,8 @@ static CGFloat kCellHeight = 44;
         [self.stackView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.center.equalTo(self);
             make.height.equalTo(self);
-            make.left.mas_equalTo(10);
-            make.right.mas_equalTo(-10);
+            make.left.equalTo(self).offset(10);
+            make.right.equalTo(self).offset(-10);
         }];
     }
     

@@ -71,8 +71,7 @@
     textField3.scrollEnabled = NO;
 
     
-    UITextView *textField4 = [[UITextView alloc]initWithFrame:CGRectMake(0, 0, 100, 200)];
-    textField3.contentSize = CGSizeMake(100, 200);
+    UITextView *textField4 = [[UITextView alloc]initWithFrame:CGRectMake(0, 0, 300, 200)];
     textField4.text = @"text view";
     textField4.backgroundColor = [UIColor orangeColor];
     textField4.scrollEnabled = NO;
@@ -117,7 +116,8 @@
          insertCell:@{@"pick":@[_datePicker]} afterID:@"Insert"];
         
         [_datePicker mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.centerY.right.equalTo(_datePicker.superview);
+            make.centerY.equalTo(_datePicker.superview);
+            make.right.equalTo(_datePicker.superview).offset(-10);
         }];
     }
 }
