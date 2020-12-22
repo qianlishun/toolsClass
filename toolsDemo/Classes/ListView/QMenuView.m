@@ -9,14 +9,13 @@
 #import "QMenuView.h"
 #import "QTableView.h"
 #import "QTableViewCell.h"
+#import "Masonry.h"
 
 @interface QMenuView ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic,strong) QTableView *tableView;
-
 @property(strong, nonatomic) NSMutableArray<NSString*> *idSource;
-@property(strong, nonatomic) NSMutableArray<NSString*> *nameSource;
-@property(strong, nonatomic) NSMutableArray<UIView*> *viewSource;
+@property(strong, nonatomic) NSMutableArray<NSArray<UIView*>*> *viewSource;
 
 @end
 
@@ -28,6 +27,9 @@ static NSString *const kTableViewCellID = @"QTableView_cell";
 {
     self = [super initWithFrame:frame];
     if (self) {
+        self.viewSource = [NSMutableArray array];
+        self.idSource = [NSMutableArray array];
+ 
         self.tableView = [[QTableView alloc]initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height)];
         [self.tableView showsCustomVertiScrollIndicator:YES];
         [self.tableView setVerIndicatorX:self.tableView.width-4];
@@ -37,61 +39,54 @@ static NSString *const kTableViewCellID = @"QTableView_cell";
         self.tableView.separatorColor = [UIColor lightGrayColor];
         self.tableView.estimatedRowHeight = 44;
         self.tableView.rowHeight = UITableViewAutomaticDimension;
+
     }
     return self;
 }
 
-- (void)setViewList:(NSArray *)views forNames:(NSArray *)names{
-    self.viewSource = [NSMutableArray arrayWithArray:views];
-    self.nameSource = [NSMutableArray arrayWithArray:names];
-    self.idSource = [NSMutableArray arrayWithArray:names];
-    
+- (void)setCellList:(NSArray *)cells{
+    self.idSource = [NSMutableArray array];
+    self.viewSource = [NSMutableArray array];
+    for (int i = 0; i < cells.count; i++) {
+        NSDictionary *dict = cells[i];
+        NSString *ID = dict.allKeys.firstObject;
+        NSArray *array = dict.allValues.firstObject;
+        if(ID && array){
+            [self.idSource addObject:ID];
+            [self.viewSource addObject:array];
+        }
+    }
     [self.tableView reloadData];
 }
 
-- (void)appendView:(UIView *)view name:(NSString *)name forID:(NSString *)ID{
-    [self.viewSource addObject:view];
-    [self.nameSource addObject:name];
-    if(ID){
+- (void)appendCell:(NSDictionary *)cell{
+    NSString *ID = cell.allKeys.firstObject;
+    NSArray *array = cell.allValues.firstObject;
+    if(ID && array){
         [self.idSource addObject:ID];
-    }else{
-        [self.idSource addObject:name];
+        [self.viewSource addObject:array];
+        [self.tableView reloadData];
     }
-    
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:self.nameSource.count-1 inSection:0];
-    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 
-- (void)insertViewAfterID:(NSString *)afterID view:(UIView *)view name:(NSString *)name forID:(NSString *)ID{
-    
+
+- (void)insertCell:(NSDictionary *)cell afterID:(NSString *)afterID{
     if([self.idSource containsObject:afterID]){
         NSUInteger index = [self.idSource indexOfObject:afterID]+1;
 
-        [self.viewSource insertObject:view atIndex:index];
-        [self.nameSource insertObject:name atIndex:index];
+        NSString *ID = cell.allKeys.firstObject;
+        NSArray *array = cell.allValues.firstObject;
         if(ID){
             [self.idSource insertObject:ID atIndex:index];
-        }else{
-            [self.idSource insertObject:name atIndex:index];
+            [self.viewSource insertObject:array atIndex:index];
+            
+            NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:0];
+            [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
         }
-        
-        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:0];
-        [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-
-    }else{
-        [self.viewSource addObject:view];
-        [self.nameSource addObject:name];
-        if(ID){
-            [self.idSource addObject:ID];
-        }else{
-            [self.idSource addObject:name];
-        }
-        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:self.nameSource.count-1 inSection:0];
-        [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }
 }
 
-- (UIView *)findViewWithID:(NSString *)ID{
+- (NSArray *)findCellWithID:(NSString *)ID{
     if([self.idSource containsObject:ID]){
         NSUInteger index = [self.idSource indexOfObject:ID];
         
@@ -100,11 +95,10 @@ static NSString *const kTableViewCellID = @"QTableView_cell";
     return nil;
 }
 
-- (BOOL)deleteViewWithID:(NSString *)ID{
+- (BOOL)deleteCellWithID:(NSString *)ID{
     if([self.idSource containsObject:ID]){
         NSUInteger index = [self.idSource indexOfObject:ID];
         
-        [self.nameSource removeObjectAtIndex:index];
         [self.viewSource removeObjectAtIndex:index];
         [self.idSource removeObjectAtIndex:index];
         
@@ -116,9 +110,8 @@ static NSString *const kTableViewCellID = @"QTableView_cell";
 }
 
 #pragma mark - TableView DataSource & Delegate
-
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return [self.viewSource[indexPath.row] height];
+    return [self.viewSource[indexPath.row].lastObject.superview height];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -126,7 +119,7 @@ static NSString *const kTableViewCellID = @"QTableView_cell";
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return self.nameSource.count;
+    return self.idSource.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -136,8 +129,10 @@ static NSString *const kTableViewCellID = @"QTableView_cell";
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     
-    [cell setText:NSLocalizedString(self.nameSource[indexPath.row], nil)];
-    [cell setView:self.viewSource[indexPath.row]];
+    [cell setViews:self.viewSource[indexPath.row]];
+    
+//    [cell setText:NSLocalizedString(self.nameSource[indexPath.row], nil)];
+//    [cell setView:self.viewSource[indexPath.row]];
     
     return cell;
 }
@@ -148,16 +143,13 @@ static NSString *const kTableViewCellID = @"QTableView_cell";
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    if (indexPath.row==self.viewSource.count-1) {
-    }else{
-        if ([cell respondsToSelector:@selector(setSeparatorInset:)])
-        {
-            [cell setSeparatorInset:UIEdgeInsetsMake(0, 10, 0, 10)];
-        }
-        if ([cell respondsToSelector:@selector(setLayoutMargins:)])
-        {
-            [cell setLayoutMargins:UIEdgeInsetsMake(0, 10, 0, 10)];
-        }
+    if ([cell respondsToSelector:@selector(setSeparatorInset:)])
+    {
+        [cell setSeparatorInset:UIEdgeInsetsMake(0, 10, 0, 10)];
+    }
+    if ([cell respondsToSelector:@selector(setLayoutMargins:)])
+    {
+        [cell setLayoutMargins:UIEdgeInsetsMake(0, 10, 0, 10)];
     }
   
 }

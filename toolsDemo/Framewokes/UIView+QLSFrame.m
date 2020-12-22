@@ -38,6 +38,10 @@
     return self.frame.origin.x + self.frame.size.width;
 }
 
+- (CGFloat)bottom{
+    return self.frame.origin.y + self.frame.size.height;
+}
+
 - (void)setCenterX:(CGFloat)centerX
 {
     CGPoint center = self.center;
@@ -79,6 +83,12 @@
 - (void)setRight:(CGFloat)right{
     CGRect frame = self.frame;
     frame.origin.x = right - frame.size.width;
+    self.frame = frame;
+}
+
+- (void)setBottom:(CGFloat)bottom{
+    CGRect frame = self.frame;
+    frame.origin.y = bottom - frame.size.height;
     self.frame = frame;
 }
 

@@ -10,7 +10,9 @@
 
 @interface QTableViewCell : UITableViewCell
 
-- (void)setText:(NSString*)text;
-- (void)setView:(UIView*)view;
+- (void)setViews:(NSArray*)views;
+
+//- (void)setText:(NSString*)text;
+//- (void)setView:(UIView*)view;
 
 @end

@@ -11,13 +11,29 @@
 
 @interface QMenuView : UIView
 
-- (void)setViewList:(NSArray*)views forNames:(NSArray*)names;
+/*
+ cells NSArray
+ [
+    {"ID1":[label1,view1,lablel2,view2]},
+    {"ID2":[label,view]},
+    {"ID3":[view]}
+ ]
+ */
+- (void)setCellList:(NSArray*)cells;
 
-- (void)appendView:(UIView*)view name:(NSString*)name forID:(NSString*)ID;
 
-- (void)insertViewAfterID:(NSString *)afterID view:(UIView*)view name:(NSString*)name forID:(NSString*)ID;
+/*
+ cell NSDictionary
+ {
+    "ID":[label1,view1,label2,view2]
+ }
+ */
+- (void)appendCell:(NSDictionary*)cell;
 
-- (BOOL)deleteViewWithID:(NSString*)ID;
+- (void)insertCell:(NSDictionary*)cell afterID:(NSString*)afterID;
 
-- (UIView*)findViewWithID:(NSString*)ID;
+- (BOOL)deleteCellWithID:(NSString*)ID;
+
+- (NSArray*)findCellWithID:(NSString*)ID;
+
 @end
