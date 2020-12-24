@@ -56,7 +56,7 @@ static NSString *const kTableViewCellID = @"QTableView_cell";
             [self.viewSource addObject:array];
         }
     }
-    [self.tableView reloadData];
+    [self reloadTableView];
 }
 
 - (void)appendCell:(NSDictionary *)cell{
@@ -65,7 +65,9 @@ static NSString *const kTableViewCellID = @"QTableView_cell";
     if(ID && array){
         [self.idSource addObject:ID];
         [self.viewSource addObject:array];
-        [self.tableView reloadData];
+        
+        [self delayReloadTableView];
+
     }
 }
 
@@ -81,7 +83,10 @@ static NSString *const kTableViewCellID = @"QTableView_cell";
             [self.viewSource insertObject:array atIndex:index];
             
             NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:0];
+            
+            [self.tableView beginUpdates];
             [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+            [self.tableView endUpdates];
         }
     }
 }
@@ -103,15 +108,31 @@ static NSString *const kTableViewCellID = @"QTableView_cell";
         [self.idSource removeObjectAtIndex:index];
         
         NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:0];
+        
+        [self.tableView beginUpdates];
         [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        [self.tableView endUpdates];
+
         return YES;
     }
     return NO;
 }
 
+- (void)delayReloadTableView{
+    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(reloadTableView) object:nil];
+    [self performSelector:@selector(reloadTableView) withObject:nil afterDelay:0.05];
+}
+
+- (void)reloadTableView{
+    [self.tableView reloadData];
+}
+
 #pragma mark - TableView DataSource & Delegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return [self.viewSource[indexPath.row].lastObject.superview height];
+    CGFloat h = [self.viewSource[indexPath.row].lastObject.superview height];
+    NSLog(@"%ld ,%.f",(long)indexPath.row,h);
+//    if(h < 44) h = 44;
+    return h;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -145,11 +166,11 @@ static NSString *const kTableViewCellID = @"QTableView_cell";
     
     if ([cell respondsToSelector:@selector(setSeparatorInset:)])
     {
-        [cell setSeparatorInset:UIEdgeInsetsMake(0, 10, 0, 10)];
+        [cell setSeparatorInset:UIEdgeInsetsMake(5, 10, 5, 10)];
     }
     if ([cell respondsToSelector:@selector(setLayoutMargins:)])
     {
-        [cell setLayoutMargins:UIEdgeInsetsMake(0, 10, 0, 10)];
+        [cell setLayoutMargins:UIEdgeInsetsMake(5, 10, 5, 10)];
     }
   
 }

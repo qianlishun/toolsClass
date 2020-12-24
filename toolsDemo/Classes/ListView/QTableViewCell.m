@@ -11,8 +11,6 @@
 
 @interface QTableViewCell()
 
-@property (nonatomic,strong) UIStackView *stackView;
-
 @property (nonatomic,strong) NSArray<UIView*>* theViews;
 
 @property (nonatomic,strong) UIView *theView;
@@ -50,29 +48,10 @@ static CGFloat kCellHeight = 44;
     return self;
 }
 
-- (UIStackView *)stackView{
-    if(!_stackView){
-        _stackView = [[UIStackView alloc]initWithFrame:CGRectMake(0, 0, self.width, self.height)];
-        [self.contentView addSubview:_stackView];
-        _stackView.axis = UILayoutConstraintAxisHorizontal;
-        _stackView.alignment = UIStackViewAlignmentCenter;
-        _stackView.distribution =  UIStackViewDistributionFill;
-        
-        [self.stackView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.center.equalTo(self);
-            make.height.equalTo(self);
-            make.left.equalTo(self).offset(10);
-            make.right.equalTo(self).offset(-10);
-        }];
-    }
-    
-    return _stackView;
-}
-
 - (void)prepareForReuse{
     [super prepareForReuse];
     
-    for (UIView* v in self.stackView.subviews) {
+    for (UIView* v in self.theViews) {
         [v removeFromSuperview];
     }
     self.theViews = nil;
@@ -97,25 +76,56 @@ static CGFloat kCellHeight = 44;
         _theViews = views;
     }
     
-    
+     
     if(views.count>1){
-        CGFloat H = 0;
+        CGFloat x = 10;
+        CGFloat H = self.height;
         for(int i = 0; i < views.count; i++){
             UIView *v = views[i];
             if(v.height>H){
                 H = v.height;
                 [self setHeight:H];
-                [self.stackView setHeight:H];
+
+            }else{
+                [v setHeight:H];
             }
-            [self.stackView addArrangedSubview:v];
+            if([v isKindOfClass:[UILabel class]]){
+                [v sizeToFit];
+                v.height = H;
+            }else if([v isKindOfClass:[UITextField class]]){
+                if(i==0)
+                    [(UITextField*)v setTextAlignment:NSTextAlignmentLeft];
+                else if(i==views.count-1)
+                    [(UITextField*)v setTextAlignment:NSTextAlignmentRight];
+            }
+            
+            v.x = x;
+            
+            x = v.right;
+            
+            if(i == views.count-1)
+                v.width = self.width - 10 - v.x;
+            
+            v.backgroundColor = [UIColor colorWithRed:arc4random_uniform(255)/255.0 green:arc4random_uniform(255)/255.0 blue:arc4random_uniform(255)/255.0 alpha:1];
+            
+            [self.contentView addSubview:v];
+
+        }
+        
+        if(![views.lastObject isKindOfClass:[UITextField class]]){
+              [views mas_distributeViewsAlongAxis:MASAxisTypeHorizontal withFixedSpacing:0 leadSpacing:10 tailSpacing:10];
+              [views mas_makeConstraints:^(MASConstraintMaker *make) {
+                  make.height.mas_equalTo(H);
+                  make.centerY.equalTo(self.contentView);
+              }];
         }
     }else if(views.count==1){
         UIView *v = views[0];
 
         [self.contentView addSubview:v];
         
-        [self setHeight:v.height];
-
+        [self setHeight:v.height+10];
+        
         [v mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.center.equalTo(self);
             make.height.mas_equalTo(v.height);

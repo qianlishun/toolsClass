@@ -51,13 +51,13 @@
     
     NSArray *names = @[@"111111",@"222222",@"33333333",@"Insert"];
     
-    UILabel *label1 = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 100, 44)];
+    UILabel *label1 = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 80, 44)];
     label1.text  = names[0];
-    UILabel *label2 = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 100, 44)];
+    UILabel *label2 = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 80, 44)];
     label2.text = names[1];
-    UILabel *label3 = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 100, 44)];
+    UILabel *label3 = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 80, 44)];
     label3.text = names[2];
-    UILabel *label4 = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 100, 44)];
+    UILabel *label4 = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 80, 44)];
     label4.text = names[3];
 
     UITextField *textField1 = [[UITextField alloc]initWithFrame:CGRectMake(0, 0, 100, 44)];
@@ -100,6 +100,18 @@
     
     [self.menuView appendCell:@{@"555":@[label5]}];
 
+    
+    UILabel *label41 = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 100, 44)];
+    label41.backgroundColor = [UIColor colorWithWhite:0.2 alpha:1.0];
+    label41.text = @"测试测试";
+    UILabel *label42 = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 100, 44)];
+    label42.backgroundColor = [UIColor colorWithWhite:0.45 alpha:1.0];
+    label42.text = @"测试测试测试";
+    UILabel *label43 = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 100, 44)];
+    label43.backgroundColor = [UIColor colorWithWhite:0.7 alpha:1.0];
+    label43.text = @"测试";
+
+    [self.menuView appendCell:@{@"444":@[label41,label42,label43]}];
 }
 
 
