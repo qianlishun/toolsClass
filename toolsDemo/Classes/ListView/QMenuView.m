@@ -17,6 +17,8 @@
 @property(strong, nonatomic) NSMutableArray<NSString*> *idSource;
 @property(strong, nonatomic) NSMutableArray<NSArray<UIView*>*> *viewSource;
 
+@property (nonatomic,assign) CGSize cellSize;
+
 @end
 
 @implementation QMenuView
@@ -40,8 +42,13 @@ static NSString *const kTableViewCellID = @"QTableView_cell";
         self.tableView.estimatedRowHeight = 44;
         self.tableView.rowHeight = UITableViewAutomaticDimension;
 
+        _cellSize = CGSizeMake(frame.size.width, 44);
     }
     return self;
+}
+
+- (void)setCellSize:(CGSize)size{
+    _cellSize = size;
 }
 
 - (void)setCellList:(NSArray *)cells{
@@ -150,7 +157,7 @@ static NSString *const kTableViewCellID = @"QTableView_cell";
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     
-    [cell setViews:self.viewSource[indexPath.row]];
+    [cell setViews:self.viewSource[indexPath.row] size:_cellSize];
     
 //    [cell setText:NSLocalizedString(self.nameSource[indexPath.row], nil)];
 //    [cell setView:self.viewSource[indexPath.row]];

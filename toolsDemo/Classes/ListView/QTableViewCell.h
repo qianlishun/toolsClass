@@ -10,7 +10,7 @@
 
 @interface QTableViewCell : UITableViewCell
 
-- (void)setViews:(NSArray*)views;
+- (void)setViews:(NSArray*)views size:(CGSize)size;
 
 //- (void)setText:(NSString*)text;
 //- (void)setView:(UIView*)view;

@@ -36,4 +36,6 @@
 
 - (NSArray*)findCellWithID:(NSString*)ID;
 
+- (void)setCellSize:(CGSize)size;
+
 @end
