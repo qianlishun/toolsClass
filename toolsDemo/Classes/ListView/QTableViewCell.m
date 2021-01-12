@@ -89,9 +89,13 @@ static CGFloat kCellHeight = 44;
             }
             [self setHeight:H];
             
-            if([v isKindOfClass:[UILabel class]]){
-                [v sizeToFit];
+            [v sizeToFit];
+            if(v.height>H)
                 v.height = H;
+            
+            if([v isKindOfClass:[UILabel class]]){
+//                [v sizeToFit];
+//                v.height = H;
             }else if([v isKindOfClass:[UITextField class]]){
                 if(i==0)
                     [(UITextField*)v setTextAlignment:NSTextAlignmentLeft];
@@ -112,12 +116,12 @@ static CGFloat kCellHeight = 44;
 
         }
         
-        if(![views.lastObject isKindOfClass:[UITextField class]]){
-              [views mas_distributeViewsAlongAxis:MASAxisTypeHorizontal withFixedSpacing:0 leadSpacing:10 tailSpacing:10];
-              [views mas_makeConstraints:^(MASConstraintMaker *make) {
-//                  make.height.mas_equalTo(H);
-                  make.centerY.equalTo(self.contentView);
-              }];
+        if(views.count>2){
+            [views mas_distributeViewsAlongAxis:MASAxisTypeHorizontal withFixedSpacing:10 leadSpacing:10 tailSpacing:10];
+            [views mas_makeConstraints:^(MASConstraintMaker *make) {
+//                make.height.mas_equalTo();
+                make.centerY.equalTo(self.contentView);
+            }];
         }
     }else if(views.count==1){
         UIView *v = views[0];

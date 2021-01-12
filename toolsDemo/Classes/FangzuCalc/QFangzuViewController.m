@@ -95,11 +95,14 @@
     
     int temp = zong-qita, lixi = 0;
     
-    for (int i = 1; i <= 12 / type; i++) {
-        temp -= yuezu * type;
+    
+    for (int i = 1; i <= 12/type; i++) {
         
-        lixi += ( (temp * ( 12 - (i*type) ) / 12 * nianhua) / 100 );
+        temp -= (yuezu*type);
         
+        lixi +=  (temp * type / 12 * nianhua / 100);
+        
+        NSLog(@"%d",lixi);
     }
     
     int zuizhong = zong - lixi;
