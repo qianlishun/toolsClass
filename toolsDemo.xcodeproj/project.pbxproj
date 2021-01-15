@@ -165,6 +165,24 @@
 		6E27879C23FBCE3E00CFA171 /* MASViewConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E27879223FBCE3E00CFA171 /* MASViewConstraint.m */; };
 		6E27879D23FBCE3E00CFA171 /* MASViewAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E27879323FBCE3E00CFA171 /* MASViewAttribute.m */; };
 		6E2E8621242215E500BBC4A1 /* FuzzyCMeans.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6E2E8620242215E500BBC4A1 /* FuzzyCMeans.mm */; };
+		6E37422125B1B28F00072630 /* SelPlaybackControls.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E37421825B1B28F00072630 /* SelPlaybackControls.m */; };
+		6E37422225B1B28F00072630 /* SelVideoPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E37421925B1B28F00072630 /* SelVideoPlayer.m */; };
+		6E37422325B1B28F00072630 /* SelPlayerConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E37421E25B1B28F00072630 /* SelPlayerConfiguration.m */; };
+		6E37422425B1B28F00072630 /* SelVideoSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E37422025B1B28F00072630 /* SelVideoSlider.m */; };
+		6E37422A25B1B2BD00072630 /* QVideoPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E37422925B1B2BD00072630 /* QVideoPlayerViewController.m */; };
+		6E37423325B1B2FA00072630 /* USMediaBrowserView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E37423225B1B2FA00072630 /* USMediaBrowserView.m */; };
+		6E37424C25B1BC3700072630 /* KGPhotosCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E37423825B1BC3700072630 /* KGPhotosCell.xib */; };
+		6E37424D25B1BC3700072630 /* KGChangeImgSizeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E37423A25B1BC3700072630 /* KGChangeImgSizeView.xib */; };
+		6E37424E25B1BC3700072630 /* KGLibary.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6E37423B25B1BC3700072630 /* KGLibary.bundle */; };
+		6E37424F25B1BC3700072630 /* KGChangeImgSizeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E37423C25B1BC3700072630 /* KGChangeImgSizeView.m */; };
+		6E37425025B1BC3700072630 /* KGEditBottomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E37423E25B1BC3700072630 /* KGEditBottomView.xib */; };
+		6E37425125B1BC3700072630 /* KGEditPhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E37423F25B1BC3700072630 /* KGEditPhotoCell.m */; };
+		6E37425225B1BC3700072630 /* KGPhotosCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E37424025B1BC3700072630 /* KGPhotosCell.m */; };
+		6E37425325B1BC3700072630 /* KGAVPlayerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E37424125B1BC3700072630 /* KGAVPlayerVC.m */; };
+		6E37425425B1BC3700072630 /* KGEditPhotoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E37424325B1BC3700072630 /* KGEditPhotoVC.m */; };
+		6E37425525B1BC3700072630 /* KGPhotosManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E37424425B1BC3700072630 /* KGPhotosManager.m */; };
+		6E37425625B1BC3700072630 /* KGPhotosLibary.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E37424625B1BC3700072630 /* KGPhotosLibary.m */; };
+		6E37425725B1BC3700072630 /* KGEditBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E37424A25B1BC3700072630 /* KGEditBottomView.m */; };
 		6E47BE87225DD28900A4D87C /* QEatEditView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E47BE86225DD28900A4D87C /* QEatEditView.m */; };
 		6E47BE8A225DE3FB00A4D87C /* QCoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E47BE89225DE3FA00A4D87C /* QCoverView.m */; };
 		6E47BE8D225DE74D00A4D87C /* QEatCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E47BE8C225DE74D00A4D87C /* QEatCollectionViewCell.m */; };
@@ -575,6 +593,38 @@
 		6E27879323FBCE3E00CFA171 /* MASViewAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASViewAttribute.m; sourceTree = "<group>"; };
 		6E2E861F242215E500BBC4A1 /* FuzzyCMeans.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FuzzyCMeans.h; sourceTree = "<group>"; };
 		6E2E8620242215E500BBC4A1 /* FuzzyCMeans.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = FuzzyCMeans.mm; sourceTree = "<group>"; };
+		6E37421825B1B28F00072630 /* SelPlaybackControls.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelPlaybackControls.m; sourceTree = "<group>"; };
+		6E37421925B1B28F00072630 /* SelVideoPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelVideoPlayer.m; sourceTree = "<group>"; };
+		6E37421A25B1B28F00072630 /* SelVideoSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelVideoSlider.h; sourceTree = "<group>"; };
+		6E37421B25B1B28F00072630 /* SelPlaybackControls.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelPlaybackControls.h; sourceTree = "<group>"; };
+		6E37421D25B1B28F00072630 /* SelPlayerConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelPlayerConfiguration.h; sourceTree = "<group>"; };
+		6E37421E25B1B28F00072630 /* SelPlayerConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelPlayerConfiguration.m; sourceTree = "<group>"; };
+		6E37421F25B1B28F00072630 /* SelVideoPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelVideoPlayer.h; sourceTree = "<group>"; };
+		6E37422025B1B28F00072630 /* SelVideoSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelVideoSlider.m; sourceTree = "<group>"; };
+		6E37422825B1B2BD00072630 /* QVideoPlayerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QVideoPlayerViewController.h; sourceTree = "<group>"; };
+		6E37422925B1B2BD00072630 /* QVideoPlayerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QVideoPlayerViewController.m; sourceTree = "<group>"; };
+		6E37423125B1B2FA00072630 /* USMediaBrowserView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USMediaBrowserView.h; sourceTree = "<group>"; };
+		6E37423225B1B2FA00072630 /* USMediaBrowserView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USMediaBrowserView.m; sourceTree = "<group>"; };
+		6E37423825B1BC3700072630 /* KGPhotosCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KGPhotosCell.xib; sourceTree = "<group>"; };
+		6E37423925B1BC3700072630 /* KGPhotosLibary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KGPhotosLibary.h; sourceTree = "<group>"; };
+		6E37423A25B1BC3700072630 /* KGChangeImgSizeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KGChangeImgSizeView.xib; sourceTree = "<group>"; };
+		6E37423B25B1BC3700072630 /* KGLibary.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = KGLibary.bundle; sourceTree = "<group>"; };
+		6E37423C25B1BC3700072630 /* KGChangeImgSizeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KGChangeImgSizeView.m; sourceTree = "<group>"; };
+		6E37423D25B1BC3700072630 /* KGPhotosManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KGPhotosManager.h; sourceTree = "<group>"; };
+		6E37423E25B1BC3700072630 /* KGEditBottomView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KGEditBottomView.xib; sourceTree = "<group>"; };
+		6E37423F25B1BC3700072630 /* KGEditPhotoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KGEditPhotoCell.m; sourceTree = "<group>"; };
+		6E37424025B1BC3700072630 /* KGPhotosCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KGPhotosCell.m; sourceTree = "<group>"; };
+		6E37424125B1BC3700072630 /* KGAVPlayerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KGAVPlayerVC.m; sourceTree = "<group>"; };
+		6E37424225B1BC3700072630 /* KGEditBottomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KGEditBottomView.h; sourceTree = "<group>"; };
+		6E37424325B1BC3700072630 /* KGEditPhotoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KGEditPhotoVC.m; sourceTree = "<group>"; };
+		6E37424425B1BC3700072630 /* KGPhotosManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KGPhotosManager.m; sourceTree = "<group>"; };
+		6E37424525B1BC3700072630 /* KGChangeImgSizeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KGChangeImgSizeView.h; sourceTree = "<group>"; };
+		6E37424625B1BC3700072630 /* KGPhotosLibary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KGPhotosLibary.m; sourceTree = "<group>"; };
+		6E37424725B1BC3700072630 /* KGEditPhotoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KGEditPhotoCell.h; sourceTree = "<group>"; };
+		6E37424825B1BC3700072630 /* KGPhotosCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KGPhotosCell.h; sourceTree = "<group>"; };
+		6E37424925B1BC3700072630 /* KGEditPhotoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KGEditPhotoVC.h; sourceTree = "<group>"; };
+		6E37424A25B1BC3700072630 /* KGEditBottomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KGEditBottomView.m; sourceTree = "<group>"; };
+		6E37424B25B1BC3700072630 /* KGAVPlayerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KGAVPlayerVC.h; sourceTree = "<group>"; };
 		6E47BE85225DD28900A4D87C /* QEatEditView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QEatEditView.h; sourceTree = "<group>"; };
 		6E47BE86225DD28900A4D87C /* QEatEditView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QEatEditView.m; sourceTree = "<group>"; };
 		6E47BE88225DE3FA00A4D87C /* QCoverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QCoverView.h; sourceTree = "<group>"; };
@@ -963,6 +1013,8 @@
 		3E9AED961CE06860001F77D5 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				6E37423725B1BC3700072630 /* PhotosManager */,
+				6E37421725B1B28F00072630 /* VideoPlayer */,
 				6E239E97258323FE00118B6A /* ListView */,
 				6EE7231725779AB800B9A366 /* FangzuCalc */,
 				6EDB2B2624A1995200FE9388 /* Measure */,
@@ -1626,6 +1678,60 @@
 			path = Masonry;
 			sourceTree = "<group>";
 		};
+		6E37421725B1B28F00072630 /* VideoPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				6E37421C25B1B28F00072630 /* Configs */,
+				6E37421B25B1B28F00072630 /* SelPlaybackControls.h */,
+				6E37421825B1B28F00072630 /* SelPlaybackControls.m */,
+				6E37421F25B1B28F00072630 /* SelVideoPlayer.h */,
+				6E37421925B1B28F00072630 /* SelVideoPlayer.m */,
+				6E37421A25B1B28F00072630 /* SelVideoSlider.h */,
+				6E37422025B1B28F00072630 /* SelVideoSlider.m */,
+				6E37423125B1B2FA00072630 /* USMediaBrowserView.h */,
+				6E37423225B1B2FA00072630 /* USMediaBrowserView.m */,
+				6E37422825B1B2BD00072630 /* QVideoPlayerViewController.h */,
+				6E37422925B1B2BD00072630 /* QVideoPlayerViewController.m */,
+			);
+			path = VideoPlayer;
+			sourceTree = "<group>";
+		};
+		6E37421C25B1B28F00072630 /* Configs */ = {
+			isa = PBXGroup;
+			children = (
+				6E37421D25B1B28F00072630 /* SelPlayerConfiguration.h */,
+				6E37421E25B1B28F00072630 /* SelPlayerConfiguration.m */,
+			);
+			path = Configs;
+			sourceTree = "<group>";
+		};
+		6E37423725B1BC3700072630 /* PhotosManager */ = {
+			isa = PBXGroup;
+			children = (
+				6E37423825B1BC3700072630 /* KGPhotosCell.xib */,
+				6E37423925B1BC3700072630 /* KGPhotosLibary.h */,
+				6E37423A25B1BC3700072630 /* KGChangeImgSizeView.xib */,
+				6E37423B25B1BC3700072630 /* KGLibary.bundle */,
+				6E37423C25B1BC3700072630 /* KGChangeImgSizeView.m */,
+				6E37423D25B1BC3700072630 /* KGPhotosManager.h */,
+				6E37423E25B1BC3700072630 /* KGEditBottomView.xib */,
+				6E37423F25B1BC3700072630 /* KGEditPhotoCell.m */,
+				6E37424025B1BC3700072630 /* KGPhotosCell.m */,
+				6E37424125B1BC3700072630 /* KGAVPlayerVC.m */,
+				6E37424225B1BC3700072630 /* KGEditBottomView.h */,
+				6E37424325B1BC3700072630 /* KGEditPhotoVC.m */,
+				6E37424425B1BC3700072630 /* KGPhotosManager.m */,
+				6E37424525B1BC3700072630 /* KGChangeImgSizeView.h */,
+				6E37424625B1BC3700072630 /* KGPhotosLibary.m */,
+				6E37424725B1BC3700072630 /* KGEditPhotoCell.h */,
+				6E37424825B1BC3700072630 /* KGPhotosCell.h */,
+				6E37424925B1BC3700072630 /* KGEditPhotoVC.h */,
+				6E37424A25B1BC3700072630 /* KGEditBottomView.m */,
+				6E37424B25B1BC3700072630 /* KGAVPlayerVC.h */,
+			);
+			path = PhotosManager;
+			sourceTree = "<group>";
+		};
 		6E5F91CE1E5FCBB800396EB1 /* Colors */ = {
 			isa = PBXGroup;
 			children = (
@@ -1887,12 +1993,15 @@
 				6E8C37EB2487597D00C64D67 /* QFindLineStoryboard.storyboard in Resources */,
 				6E89D6992251E28C00B1C650 /* turntable.js in Resources */,
 				6E8C37F62487B93200C64D67 /* IMG_0119.jpg in Resources */,
+				6E37424E25B1BC3700072630 /* KGLibary.bundle in Resources */,
 				6EDB2B5624A1DD7300FE9388 /* m_point1.png in Resources */,
 				6EDB2B5C24A1DD9100FE9388 /* m_point2h.png in Resources */,
 				6E10BACC242B65DF003EB898 /* blineTest3.png in Resources */,
+				6E37425025B1BC3700072630 /* KGEditBottomView.xib in Resources */,
 				6EA9F28F243F243700A7E5C2 /* test222.jpeg in Resources */,
 				6EDB2B5A24A1DD8D00FE9388 /* m_point2.png in Resources */,
 				6EDB2B6224A1DDA000FE9388 /* m_point4.png in Resources */,
+				6E37424C25B1BC3700072630 /* KGPhotosCell.xib in Resources */,
 				6EDB2B6424A1DDA600FE9388 /* m_point4h.png in Resources */,
 				3EB53A281D1D175300840D38 /* SVProgressHUD.bundle in Resources */,
 				6EAAED1523C2D48700256846 /* QTestStoryboard.storyboard in Resources */,
@@ -1903,6 +2012,7 @@
 				6E89D6952251D38200B1C650 /* wrgo.html in Resources */,
 				6EDB2B6024A1DD9B00FE9388 /* m_point3h.png in Resources */,
 				6EDB2B6624A1DDB600FE9388 /* m_del.png in Resources */,
+				6E37424D25B1BC3700072630 /* KGChangeImgSizeView.xib in Resources */,
 				3E79719E1D0AEAE600E040A8 /* topic_news.json in Resources */,
 				3E9AED3E1CE06751001F77D5 /* LaunchScreen.storyboard in Resources */,
 				3EB53A021D1D175300840D38 /* MJRefresh.bundle in Resources */,
@@ -1958,6 +2068,7 @@
 				6EDB2B4B24A1A77B00FE9388 /* USPointView.m in Sources */,
 				3EB53A131D1D175300840D38 /* TAPageControl.m in Sources */,
 				3ECB77A11CE32A740046BA95 /* WaterfallCell.m in Sources */,
+				6E37424F25B1BC3700072630 /* KGChangeImgSizeView.m in Sources */,
 				3EB53A101D1D175300840D38 /* TAAbstractDotView.m in Sources */,
 				3E7971961D0ADBCB00E040A8 /* ChannelLabel.m in Sources */,
 				3EB53A011D1D175300840D38 /* MJRefreshStateHeader.m in Sources */,
@@ -1971,6 +2082,7 @@
 				3E9AEDBD1CE06EA8001F77D5 /* ImagePlayController.m in Sources */,
 				3E86C64E1CE49C4700AC4BBD /* FRGWaterfallHeaderReusableView.m in Sources */,
 				3E9AEDB41CE069DE001F77D5 /* Contact.m in Sources */,
+				6E37425525B1BC3700072630 /* KGPhotosManager.m in Sources */,
 				3EB53A1A1D1D175300840D38 /* SDWebImageCompat.m in Sources */,
 				3EB539FA1D1D175300840D38 /* MJRefreshAutoNormalFooter.m in Sources */,
 				6EAAED1323C2D44D00256846 /* QTestViewController.mm in Sources */,
@@ -1983,6 +2095,7 @@
 				3EB53A001D1D175300840D38 /* MJRefreshNormalHeader.m in Sources */,
 				3EB539E81D1D175300840D38 /* MJDictionaryCache.m in Sources */,
 				3EC2054E1CF5C2EE001AF96C /* QWaveController.m in Sources */,
+				6E37425225B1BC3700072630 /* KGPhotosCell.m in Sources */,
 				6E47BE8D225DE74D00A4D87C /* QEatCollectionViewCell.m in Sources */,
 				6EF6909921E73C290080A2CB /* USGestureRecognizer.m in Sources */,
 				6E781B2324A33D300043C943 /* USScrawlGroup.m in Sources */,
@@ -2002,6 +2115,7 @@
 				3E9AEDA81CE0698A001F77D5 /* ContactViewController.m in Sources */,
 				6EDB2B4624A1A73B00FE9388 /* USMark.m in Sources */,
 				3E9AEDC31CE06F73001F77D5 /* LockView.m in Sources */,
+				6E37425325B1BC3700072630 /* KGAVPlayerVC.m in Sources */,
 				3EB539EE1D1D175300840D38 /* NSObject+MJClass.m in Sources */,
 				3E9AEDA51CE0693B001F77D5 /* AddViewController.m in Sources */,
 				6E27877823FBCC9D00CFA171 /* QRulerView.m in Sources */,
@@ -2014,8 +2128,10 @@
 				6E9115A4225CA6A80061690D /* GCDAsyncSocket+category.m in Sources */,
 				3EB53A071D1D175300840D38 /* README.md in Sources */,
 				6E911597225C92520061690D /* GCDAsyncSocket.m in Sources */,
+				6E37422325B1B28F00072630 /* SelPlayerConfiguration.m in Sources */,
 				6E75FD2B2434826E00799D4C /* HoughLineDetector.cpp in Sources */,
 				6E47BE8A225DE3FB00A4D87C /* QCoverView.m in Sources */,
+				6E37425725B1BC3700072630 /* KGEditBottomView.m in Sources */,
 				6E27879623FBCE3E00CFA171 /* MASCompositeConstraint.m in Sources */,
 				3EB53A0A1D1D175300840D38 /* QLSNavigationController.m in Sources */,
 				3EB539F61D1D175300840D38 /* MJRefreshComponent.m in Sources */,
@@ -2028,6 +2144,7 @@
 				6E5F91D11E5FCBD600396EB1 /* QColorsViewController.m in Sources */,
 				6EDB2B4524A1A73B00FE9388 /* USMarkGroup.m in Sources */,
 				3EB53A0E1D1D175300840D38 /* UITableView+SDAutoTableViewCellHeight.m in Sources */,
+				6E37422A25B1B2BD00072630 /* QVideoPlayerViewController.m in Sources */,
 				3E7971991D0AE13000E040A8 /* NewsHomeCell.m in Sources */,
 				3EB53A211D1D175300840D38 /* UIImage+GIF.m in Sources */,
 				3EB539F11D1D175300840D38 /* NSObject+MJProperty.m in Sources */,
@@ -2055,11 +2172,13 @@
 				3EB53A041D1D175300840D38 /* UIScrollView+MJExtension.m in Sources */,
 				3EEA2BFC1D03BE2100D697AC /* NewsWebController.m in Sources */,
 				6E8C37EE24875A1900C64D67 /* QFindLineViewController.mm in Sources */,
+				6E37425125B1BC3700072630 /* KGEditPhotoCell.m in Sources */,
 				6EDB2B5124A1A82C00FE9388 /* MeasureHeader.m in Sources */,
 				3EB53A2A1D1D175300840D38 /* XYString.m in Sources */,
 				3E9AEDC01CE06EC9001F77D5 /* QCollectionViewCell.m in Sources */,
 				3E9AEDAB1CE069A4001F77D5 /* EditViewController.m in Sources */,
 				6EDB2B4224A1A73B00FE9388 /* USMeasureArea.m in Sources */,
+				6E37422425B1B28F00072630 /* SelVideoSlider.m in Sources */,
 				6E2E8621242215E500BBC4A1 /* FuzzyCMeans.mm in Sources */,
 				3EB53A151D1D175300840D38 /* SDCycleScrollView.m in Sources */,
 				6EDB2B5424A1C71500FE9388 /* MeasureMenuView.m in Sources */,
@@ -2071,6 +2190,8 @@
 				3EB539FC1D1D175300840D38 /* MJRefreshBackGifFooter.m in Sources */,
 				3EB539E01D1D175300840D38 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				3E9AED9D1CE06860001F77D5 /* DemoCell.m in Sources */,
+				6E37422125B1B28F00072630 /* SelPlaybackControls.m in Sources */,
+				6E37425425B1BC3700072630 /* KGEditPhotoVC.m in Sources */,
 				3EB53A261D1D175300840D38 /* UIView+WebCacheOperation.m in Sources */,
 				3EB53A141D1D175300840D38 /* SDCollectionViewCell.m in Sources */,
 				3E428D021D02D3D5000C404C /* Editor.m in Sources */,
@@ -2110,9 +2231,12 @@
 				3EB539F51D1D175300840D38 /* MJRefreshBackFooter.m in Sources */,
 				6ED9B11C23C8390C0052FD1A /* USSlider.m in Sources */,
 				3E7971901D0ACC8E00E040A8 /* QNetWorkTools.m in Sources */,
+				6E37422225B1B28F00072630 /* SelVideoPlayer.m in Sources */,
 				6EAAED1823C2DE0500256846 /* QSlider.m in Sources */,
 				6E781B1C24A2F2C70043C943 /* USAnnotate.m in Sources */,
 				3EB53A0F1D1D175300840D38 /* UIView+SDAutoLayout.m in Sources */,
+				6E37425625B1BC3700072630 /* KGPhotosLibary.m in Sources */,
+				6E37423325B1B2FA00072630 /* USMediaBrowserView.m in Sources */,
 				3EB539DC1D1D175300840D38 /* AFURLResponseSerialization.m in Sources */,
 				3EB53A051D1D175300840D38 /* UIScrollView+MJRefresh.m in Sources */,
 				6EDB2B4E24A1A7BF00FE9388 /* USPoint.m in Sources */,

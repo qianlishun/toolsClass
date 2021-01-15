@@ -103,7 +103,8 @@ static CGFloat kCellHeight = 44;
                     [(UITextField*)v setTextAlignment:NSTextAlignmentRight];
             }
             
-            v.x = x;
+            v.centerY = H/2;
+            v.x = x+10;
             
             x = v.right;
             
