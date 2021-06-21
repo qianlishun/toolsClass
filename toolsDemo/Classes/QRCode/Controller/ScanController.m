@@ -23,7 +23,7 @@
 //4. 特殊的 layer(展示输入设备所采集的信息)
 @property (nonatomic,strong) PreView *preView;
 
-@property (strong, nonatomic)  UILabel *label;
+@property (strong, nonatomic)  UITextView *textView;
 @property (nonatomic,strong) UIButton *btn;
 
 
@@ -34,9 +34,10 @@
 - (UIButton *)btn{
 
     if (!_btn) {
-
-        UIButton *btn = [[UIButton alloc]initWithFrame:self.label.frame];
-
+        UIButton *btn = [UIButton buttonWithType:UIButtonTypeSystem];
+        [btn setFrame:CGRectMake(0, 0, 200, 40)];
+        btn.center = self.view.center;
+        [btn setTitle:@"点我扫描" forState:UIControlStateNormal];
         [btn addTarget:self action:@selector(scanClick) forControlEvents:UIControlEventTouchUpInside];
         _btn = btn;
     }
@@ -50,17 +51,14 @@
 
     self.view.backgroundColor = [UIColor whiteColor];
 
-    UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 260, 42)];
-    label.center = self.view.center;
-    label.numberOfLines = 0;
-    label.textAlignment = NSTextAlignmentCenter;
-    label.text = @"点我扫描";
-    self.label = label;
-
-    [self.view addSubview:label];
-
     [self.view addSubview:self.btn];
 
+    self.textView = [[UITextView alloc]initWithFrame:CGRectMake(0, 0, 300, 300)];
+    self.textView.center = self.view.center;
+    [self.view addSubview:self.textView];
+    self.textView.hidden = YES;
+    self.textView.backgroundColor = [UIColor lightGrayColor];
+    self.textView.font = [UIFont systemFontOfSize:14];
 }
 
 - (void)scanClick{
@@ -108,6 +106,7 @@
 
     // 启动会话
     [self.session startRunning];
+    
 }
 
 - (void)cancelClick:(UIButton *)sender{
@@ -117,8 +116,9 @@
     // 2.删除 layer
     [self.preView removeFromSuperview];
 
-    self.label.text = @"点我扫描";
     [sender removeFromSuperview];
+    
+    self.textView.hidden = YES;
 }
 
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputMetadataObjects:(NSArray *)metadataObjects fromConnection:(AVCaptureConnection *)connection{
@@ -131,16 +131,23 @@
 
     // 3.遍历数据获取内容
     for (AVMetadataMachineReadableCodeObject *obj in metadataObjects) {
-        self.label.text = obj.stringValue;
+        self.textView.text = obj.stringValue;
     }
-    if([self.label.text hasPrefix:@"http://"] || [self.label.text hasPrefix:@"https://"] || [self.label.text hasPrefix:@"sms://"]||[self.label.text hasPrefix:@"tel://"]){
+    if([self.textView.text hasPrefix:@"http://"] || [self.textView.text hasPrefix:@"https://"] || [self.textView.text hasPrefix:@"sms://"]||[self.textView.text hasPrefix:@"tel://"]){
 
-        NSURL *url = [NSURL URLWithString:self.label.text];
+        NSURL *url = [NSURL URLWithString:self.textView.text];
         [[UIApplication sharedApplication]openURL:url];
     }
     
+    self.textView.hidden = NO;
+
 }
 
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [super touchesBegan:touches withEvent:event];
+    
+    [self.view endEditing:YES];
+}
 
 
 @end

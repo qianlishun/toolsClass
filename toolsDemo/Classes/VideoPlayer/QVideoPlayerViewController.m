@@ -9,7 +9,6 @@
 #import "QVideoPlayerViewController.h"
 #import "USMediaBrowserView.h"
 #import <Photos/Photos.h>
-#import "KGPhotosManager.h"
 
 @interface QVideoPlayerViewController ()
 @property (nonatomic,strong) USMediaBrowserView *mediaBrowserView;
@@ -28,9 +27,9 @@
     [self.view addSubview:self.mediaBrowserView];
     
 
-    PHFetchResult *smartAlbums = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeSmartAlbum subtype:PHAssetCollectionSubtypeAlbumRegular options:nil];
-     
-    PHFetchResult *topLevelUserCollections = [PHCollectionList fetchTopLevelUserCollectionsWithOptions:nil];
+//    PHFetchResult *smartAlbums = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeSmartAlbum subtype:PHAssetCollectionSubtypeAlbumRegular options:nil];
+//
+//    PHFetchResult *topLevelUserCollections = [PHCollectionList fetchTopLevelUserCollectionsWithOptions:nil];
      
     PHFetchOptions *options = [[PHFetchOptions alloc] init];
     options.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"creationDate" ascending:YES]];
