@@ -6,34 +6,20 @@
 //  Copyright © 2020 SonopTek. All rights reserved.
 //
 
-#import "USQButton.h"
+#import "USQButton2.h"
 #import "UIColor+Common.h"
 
-static BOOL highLight = NO;
-static UIColor *originColor;
-
-@implementation USQButton{
+@implementation USQButton2{
     UIImage *normalImage;
     UIImage *lightImage;
     
-    UIImage *normalImage2;
-
     UIImage *bgNormalImage;
     UIImage *bgLightImage;
 
-    USQButtonPosition titlePostion;
-
-    USQButtonPosition imagePostion;
+//    UIColor *textColor;
+//    UIColor *disableTextColor;
 }
 
-- (instancetype)init
-{
-    self = [super init];
-    if (self) {
-        [self initButton];
-    }
-    return self;
-}
 
 - (instancetype)initWithFrame:(CGRect)frame
 {
@@ -45,14 +31,11 @@ static UIColor *originColor;
 }
 
 - (void)initButton{
-    titlePostion = USQButton_Center;
-    imagePostion = USQButton_Left;
-    
     self.imageView = [[UIImageView alloc]init];
-    self.imageView.contentMode = UIViewContentModeScaleAspectFit;
+    self.imageView.contentMode = UIViewContentModeScaleAspectFill;
     self.imageBgView = [[UIImageView alloc]init];
     self.titleLabel = [UILabel new];
-    self.titleLabel.textAlignment = NSTextAlignmentLeft;
+    self.titleLabel.textAlignment = NSTextAlignmentCenter;
     self.titleLabel.textColor = [UIColor whiteColor];
     self.titleLabel.adjustsFontSizeToFitWidth = YES;
     
@@ -61,49 +44,38 @@ static UIColor *originColor;
     [self addSubview:self.titleLabel];
 }
 
+- (void)updateStyle{
+    if(self.imageView.image==nil){
+        self.titleLabel.font = FONT_SIZE;
+    }else if(self.titleLabel.text.length == 0){
+
+    }else{
+        self.titleLabel.font = FONT_SMALLSIZE;
+    }
+}
+
 - (void)layoutSubviews{
     [super layoutSubviews];
-    
     CGFloat w = self.width/10.0;
     CGFloat h = self.height;
-    float imageScale =  1.25;
+
+    [self.imageView setFrame:CGRectMake(w, 0, w*4, h)];
     [self.imageBgView setFrame:self.bounds];
     if(self.imageView.image==nil){
         self.imageView.hidden = YES;
         [self.titleLabel setFrame:CGRectMake(0, 0, w*10, h)];
-        self.titleLabel.textAlignment = NSTextAlignmentCenter;
     }else if(self.titleLabel.text.length == 0){
         self.imageView.hidden = NO;
         [self.imageView setFrame:CGRectMake(0, 0, self.width, self.height)];
     }else{
-        self.titleLabel.textAlignment = NSTextAlignmentLeft;
         self.imageView.hidden = NO;
-        [self.titleLabel sizeToFit];
-        self.titleLabel.x = self.width*0.3;
-        self.titleLabel.centerY = h/2;
         
-        if(titlePostion == USQButton_Left){
-            self.titleLabel.x = w;
-        }else if(titlePostion == USQButton_Right){
-            self.titleLabel.x = self.width-w - self.titleLabel.width;
-        }
-        float imageH = self.titleLabel.height*imageScale;
-        [self.imageView setFrame:CGRectMake(0, (h - imageH)/2.0, self.width/4, imageH)];
-        CGFloat x = 0;
-        if(imagePostion == USQButton_Center)
-            x = self.width/2.0 - self.imageView.width/2;
-        else if(imagePostion == USQButton_Right)
-            x = self.width - self.imageView.width;
-        self.imageView.x = x;
-    }
-    if(!self.imageView2) return;
-    
-    if(self.imageView2.image==nil){
-        self.imageView2.hidden = YES;
-    }else{
-        float imageH = self.titleLabel.height*imageScale;
-        self.imageView.hidden = NO;
-        [self.imageView2 setFrame:CGRectMake(self.width*3/4.0, (h - imageH)/2.0, self.width/4.0, imageH)];
+        float imageH = h*4/5.0;
+        float imageW = self.imageView.image.size.width * imageH / self.imageView.image.size.height;
+        [self.imageView setFrame:CGRectMake(0, 0, imageW, imageH)];
+        self.imageView.centerX = self.width/2.0;
+
+        [self.titleLabel setFrame:CGRectMake(w, h*3/5.0, w*8, h*2/5.0)];
     }
 }
 
@@ -114,16 +86,7 @@ static UIColor *originColor;
     }else{
         lightImage = image;
     }
-}
-
-- (void)setImage2:(UIImage *)image forState:(UIControlState)state{
-    if(!_imageView2){
-        self.imageView2 = [[UIImageView alloc]init];
-        self.imageView2.contentMode = UIViewContentModeScaleAspectFit;
-        [self addSubview:self.imageView2];
-    }
-    normalImage2 = image;
-    self.imageView2.image = image;
+    [self updateStyle];
 }
 
 - (void)setBackgroundImage:(UIImage*)image forState:(UIControlState)state{
@@ -137,16 +100,22 @@ static UIColor *originColor;
 
 - (void)setTitle:(NSString *)title forState:(UIControlState)state{
     self.titleLabel.text = title;
+    [self updateStyle];
 }
 
 - (void)setTitleColor:(UIColor *)color forState:(UIControlState)state{
-    self.titleLabel.textColor = color;
+    if(state == UIControlStateNormal)
+        self.titleLabel.textColor = color;
 }
 
 - (void)setHighlighted:(BOOL)highlighted{
     if(highlighted){
-        self.imageView.image = lightImage ?: normalImage;
-        self.imageBgView.image = bgLightImage ?: bgNormalImage;
+        if(lightImage){
+            self.imageView.image = lightImage;
+        }
+        if(bgLightImage){
+            self.imageBgView.image = bgLightImage;
+        }
     }else{
         self.imageView.image = normalImage;
         self.imageBgView.image = bgNormalImage;
@@ -171,27 +140,6 @@ static UIColor *originColor;
     return self.enabled;
 }
 
-
-- (void)setTouchHighLight:(BOOL)touchHighLight{
-    highLight = touchHighLight;
-    originColor = self.titleLabel.textColor;
-}
-
-- (BOOL)touchHighLight{
-    return highLight;
-}
-
-- (void)setTitlePosition:(USQButtonPosition)postion{
-    titlePostion = postion;
-    [self layoutIfNeeded];
-}
-
-- (void)setImagePosition:(USQButtonPosition)postion{
-    imagePostion = postion;
-    [self layoutIfNeeded];
-}
-
-
 - (void)sendActionsForControlEvents:(UIControlEvents)controlEvents{
     [super sendActionsForControlEvents:controlEvents];
     
@@ -214,5 +162,4 @@ static UIColor *originColor;
         self.alpha = 1.0;
     });
 }
-
 @end

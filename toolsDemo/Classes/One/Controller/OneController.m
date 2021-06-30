@@ -48,6 +48,7 @@
                          @"QColorsViewController",@"渐变色",
                          @"QFangzuViewController",@"房",
                          @"QMenuViewController",@"List",
+                         @"TestVC",@"test",
                          ];
 
 //    UIButton *button=[UIButton buttonWithType:UIButtonTypeCustom];

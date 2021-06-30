@@ -18,6 +18,16 @@
 
 @implementation MainController
 
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    
+    UIEdgeInsets edgeInsets = UIEdgeInsetsMake(0, 0, 0, 0);
+    if (@available(iOS 11.0, *)) {
+        edgeInsets = self.view.safeAreaInsets;
+        [QStateModel sharedInstance].edgeInsets = edgeInsets;
+    }
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     

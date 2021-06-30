@@ -14,8 +14,24 @@
 #endif
 
 #import "UIView+QLSFrame.h"
+#import "QStateModel.h"
 
 #define kWIDTH [UIScreen mainScreen].bounds.size.width
 #define kSize [UIScreen mainScreen].bounds.size
 #define ScreenFrame [UIScreen mainScreen].bounds
 #define ViewSize self.view.bounds.size
+
+
+#define kISiPad ([[QStateModel sharedInstance].machine hasPrefix:@"iPad"])
+#define kISiPhone ([[QStateModel sharedInstance].machine hasPrefix:@"iPhone"])
+
+#define VIEW_TOP (  [QStateModel sharedInstance].edgeInsets.top )
+#define VIEW_BOTTOM (  [QStateModel sharedInstance].edgeInsets.bottom )
+
+#define FONT_SMALLSIZE ( kISiPad ? [UIFont systemFontOfSize:14] : [UIFont systemFontOfSize:12])
+#define FONT_SIZE  (kISiPad  ?  [UIFont systemFontOfSize:17] :  [UIFont systemFontOfSize:(VIEW_TOP ? 15 : 14)])
+#define FONT_BIGSIZE  [UIFont systemFontOfSize:22]
+
+#define FONT_SMALLSIZE_FLOAT ((kScreenW > 1024)  ? 14 : 13)
+#define FONT_SIZE_FLOAT  17.0
+#define FONT_BIGSIZE_FLOAT  22.0
