@@ -28,6 +28,11 @@ typedef enum : NSUInteger {
 #import "USRingView.h"
 #import "USQButton2.h"
 #import "UIColor+Common.h"
+#import "QRulerView.h"
+#import "QSlider.h"
+#import "QRuleSlider.h"
+#import "UIImage+AssetUrl.h"
+#import "QPlayLoopSlider.h"
 
 @interface TestVC ()
 @property (nonatomic,assign) SCAN_MODE scanMode;
@@ -46,7 +51,54 @@ typedef enum : NSUInteger {
 
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
+   
+    QRuleSlider *slider = [[QRuleSlider alloc]initWithFrame:CGRectMake(0, 0, 50, 200)];
+    slider.center = self.view.center;
+    [self.view addSubview:slider];
     
+    slider.minimumValue = 30;
+    slider.maximumValue = 105;
+    slider.value = 30;
+    
+    QPlayLoopSlider *slider2 = [[QPlayLoopSlider alloc]initWithFrame:CGRectMake(0, 0, self.view.width*0.5, 30)];
+    slider2.center = CGPointMake(self.view.width/2, 100);
+    
+    slider2.minimumValue = 0;
+    slider2.maximumValue = 500;
+    slider2.value = 0;
+    
+    [self.view addSubview:slider2];
+    
+    QRulerView * rulerView = [[QRulerView alloc]initWithFrame:CGRectMake(150, 200, 500, 50)];
+//        rulerView.backgroundColor = [UIColor clearColor];
+    //使用刻度尺常规模式
+    rulerView.isCustomScalesValue = NO;
+    //不显示刻度尺上的文案
+    rulerView.isShowScaleText = NO;
+    rulerView.scaleTextFont = [UIFont systemFontOfSize:0];
+    //显示刻度尺中当前值文案
+    rulerView.isShowCurrentValue = NO;
+    //最大值
+    rulerView.maxValue = 500;
+    //最小值
+    rulerView.minValue = 0;
+    //单元值
+    rulerView.unitValue = 1;
+    //默认值
+    rulerView.defaultValue = 0;
+    //两个刻度文案之间的刻度格数
+    rulerView.scalesCountBetweenScaleText = 1;
+    rulerView.scalesCountBetweenLargeLine = 1;
+    
+    rulerView.indicatorWidth = 2.5;
+    rulerView.lineWidth = 2;
+    rulerView.lineSpace = 15;
+    
+    [rulerView updateRulerEnableCallback:NO];
+    
+    [self.view addSubview:rulerView];
+    
+    /*
     self.ringView = [[USRingView alloc]initWithFrame:CGRectMake(0, 0, 150, 300) center:CGPointMake(0, 150) radius:150];
     self.ringView.center = CGPointMake(self.view.centerX+80, 250);
     
@@ -131,6 +183,7 @@ typedef enum : NSUInteger {
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         view.usEnabled = YES;
     });
+     */
 }
 
 - (void)onFreeze:(USQButton2*)sender{

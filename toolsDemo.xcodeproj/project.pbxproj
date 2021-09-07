@@ -208,12 +208,15 @@
 		6E9115A4225CA6A80061690D /* GCDAsyncSocket+category.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E9115A2225CA6A70061690D /* GCDAsyncSocket+category.m */; };
 		6E9115A7225CA6C50061690D /* SerViceAPP.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E9115A6225CA6C50061690D /* SerViceAPP.m */; };
 		6E9115A8225CA8260061690D /* TwoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E9AEDB01CE069CD001F77D5 /* TwoController.m */; };
+		6E9EC67A26DE0C8700BE4FF6 /* QRuleSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E9EC67926DE0C8700BE4FF6 /* QRuleSlider.m */; };
+		6E9EC67D26DE307400BE4FF6 /* QPlayLoopSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E9EC67C26DE307400BE4FF6 /* QPlayLoopSlider.m */; };
 		6EA9F28F243F243700A7E5C2 /* test222.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6EA9F28E243F243700A7E5C2 /* test222.jpeg */; };
 		6EAAED1323C2D44D00256846 /* QTestViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6EAAED1223C2D44D00256846 /* QTestViewController.mm */; };
 		6EAAED1523C2D48700256846 /* QTestStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EAAED1423C2D48700256846 /* QTestStoryboard.storyboard */; };
 		6EAAED1823C2DE0500256846 /* QSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EAAED1723C2DE0500256846 /* QSlider.m */; };
 		6EAAED1B23C2ED4E00256846 /* UIColor+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EAAED1923C2ED4E00256846 /* UIColor+Common.m */; };
 		6EBF16EF24124BFC002A3BB6 /* UIImage+AssetUrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EBF16EE24124BFC002A3BB6 /* UIImage+AssetUrl.m */; };
+		6ECC393226B166BB0012C55C /* QLiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ECC393126B166BB0012C55C /* QLiveViewController.m */; };
 		6ED9B11C23C8390C0052FD1A /* USSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ED9B11B23C8390C0052FD1A /* USSlider.m */; };
 		6ED9B11F23C898110052FD1A /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6ED9B11E23C898110052FD1A /* NetworkExtension.framework */; };
 		6ED9B12123C8997C0052FD1A /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6ED9B12023C8997C0052FD1A /* ExternalAccessory.framework */; };
@@ -240,6 +243,8 @@
 		6EDB2B6424A1DDA600FE9388 /* m_point4h.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EDB2B6324A1DDA500FE9388 /* m_point4h.png */; };
 		6EDB2B6624A1DDB600FE9388 /* m_del.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EDB2B6524A1DDB600FE9388 /* m_del.png */; };
 		6EE0FB1C2683266F007E21C6 /* freeze_live.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EE0FB1B2683266F007E21C6 /* freeze_live.png */; };
+		6EE4F8C826D658FE00E5E593 /* ZGCaptureDeviceCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EE4F8C226D658FE00E5E593 /* ZGCaptureDeviceCamera.m */; };
+		6EE4F8CA26D658FE00E5E593 /* ZGCaptureDeviceImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EE4F8C626D658FE00E5E593 /* ZGCaptureDeviceImage.m */; };
 		6EE7231A25779AE100B9A366 /* QFangzuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EE7231925779AE100B9A366 /* QFangzuViewController.m */; };
 		6EEA4255207EFE5D00BEFEC6 /* QImageBookController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EEA4254207EFE5D00BEFEC6 /* QImageBookController.m */; };
 		6EEA4258207EFE8B00BEFEC6 /* QAnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EEA4256207EFE8B00BEFEC6 /* QAnimationView.m */; };
@@ -664,6 +669,10 @@
 		6E9115A3225CA6A80061690D /* GCDAsyncSocket+category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GCDAsyncSocket+category.h"; sourceTree = "<group>"; };
 		6E9115A5225CA6C50061690D /* SerViceAPP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SerViceAPP.h; sourceTree = "<group>"; };
 		6E9115A6225CA6C50061690D /* SerViceAPP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SerViceAPP.m; sourceTree = "<group>"; };
+		6E9EC67826DE0C8700BE4FF6 /* QRuleSlider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QRuleSlider.h; sourceTree = "<group>"; };
+		6E9EC67926DE0C8700BE4FF6 /* QRuleSlider.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QRuleSlider.m; sourceTree = "<group>"; };
+		6E9EC67B26DE307400BE4FF6 /* QPlayLoopSlider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QPlayLoopSlider.h; sourceTree = "<group>"; };
+		6E9EC67C26DE307400BE4FF6 /* QPlayLoopSlider.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QPlayLoopSlider.m; sourceTree = "<group>"; };
 		6EA9F28E243F243700A7E5C2 /* test222.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test222.jpeg; sourceTree = "<group>"; };
 		6EAAED1123C2D44D00256846 /* QTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QTestViewController.h; sourceTree = "<group>"; };
 		6EAAED1223C2D44D00256846 /* QTestViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = QTestViewController.mm; sourceTree = "<group>"; };
@@ -674,6 +683,8 @@
 		6EAAED1A23C2ED4E00256846 /* UIColor+Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Common.h"; sourceTree = "<group>"; };
 		6EBF16ED24124BFB002A3BB6 /* UIImage+AssetUrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+AssetUrl.h"; sourceTree = "<group>"; };
 		6EBF16EE24124BFC002A3BB6 /* UIImage+AssetUrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+AssetUrl.m"; sourceTree = "<group>"; };
+		6ECC393026B166BB0012C55C /* QLiveViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QLiveViewController.h; sourceTree = "<group>"; };
+		6ECC393126B166BB0012C55C /* QLiveViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QLiveViewController.m; sourceTree = "<group>"; };
 		6ED9B11A23C8390C0052FD1A /* USSlider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USSlider.h; sourceTree = "<group>"; };
 		6ED9B11B23C8390C0052FD1A /* USSlider.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USSlider.m; sourceTree = "<group>"; };
 		6ED9B11D23C898110052FD1A /* toolsDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = toolsDemo.entitlements; sourceTree = "<group>"; };
@@ -715,6 +726,11 @@
 		6EDB2B6324A1DDA500FE9388 /* m_point4h.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = m_point4h.png; sourceTree = "<group>"; };
 		6EDB2B6524A1DDB600FE9388 /* m_del.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = m_del.png; sourceTree = "<group>"; };
 		6EE0FB1B2683266F007E21C6 /* freeze_live.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = freeze_live.png; sourceTree = "<group>"; };
+		6EE4F8C226D658FE00E5E593 /* ZGCaptureDeviceCamera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZGCaptureDeviceCamera.m; sourceTree = "<group>"; };
+		6EE4F8C326D658FE00E5E593 /* ZGCaptureDeviceImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZGCaptureDeviceImage.h; sourceTree = "<group>"; };
+		6EE4F8C626D658FE00E5E593 /* ZGCaptureDeviceImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZGCaptureDeviceImage.m; sourceTree = "<group>"; };
+		6EE4F8C726D658FE00E5E593 /* ZGCaptureDeviceCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZGCaptureDeviceCamera.h; sourceTree = "<group>"; };
+		6EE4F8CB26D6591400E5E593 /* ZGCaptureDeviceProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZGCaptureDeviceProtocol.h; sourceTree = "<group>"; };
 		6EE7231825779AE100B9A366 /* QFangzuViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QFangzuViewController.h; sourceTree = "<group>"; };
 		6EE7231925779AE100B9A366 /* QFangzuViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QFangzuViewController.m; sourceTree = "<group>"; };
 		6EEA4253207EFE5D00BEFEC6 /* QImageBookController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QImageBookController.h; sourceTree = "<group>"; };
@@ -1011,6 +1027,7 @@
 		3E9AED961CE06860001F77D5 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				6ECC392F26B166A00012C55C /* LFLive */,
 				6E37421725B1B28F00072630 /* VideoPlayer */,
 				6E239E97258323FE00118B6A /* ListView */,
 				6EE7231725779AB800B9A366 /* FangzuCalc */,
@@ -1808,8 +1825,23 @@
 				6E3581AB2680980300CF0D6F /* TestVC.m */,
 				6E3581AE2680984300CF0D6F /* USRingView.h */,
 				6E3581AD2680984300CF0D6F /* USRingView.m */,
+				6E9EC67826DE0C8700BE4FF6 /* QRuleSlider.h */,
+				6E9EC67926DE0C8700BE4FF6 /* QRuleSlider.m */,
+				6E9EC67B26DE307400BE4FF6 /* QPlayLoopSlider.h */,
+				6E9EC67C26DE307400BE4FF6 /* QPlayLoopSlider.m */,
 			);
 			path = Test;
+			sourceTree = "<group>";
+		};
+		6ECC392F26B166A00012C55C /* LFLive */ = {
+			isa = PBXGroup;
+			children = (
+				6EE4F8CB26D6591400E5E593 /* ZGCaptureDeviceProtocol.h */,
+				6EE4F8C126D658FE00E5E593 /* VideoTool */,
+				6ECC393026B166BB0012C55C /* QLiveViewController.h */,
+				6ECC393126B166BB0012C55C /* QLiveViewController.m */,
+			);
+			path = LFLive;
 			sourceTree = "<group>";
 		};
 		6EDB2B2624A1995200FE9388 /* Measure */ = {
@@ -1868,6 +1900,17 @@
 				6E781B2224A33D300043C943 /* USScrawlGroup.m */,
 			);
 			path = mark;
+			sourceTree = "<group>";
+		};
+		6EE4F8C126D658FE00E5E593 /* VideoTool */ = {
+			isa = PBXGroup;
+			children = (
+				6EE4F8C726D658FE00E5E593 /* ZGCaptureDeviceCamera.h */,
+				6EE4F8C226D658FE00E5E593 /* ZGCaptureDeviceCamera.m */,
+				6EE4F8C326D658FE00E5E593 /* ZGCaptureDeviceImage.h */,
+				6EE4F8C626D658FE00E5E593 /* ZGCaptureDeviceImage.m */,
+			);
+			path = VideoTool;
 			sourceTree = "<group>";
 		};
 		6EE7231725779AB800B9A366 /* FangzuCalc */ = {
@@ -2124,6 +2167,8 @@
 				3EB53A291D1D175300840D38 /* SVProgressHUD.m in Sources */,
 				3EB53A1F1D1D175300840D38 /* SDWebImagePrefetcher.m in Sources */,
 				3EB53A221D1D175300840D38 /* UIImage+MultiFormat.m in Sources */,
+				6EE4F8C826D658FE00E5E593 /* ZGCaptureDeviceCamera.m in Sources */,
+				6ECC393226B166BB0012C55C /* QLiveViewController.m in Sources */,
 				6E375E1D2629766500EBD2DD /* SVProgressAnimatedView.m in Sources */,
 				6E27877723FBCC9D00CFA171 /* QRulerModel.m in Sources */,
 				6E27879823FBCE3E00CFA171 /* MASLayoutConstraint.m in Sources */,
@@ -2136,6 +2181,7 @@
 				6E27879623FBCE3E00CFA171 /* MASCompositeConstraint.m in Sources */,
 				3EB53A0A1D1D175300840D38 /* QLSNavigationController.m in Sources */,
 				6EFEDFD0268198FC00DCAA14 /* QStateModel.m in Sources */,
+				6E9EC67A26DE0C8700BE4FF6 /* QRuleSlider.m in Sources */,
 				6E3581AC2680980300CF0D6F /* TestVC.m in Sources */,
 				3EB539F61D1D175300840D38 /* MJRefreshComponent.m in Sources */,
 				3EB539FE1D1D175300840D38 /* MJRefreshBackStateFooter.m in Sources */,
@@ -2162,6 +2208,7 @@
 				3EB53A171D1D175300840D38 /* MKAnnotationView+WebCache.m in Sources */,
 				6E781B2024A33D160043C943 /* USScrawl.m in Sources */,
 				6EDB2B4024A1A73B00FE9388 /* USMarkView.m in Sources */,
+				6E9EC67D26DE307400BE4FF6 /* QPlayLoopSlider.m in Sources */,
 				3EB53A0D1D1D175300840D38 /* QLSTabItem.m in Sources */,
 				3EB539EC1D1D175300840D38 /* MJPropertyKey.m in Sources */,
 				6E239EA92583262D00118B6A /* QScrollView.m in Sources */,
@@ -2173,6 +2220,7 @@
 				3E9AED951CE06827001F77D5 /* AppDelegate.m in Sources */,
 				3EB53A111D1D175300840D38 /* TAAnimatedDotView.m in Sources */,
 				3EB53A041D1D175300840D38 /* UIScrollView+MJExtension.m in Sources */,
+				6EE4F8CA26D658FE00E5E593 /* ZGCaptureDeviceImage.m in Sources */,
 				3EEA2BFC1D03BE2100D697AC /* NewsWebController.m in Sources */,
 				6E8C37EE24875A1900C64D67 /* QFindLineViewController.mm in Sources */,
 				6EDB2B5124A1A82C00FE9388 /* MeasureHeader.m in Sources */,

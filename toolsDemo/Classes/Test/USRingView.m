@@ -265,9 +265,9 @@ typedef enum : NSUInteger {
 
     float  distance = [self calcDistance:p1 p2:self.arcCenter];
     if(distance < self.arcRadius/2.0){
-        if([_centerView isKindOfClass:[UIControl class]]){
-            [(UIControl*)_centerView sendActionsForControlEvents:UIControlEventTouchUpInside];
-        }
+//        if([_centerView isKindOfClass:[UIControl class]]){
+//            [(UIControl*)_centerView sendActionsForControlEvents:UIControlEventTouchUpInside];
+//        }
         return _centerView;
     }else if(distance > self.arcRadius){
         return nil;

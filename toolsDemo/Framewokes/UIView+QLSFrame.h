@@ -32,7 +32,7 @@ typedef NS_OPTIONS(NSUInteger, UIBorderSideType) {
 - (void)addLineWithRect:(CGRect)rect color:(UIColor*)color;
 
 
-- (CATextLayer*)createTextLayerWithString:(NSString*)string Frame:(CGRect)frame fontsize:(float)fontsize color:(UIColor*)color;
+- (CATextLayer*)createTextLayerWithString:(NSString*)string Frame:(CGRect)frame font:(UIFont*)font  color:(UIColor*)color;
 
 - (UIView *)borderForColor:(UIColor *)color borderWidth:(CGFloat)borderWidth borderType:(UIBorderSideType)borderType;
 

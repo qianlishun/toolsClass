@@ -12,8 +12,11 @@ typedef void(^SliderBallMoved)(BOOL isUpadte , NSNumber *value);
 
 - (instancetype)initWithFrame:(CGRect)frame list:(NSArray*)list;
 
+- (void)setList:(NSArray*)list;
+
 - (void)setThumbSize:(CGSize)size color:(UIColor*)color highlight:(UIColor*)lightColor;
 
 - (void)drawDotWithColor:(UIColor*)color;
 
+- (void)updateValue:(int)value;
 @end

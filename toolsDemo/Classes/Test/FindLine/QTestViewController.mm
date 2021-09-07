@@ -169,7 +169,7 @@
                 wR.maxValue = maxVlue;
                 wR.defaultValue = maxVlue;
                 isScrollCallBack = NO;
-                [wR updateRuler];
+                [wR updateRulerEnableCallback:isScrollCallBack];
                 isScrollCallBack = YES;
         }
     };
@@ -236,7 +236,7 @@ static bool isScrollCallBack = YES;
         return [NSString stringWithFormat:@"%.f",value];
     }];
     [rulerView setFrame:CGRectMake(0, 300, CGRectGetWidth(self.view.frame), 52)];
-    [rulerView updateRuler];
+    [rulerView updateRulerEnableCallback:NO];
     [self.view addSubview:rulerView];
     
     self.rulerView = rulerView;

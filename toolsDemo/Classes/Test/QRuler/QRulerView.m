@@ -104,8 +104,8 @@
     _inPointCurrentScale = 0;
 }
 
--(void)updateRuler{
-    
+-(void)updateRulerEnableCallback:(BOOL)enableCallback{
+    self.enableCallback = enableCallback;
     [self setupCollectionView];
     [self setupIndicatorView];
     [self setupCurrentValueLabel];
@@ -114,6 +114,9 @@
     [self setupDataSource];
     
     [self setNeedsLayout];
+    
+    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(delayEnableCallback) object:nil];
+    [self performSelector:@selector(delayEnableCallback) withObject:nil afterDelay:0.15];
 }
 
 -(void)setupCollectionView{
@@ -141,7 +144,7 @@
 }
 
 -(void)setupDataSource{
-    if ((self.maxValue <= self.minValue || self.unitValue == 0) && !self.isCustomScalesValue) {
+    if ((self.maxValue < self.minValue || self.unitValue == 0) && !self.isCustomScalesValue) {
         NSAssert(NO, @"参数错误或者maxValue不能大于等于minuValue,each不能为0");
     }
     if (self.isShowInPoint && self.isCustomScalesValue && ((self.inPointCurrentScale >self.customScalesCount)||(self.inPointCurrentScale<0))) {
@@ -206,12 +209,20 @@
     
     [self.currentValueLabel setHidden:!self.isShowCurrentValue];
     
-    //刷新collectionView
-    [self.collectionView setContentOffset:CGPointMake(defaultOffset, 0) animated:NO];
-    [self.collectionView setScrollEnabled:self.isScrollEnable];
-    [self.currentValueLabel setTextColor:self.isScrollEnable?[UIColor whiteColor]:[UIColor colorWithHexString:@"#FFFFFF" alpha:0.4]];
     [self.collectionView reloadData];
     
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.02 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [UIView animateWithDuration:0.12 animations:^{
+            [self.collectionView setContentOffset:CGPointMake(defaultOffset, 0) animated:NO];
+        }];
+    });
+    
+    //刷新collectionView
+    [self.collectionView setScrollEnabled:self.isScrollEnable];
+    [self.currentValueLabel setTextColor:self.isScrollEnable?[UIColor whiteColor]:[UIColor colorWithHexString:@"#FFFFFF" alpha:0.4]];
+    
+    if(!_enableCallback)
+        return;
     //此处是因为，设置contentOffset的是double类型，设置完后必然会走scrollDidScroll，然后又要走其中根据偏移量来计算index的方法。但是读取scrollView的contentOffset居然不保留小数位或者只保留一位小数位，精度大变，导致数据误差极大。故在此调用原偏移量进行重置。
     if (self.isCustomScalesValue) {
         if (self.dividingRulerCustomScaleDidScrollBlock) {
@@ -354,7 +365,8 @@
     }else{
         count = offset/(self.lineWidth+self.lineSpace);
     }
-    
+    if(!_enableCallback)
+        return;
     if (self.isCustomScalesValue) {
         if (self.dividingRulerCustomScaleDidScrollBlock) {
             self.currentValueLabel.text = self.dividingRulerCustomScaleDidScrollBlock(count);
@@ -382,7 +394,8 @@
     self.selectedIndex = count;
     [self.collectionView reloadData];
     [self.collectionView setContentOffset:CGPointMake(count * (self.lineWidth+self.lineSpace)-self.collectionView.contentInset.left, 0) animated:YES];
-    
+    if(!_enableCallback)
+        return;
     if (self.isCustomScalesValue) {
         if (self.dividingRulerCustomScaleDidScrollBlock) {
             self.currentValueLabel.text = self.dividingRulerCustomScaleDidScrollBlock(count);
@@ -409,6 +422,19 @@
     [self.collectionView setContentOffset:pointOffset];
 }
 
+- (void)scrollToEndEnableCallback:(BOOL)enableCallback{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        self.enableCallback = enableCallback;
+        [self.collectionView setContentOffset:CGPointMake(self.collectionView.contentSize.width, 0)];
+
+        [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(delayEnableCallback) object:nil];
+        [self performSelector:@selector(delayEnableCallback) withObject:nil afterDelay:0.15];
+    });
+}
+
+- (void)delayEnableCallback{
+    self.enableCallback = YES;
+}
 
 #pragma mark - Private
 -(UICollectionView *)collectionView{
@@ -421,7 +447,7 @@
         _collectionView.showsVerticalScrollIndicator = NO;
         _collectionView.showsHorizontalScrollIndicator = NO;
         [self addSubview:_collectionView];
-        [_collectionView setBackgroundColor:[UIColor blackColor]];
+        [_collectionView setBackgroundColor:[UIColor clearColor]];
         [_collectionView registerClass:[QRulerCell class] forCellWithReuseIdentifier:@"QRulerCell"];
         //collectionView位置
         [_collectionView setFrame:CGRectMake(0, 0, CGRectGetWidth(self.frame), CGRectGetHeight(self.frame))];

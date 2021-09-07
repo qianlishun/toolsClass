@@ -94,14 +94,15 @@
 @property (nonatomic,copy)   NSString             * (^dividingRulerCustomScaleDidEndScrollingBlock)(CGFloat index);
 @property (nonatomic,copy)   NSString             * (^dividingRulerCustomScaleDidScrollBlock)(CGFloat index);
 
+@property (nonatomic,assign) BOOL enableCallback;
 
 /**
  更新刻度尺数据显示，数据更新后，必须调用此方法来更新数据，否则不会生效
  */
-- (void)updateRuler;
+- (void)updateRulerEnableCallback:(BOOL)enableCallback;
+
+- (void)scrollToEndEnableCallback:(BOOL)enableCallback;
 
 - (void)updateScrollerViewContentOffset:(CGPoint)pointOffset;
-
-
 
 @end

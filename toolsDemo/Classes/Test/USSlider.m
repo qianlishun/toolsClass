@@ -105,7 +105,8 @@
 
 //        NSString *text = [NSString stringWithFormat:@"%@",valueList[i]];
         NSString *text = [NSString stringWithFormat:@"%d",i];
-        CATextLayer *layer = [self createTextLayerWithString:text Frame:CGRectMake(center.x + offset, center.y + thumbSize.height, 30, 20) fontsize:8.0 color:[UIColor whiteColor]];
+        UIFont *font = [UIFont systemFontOfSize:8.0];
+        CATextLayer *layer = [self createTextLayerWithString:text Frame:CGRectMake(center.x + offset, center.y + thumbSize.height, 30, 20) font:font color:[UIColor whiteColor]];
         [shapeLayer addSublayer:layer];
         
        if(i == self.value || i == 0 || i==self.maximumValue){

@@ -49,7 +49,8 @@
                          @"QFangzuViewController",@"房",
                          @"QMenuViewController",@"List",
                          @"TestVC",@"test",
-                         ];
+                         @"QLiveViewController",@"Live",
+                        ];
 
 //    UIButton *button=[UIButton buttonWithType:UIButtonTypeCustom];
 //    button.frame=CGRectMake(0, 0, 200, 60);
@@ -62,7 +63,6 @@
 //    [self.view addSubview:button];
 //
 //    [button addTarget:self action:@selector(jumpToThree) forControlEvents:UIControlEventTouchUpInside];
-
 }
 
 #pragma mark - tableView date source
