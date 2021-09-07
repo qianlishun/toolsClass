@@ -52,7 +52,8 @@ typedef enum : NSUInteger {
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
    
-    QRuleSlider *slider = [[QRuleSlider alloc]initWithFrame:CGRectMake(0, 0, 50, 200)];
+    QRuleSlider *slider = [[QRuleSlider alloc]initWithFrame:CGRectMake(0, 0, 80, 200)];
+//    slider.backgroundColor = [UIColor grayColor];
     slider.center = self.view.center;
     [self.view addSubview:slider];
     

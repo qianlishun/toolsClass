@@ -18,9 +18,6 @@ static float layerLineWidth = 2;
 
 //@property (nonatomic,strong) UILabel *textLabel;
 
-@property (nonatomic,assign) CGPoint firstPoint;
-
-
 @end
 
 @implementation QRuleSlider
@@ -87,23 +84,24 @@ static float layerLineWidth = 2;
 }
 
 - (void)actionPanGesture2:(UIPanGestureRecognizer *)sender{
-    CGPoint touchPoint = [sender locationInView:self];
+    CGPoint touchPoint = [sender translationInView:sender.view];
 
     if(sender.state == UIGestureRecognizerStateCancelled ||
-       sender.state == UIGestureRecognizerStateFailed){
+       sender.state == UIGestureRecognizerStateFailed ||
+       sender.state == UIGestureRecognizerStateBegan){
         return;
-    }else if(sender.state == UIGestureRecognizerStateBegan){
-        self.firstPoint = touchPoint;
     }
+    [sender setTranslation:CGPointZero inView:sender.view];
+
+    NSLog(@"%.2f",touchPoint.y);
     
-    CGFloat diff = touchPoint.y - self.firstPoint.y;
-    
-    CGFloat value = (self.maximumValue - self.minimumValue) * (diff / self.frame.size.height );
-    
-    value = self.minimumValue + value + 0.5;
+    CGFloat value = (self.maximumValue - self.minimumValue) * (touchPoint.y / self.frame.size.height );
+    if(value>0) value = value*2;
+    if(value<0) value = value;
+    value = self.value + value;
 
     if(value <= self.minimumValue){
-        value = 0;
+        value = self.minimumValue;
     }else if(value >= self.maximumValue){
         value = self.maximumValue;
     }
@@ -114,6 +112,7 @@ static float layerLineWidth = 2;
     if((int)value != self.value){
         self.value = (int)value;
     }
+
 }
 
 - (void)setValue:(float)value{
