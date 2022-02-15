@@ -9,6 +9,9 @@
 #import "QStateModel.h"
 #import <sys/utsname.h>
 
+@interface QStateModel()
+@property(nonatomic, strong) NSUserDefaults *ud;
+@end
 
 @implementation QStateModel
 
@@ -31,9 +34,35 @@
         _machine = [NSString stringWithCString:systemInfo.machine encoding:NSUTF8StringEncoding];
 
         self.edgeInsets = UIEdgeInsetsMake(0, 0, 0, 0);
+        
+        self.ud = [NSUserDefaults standardUserDefaults];
+        
+        self.pdfSaveData = [self.ud dictionaryForKey:@"pdfSaveData"];
     }
     return self;
 }
 
+- (void)setPdfSaveData:(NSDictionary *)pdfSaveData{
+    _pdfSaveData = pdfSaveData;
+    
+    [_ud setObject:pdfSaveData forKey:@"pdfSaveData"];
+}
+
++ (void)createFolderPath:(NSString*)path{
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+
+    BOOL isDir = FALSE;
+    BOOL isDirExist = [fileManager fileExistsAtPath:path isDirectory:&isDir];
+    if(isDirExist)
+        NSLog(@"folder is exist");
+    if(!(isDirExist && isDir)){
+        BOOL bCreateDir = [fileManager createDirectoryAtPath:path withIntermediateDirectories:YES attributes:nil error:nil];
+        if(!bCreateDir){
+            NSLog(@"creat folder failed！");
+        }else{
+            NSLog(@"creat folder successed: %@",path);
+        }
+    }
+}
     
 @end

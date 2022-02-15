@@ -31,6 +31,7 @@
     self.view.backgroundColor = [UIColor whiteColor];
 
     self.contenArray = @[
+                         @"QPDFViewController",@"PDF Reader",
                          @"QEatController",@"去哪吃",
                          @"SetQRCodeController",@"生成二维码",
                          @"ScanController",@"扫描二维码",

@@ -33,6 +33,7 @@ typedef enum : NSUInteger {
 #import "QRuleSlider.h"
 #import "UIImage+AssetUrl.h"
 #import "QPlayLoopSlider.h"
+#import "USPickerView.h"
 
 @interface TestVC ()
 @property (nonatomic,assign) SCAN_MODE scanMode;
@@ -98,6 +99,12 @@ typedef enum : NSUInteger {
     [rulerView updateRulerEnableCallback:NO];
     
     [self.view addSubview:rulerView];
+    
+    
+    USPickerView *pickerView = [[USPickerView alloc]initWithFrame:CGRectMake(0, 0, 300, 80)];
+    [pickerView setCount: 100];
+    [self.view addSubview:pickerView];
+    pickerView.center = self.view.center;
     
     /*
     self.ringView = [[USRingView alloc]initWithFrame:CGRectMake(0, 0, 150, 300) center:CGPointMake(0, 150) radius:150];

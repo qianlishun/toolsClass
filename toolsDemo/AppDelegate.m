@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "MainController.h"
+#import "QPDFViewController.h"
 
 @interface AppDelegate ()
 
@@ -31,6 +32,11 @@
     return YES;
 }
 
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options{
+    
+    
+    return [(MainController*)self.window.rootViewController pushPDFVC:url];
+}
 
 
 @end

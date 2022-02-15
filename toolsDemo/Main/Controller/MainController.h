@@ -10,4 +10,6 @@
 
 @interface MainController : QLSTabBarController
 
+- (BOOL)pushPDFVC:(NSURL*)url;
+
 @end

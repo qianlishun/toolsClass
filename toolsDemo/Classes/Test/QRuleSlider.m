@@ -84,21 +84,22 @@ static float layerLineWidth = 2;
 }
 
 - (void)actionPanGesture2:(UIPanGestureRecognizer *)sender{
-    CGPoint touchPoint = [sender translationInView:sender.view];
-
     if(sender.state == UIGestureRecognizerStateCancelled ||
-       sender.state == UIGestureRecognizerStateFailed ||
-       sender.state == UIGestureRecognizerStateBegan){
+       sender.state == UIGestureRecognizerStateFailed){
         return;
+    }else if(sender.state == UIGestureRecognizerStateBegan){
+        CGFloat y = (self.value - self.minimumValue ) / (self.maximumValue - self.minimumValue) * self.height;
+        [sender setTranslation:CGPointMake(0, y) inView:sender.view];
     }
-    [sender setTranslation:CGPointZero inView:sender.view];
-
-    NSLog(@"%.2f",touchPoint.y);
     
+    CGPoint touchPoint = [sender translationInView:sender.view];
+    
+    NSLog(@"%.2f",touchPoint.y);
+
+    // 先默认为垂直样式
     CGFloat value = (self.maximumValue - self.minimumValue) * (touchPoint.y / self.frame.size.height );
-    if(value>0) value = value*2;
-    if(value<0) value = value;
-    value = self.value + value;
+    
+    value = self.minimumValue + value + 0.5;
 
     if(value <= self.minimumValue){
         value = self.minimumValue;

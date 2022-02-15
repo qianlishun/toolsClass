@@ -35,3 +35,5 @@
 #define FONT_SMALLSIZE_FLOAT ((kScreenW > 1024)  ? 14 : 13)
 #define FONT_SIZE_FLOAT  17.0
 #define FONT_BIGSIZE_FLOAT  22.0
+
+#define customPDFPath [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"PDF"]

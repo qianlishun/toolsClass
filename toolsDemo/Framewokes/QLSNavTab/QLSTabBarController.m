@@ -111,7 +111,19 @@
             
         }
         if (self.navigationBackgroundColor) {
-            [nav.navigationBar setBarTintColor:self.navigationBackgroundColor];
+            
+            if (@available(iOS 13.0, *)) {
+                
+                UINavigationBarAppearance *appearance = [[UINavigationBarAppearance alloc] init];
+                appearance.backgroundColor = self.navigationBackgroundColor;
+                
+                nav.navigationBar.standardAppearance = appearance;
+                nav.navigationBar.scrollEdgeAppearance = appearance;
+                
+            } else {
+                
+                [nav.navigationBar setBarTintColor:self.navigationBackgroundColor];
+            }
         }
         if (self.navigationBackgroundImage) {
             [nav.navigationBar setBackgroundImage:self.navigationBackgroundImage forBarMetrics:UIBarMetricsDefault];

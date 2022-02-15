@@ -144,6 +144,7 @@
 		3EE3F9971D3F060700ACD86D /* QScalableNav.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EE3F9961D3F060700ACD86D /* QScalableNav.m */; };
 		3EEA2BFC1D03BE2100D697AC /* NewsWebController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EEA2BFB1D03BE2100D697AC /* NewsWebController.m */; };
 		3EFFF6971D0ABDDE0042ABF4 /* QNewsHomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EFFF6961D0ABDDE0042ABF4 /* QNewsHomeController.m */; };
+		6E0D584F279EB1A5000D9692 /* USPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E0D584E279EB1A5000D9692 /* USPickerView.m */; };
 		6E10BACC242B65DF003EB898 /* blineTest3.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E10BACB242B65DE003EB898 /* blineTest3.png */; };
 		6E239E9A2583243B00118B6A /* QMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E239E992583243B00118B6A /* QMenuView.m */; };
 		6E239EA92583262D00118B6A /* QScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E239EA82583262D00118B6A /* QScrollView.m */; };
@@ -183,6 +184,10 @@
 		6E47BE8A225DE3FB00A4D87C /* QCoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E47BE89225DE3FA00A4D87C /* QCoverView.m */; };
 		6E47BE8D225DE74D00A4D87C /* QEatCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E47BE8C225DE74D00A4D87C /* QEatCollectionViewCell.m */; };
 		6E5F91D11E5FCBD600396EB1 /* QColorsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5F91D01E5FCBD600396EB1 /* QColorsViewController.m */; };
+		6E6D106F27BA575E00993DA0 /* PDFOutlineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6D106E27BA575E00993DA0 /* PDFOutlineViewController.m */; };
+		6E6D107227BA578F00993DA0 /* QPDFReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6D107127BA578F00993DA0 /* QPDFReader.m */; };
+		6E6D107527BA708400993DA0 /* PDFSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6D107427BA708400993DA0 /* PDFSearchViewController.m */; };
+		6E6D107827BA737700993DA0 /* PDFThumbnailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E6D107727BA737700993DA0 /* PDFThumbnailViewController.m */; };
 		6E6D4526242A18F4007DAB5C /* blineTest2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6E6D4525242A18F3007DAB5C /* blineTest2.jpg */; };
 		6E75FD1B24347C6600799D4C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E75FD1A24347C6600799D4C /* UIKit.framework */; };
 		6E75FD2424347CC400799D4C /* libc.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E75FD2324347CBB00799D4C /* libc.tbd */; };
@@ -208,6 +213,9 @@
 		6E9115A4225CA6A80061690D /* GCDAsyncSocket+category.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E9115A2225CA6A70061690D /* GCDAsyncSocket+category.m */; };
 		6E9115A7225CA6C50061690D /* SerViceAPP.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E9115A6225CA6C50061690D /* SerViceAPP.m */; };
 		6E9115A8225CA8260061690D /* TwoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E9AEDB01CE069CD001F77D5 /* TwoController.m */; };
+		6E97F1E627BB5B19009EB07B /* PDFOutlineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E97F1E527BB5B19009EB07B /* PDFOutlineCell.m */; };
+		6E97F1E927BB5B73009EB07B /* PDFThumbnailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E97F1E827BB5B73009EB07B /* PDFThumbnailCell.m */; };
+		6E97F1EC27BB5C3C009EB07B /* PDFSearchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E97F1EB27BB5C3C009EB07B /* PDFSearchCell.m */; };
 		6E9EC67A26DE0C8700BE4FF6 /* QRuleSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E9EC67926DE0C8700BE4FF6 /* QRuleSlider.m */; };
 		6E9EC67D26DE307400BE4FF6 /* QPlayLoopSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E9EC67C26DE307400BE4FF6 /* QPlayLoopSlider.m */; };
 		6EA9F28F243F243700A7E5C2 /* test222.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6EA9F28E243F243700A7E5C2 /* test222.jpeg */; };
@@ -245,12 +253,14 @@
 		6EE0FB1C2683266F007E21C6 /* freeze_live.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EE0FB1B2683266F007E21C6 /* freeze_live.png */; };
 		6EE4F8C826D658FE00E5E593 /* ZGCaptureDeviceCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EE4F8C226D658FE00E5E593 /* ZGCaptureDeviceCamera.m */; };
 		6EE4F8CA26D658FE00E5E593 /* ZGCaptureDeviceImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EE4F8C626D658FE00E5E593 /* ZGCaptureDeviceImage.m */; };
+		6EE6906027B512C800828481 /* QPDFViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EE6905F27B512C800828481 /* QPDFViewController.m */; };
 		6EE7231A25779AE100B9A366 /* QFangzuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EE7231925779AE100B9A366 /* QFangzuViewController.m */; };
 		6EEA4255207EFE5D00BEFEC6 /* QImageBookController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EEA4254207EFE5D00BEFEC6 /* QImageBookController.m */; };
 		6EEA4258207EFE8B00BEFEC6 /* QAnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EEA4256207EFE8B00BEFEC6 /* QAnimationView.m */; };
 		6EF6909921E73C290080A2CB /* USGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF6909821E73C290080A2CB /* USGestureRecognizer.m */; };
 		6EFEDFD0268198FC00DCAA14 /* QStateModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EFEDFCF268198FC00DCAA14 /* QStateModel.m */; };
 		6EFEDFD22681C52400DCAA14 /* freeze.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EFEDFD12681C52400DCAA14 /* freeze.png */; };
+		C73C3DE75615987226E4FEEF /* Pods_toolsDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B9F831ECDEBE925BD230891 /* Pods_toolsDemo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -551,6 +561,9 @@
 		3EEA2BFB1D03BE2100D697AC /* NewsWebController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewsWebController.m; path = ../Views/NewsWebController.m; sourceTree = "<group>"; };
 		3EFFF6951D0ABDDE0042ABF4 /* QNewsHomeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNewsHomeController.h; sourceTree = "<group>"; };
 		3EFFF6961D0ABDDE0042ABF4 /* QNewsHomeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QNewsHomeController.m; sourceTree = "<group>"; };
+		60CF6736F1E1A6E1240D1826 /* Pods-toolsDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-toolsDemo.debug.xcconfig"; path = "Target Support Files/Pods-toolsDemo/Pods-toolsDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		6E0D584D279EB1A5000D9692 /* USPickerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USPickerView.h; sourceTree = "<group>"; };
+		6E0D584E279EB1A5000D9692 /* USPickerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USPickerView.m; sourceTree = "<group>"; };
 		6E10BACB242B65DE003EB898 /* blineTest3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blineTest3.png; sourceTree = "<group>"; };
 		6E239E982583243B00118B6A /* QMenuView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QMenuView.h; sourceTree = "<group>"; };
 		6E239E992583243B00118B6A /* QMenuView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QMenuView.m; sourceTree = "<group>"; };
@@ -630,6 +643,14 @@
 		6E47BE8C225DE74D00A4D87C /* QEatCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QEatCollectionViewCell.m; sourceTree = "<group>"; };
 		6E5F91CF1E5FCBD600396EB1 /* QColorsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QColorsViewController.h; sourceTree = "<group>"; };
 		6E5F91D01E5FCBD600396EB1 /* QColorsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QColorsViewController.m; sourceTree = "<group>"; };
+		6E6D106D27BA575E00993DA0 /* PDFOutlineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PDFOutlineViewController.h; sourceTree = "<group>"; };
+		6E6D106E27BA575E00993DA0 /* PDFOutlineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PDFOutlineViewController.m; sourceTree = "<group>"; };
+		6E6D107027BA578F00993DA0 /* QPDFReader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QPDFReader.h; sourceTree = "<group>"; };
+		6E6D107127BA578F00993DA0 /* QPDFReader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QPDFReader.m; sourceTree = "<group>"; };
+		6E6D107327BA708400993DA0 /* PDFSearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PDFSearchViewController.h; sourceTree = "<group>"; };
+		6E6D107427BA708400993DA0 /* PDFSearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PDFSearchViewController.m; sourceTree = "<group>"; };
+		6E6D107627BA737700993DA0 /* PDFThumbnailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PDFThumbnailViewController.h; sourceTree = "<group>"; };
+		6E6D107727BA737700993DA0 /* PDFThumbnailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PDFThumbnailViewController.m; sourceTree = "<group>"; };
 		6E6D4525242A18F3007DAB5C /* blineTest2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = blineTest2.jpg; sourceTree = "<group>"; };
 		6E75FCAA243459E800799D4C /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		6E75FD1A24347C6600799D4C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -669,6 +690,12 @@
 		6E9115A3225CA6A80061690D /* GCDAsyncSocket+category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GCDAsyncSocket+category.h"; sourceTree = "<group>"; };
 		6E9115A5225CA6C50061690D /* SerViceAPP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SerViceAPP.h; sourceTree = "<group>"; };
 		6E9115A6225CA6C50061690D /* SerViceAPP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SerViceAPP.m; sourceTree = "<group>"; };
+		6E97F1E427BB5B19009EB07B /* PDFOutlineCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PDFOutlineCell.h; sourceTree = "<group>"; };
+		6E97F1E527BB5B19009EB07B /* PDFOutlineCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PDFOutlineCell.m; sourceTree = "<group>"; };
+		6E97F1E727BB5B73009EB07B /* PDFThumbnailCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PDFThumbnailCell.h; sourceTree = "<group>"; };
+		6E97F1E827BB5B73009EB07B /* PDFThumbnailCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PDFThumbnailCell.m; sourceTree = "<group>"; };
+		6E97F1EA27BB5C3C009EB07B /* PDFSearchCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PDFSearchCell.h; sourceTree = "<group>"; };
+		6E97F1EB27BB5C3C009EB07B /* PDFSearchCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PDFSearchCell.m; sourceTree = "<group>"; };
 		6E9EC67826DE0C8700BE4FF6 /* QRuleSlider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QRuleSlider.h; sourceTree = "<group>"; };
 		6E9EC67926DE0C8700BE4FF6 /* QRuleSlider.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QRuleSlider.m; sourceTree = "<group>"; };
 		6E9EC67B26DE307400BE4FF6 /* QPlayLoopSlider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QPlayLoopSlider.h; sourceTree = "<group>"; };
@@ -731,6 +758,8 @@
 		6EE4F8C626D658FE00E5E593 /* ZGCaptureDeviceImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZGCaptureDeviceImage.m; sourceTree = "<group>"; };
 		6EE4F8C726D658FE00E5E593 /* ZGCaptureDeviceCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZGCaptureDeviceCamera.h; sourceTree = "<group>"; };
 		6EE4F8CB26D6591400E5E593 /* ZGCaptureDeviceProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZGCaptureDeviceProtocol.h; sourceTree = "<group>"; };
+		6EE6905E27B512C800828481 /* QPDFViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QPDFViewController.h; sourceTree = "<group>"; };
+		6EE6905F27B512C800828481 /* QPDFViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QPDFViewController.m; sourceTree = "<group>"; };
 		6EE7231825779AE100B9A366 /* QFangzuViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QFangzuViewController.h; sourceTree = "<group>"; };
 		6EE7231925779AE100B9A366 /* QFangzuViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QFangzuViewController.m; sourceTree = "<group>"; };
 		6EEA4253207EFE5D00BEFEC6 /* QImageBookController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QImageBookController.h; sourceTree = "<group>"; };
@@ -742,6 +771,8 @@
 		6EFEDFCE268198FC00DCAA14 /* QStateModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QStateModel.h; sourceTree = "<group>"; };
 		6EFEDFCF268198FC00DCAA14 /* QStateModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QStateModel.m; sourceTree = "<group>"; };
 		6EFEDFD12681C52400DCAA14 /* freeze.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = freeze.png; sourceTree = "<group>"; };
+		7B9F831ECDEBE925BD230891 /* Pods_toolsDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_toolsDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A95FA3B2232375371E86F2B5 /* Pods-toolsDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-toolsDemo.release.xcconfig"; path = "Target Support Files/Pods-toolsDemo/Pods-toolsDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -753,6 +784,7 @@
 				6E75FD1B24347C6600799D4C /* UIKit.framework in Frameworks */,
 				6E75FD2424347CC400799D4C /* libc.tbd in Frameworks */,
 				6ED9B11F23C898110052FD1A /* NetworkExtension.framework in Frameworks */,
+				C73C3DE75615987226E4FEEF /* Pods_toolsDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -931,6 +963,7 @@
 				3E9AED521CE06751001F77D5 /* toolsDemoUITests */,
 				3E9AED2C1CE06751001F77D5 /* Products */,
 				6E21D68C2072365000737816 /* Frameworks */,
+				F46C97C1ADC9D382B89921B8 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -962,6 +995,8 @@
 				3EB539131D1D175300840D38 /* Framewokes */,
 				3E9AED3A1CE06751001F77D5 /* Assets.xcassets */,
 				3E9AED2F1CE06751001F77D5 /* main.m */,
+				3E9AED921CE06827001F77D5 /* AppDelegate.h */,
+				3E9AED931CE06827001F77D5 /* AppDelegate.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -1018,8 +1053,6 @@
 		3E9AED911CE06827001F77D5 /* others */ = {
 			isa = PBXGroup;
 			children = (
-				3E9AED921CE06827001F77D5 /* AppDelegate.h */,
-				3E9AED931CE06827001F77D5 /* AppDelegate.m */,
 			);
 			path = others;
 			sourceTree = "<group>";
@@ -1027,6 +1060,7 @@
 		3E9AED961CE06860001F77D5 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				6EE6905D27B512AA00828481 /* PDFReader */,
 				6ECC392F26B166A00012C55C /* LFLive */,
 				6E37421725B1B28F00072630 /* VideoPlayer */,
 				6E239E97258323FE00118B6A /* ListView */,
@@ -1628,6 +1662,7 @@
 				6E75FCAA243459E800799D4C /* OpenGLES.framework */,
 				6ED9B12023C8997C0052FD1A /* ExternalAccessory.framework */,
 				6ED9B11E23C898110052FD1A /* NetworkExtension.framework */,
+				7B9F831ECDEBE925BD230891 /* Pods_toolsDemo.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1805,6 +1840,39 @@
 			path = LocalNetworkManager;
 			sourceTree = "<group>";
 		};
+		6E97F1E127BB5AAA009EB07B /* PDFOutline */ = {
+			isa = PBXGroup;
+			children = (
+				6E6D106D27BA575E00993DA0 /* PDFOutlineViewController.h */,
+				6E6D106E27BA575E00993DA0 /* PDFOutlineViewController.m */,
+				6E97F1E427BB5B19009EB07B /* PDFOutlineCell.h */,
+				6E97F1E527BB5B19009EB07B /* PDFOutlineCell.m */,
+			);
+			path = PDFOutline;
+			sourceTree = "<group>";
+		};
+		6E97F1E227BB5ABA009EB07B /* PDFThumbnail */ = {
+			isa = PBXGroup;
+			children = (
+				6E6D107627BA737700993DA0 /* PDFThumbnailViewController.h */,
+				6E6D107727BA737700993DA0 /* PDFThumbnailViewController.m */,
+				6E97F1E727BB5B73009EB07B /* PDFThumbnailCell.h */,
+				6E97F1E827BB5B73009EB07B /* PDFThumbnailCell.m */,
+			);
+			path = PDFThumbnail;
+			sourceTree = "<group>";
+		};
+		6E97F1E327BB5AC5009EB07B /* PDFSearch */ = {
+			isa = PBXGroup;
+			children = (
+				6E6D107327BA708400993DA0 /* PDFSearchViewController.h */,
+				6E6D107427BA708400993DA0 /* PDFSearchViewController.m */,
+				6E97F1EA27BB5C3C009EB07B /* PDFSearchCell.h */,
+				6E97F1EB27BB5C3C009EB07B /* PDFSearchCell.m */,
+			);
+			path = PDFSearch;
+			sourceTree = "<group>";
+		};
 		6EAAED1023C2D44100256846 /* Test */ = {
 			isa = PBXGroup;
 			children = (
@@ -1829,6 +1897,8 @@
 				6E9EC67926DE0C8700BE4FF6 /* QRuleSlider.m */,
 				6E9EC67B26DE307400BE4FF6 /* QPlayLoopSlider.h */,
 				6E9EC67C26DE307400BE4FF6 /* QPlayLoopSlider.m */,
+				6E0D584D279EB1A5000D9692 /* USPickerView.h */,
+				6E0D584E279EB1A5000D9692 /* USPickerView.m */,
 			);
 			path = Test;
 			sourceTree = "<group>";
@@ -1913,6 +1983,20 @@
 			path = VideoTool;
 			sourceTree = "<group>";
 		};
+		6EE6905D27B512AA00828481 /* PDFReader */ = {
+			isa = PBXGroup;
+			children = (
+				6E97F1E327BB5AC5009EB07B /* PDFSearch */,
+				6E97F1E227BB5ABA009EB07B /* PDFThumbnail */,
+				6E97F1E127BB5AAA009EB07B /* PDFOutline */,
+				6EE6905E27B512C800828481 /* QPDFViewController.h */,
+				6EE6905F27B512C800828481 /* QPDFViewController.m */,
+				6E6D107027BA578F00993DA0 /* QPDFReader.h */,
+				6E6D107127BA578F00993DA0 /* QPDFReader.m */,
+			);
+			path = PDFReader;
+			sourceTree = "<group>";
+		};
 		6EE7231725779AB800B9A366 /* FangzuCalc */ = {
 			isa = PBXGroup;
 			children = (
@@ -1922,6 +2006,15 @@
 			path = FangzuCalc;
 			sourceTree = "<group>";
 		};
+		F46C97C1ADC9D382B89921B8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				60CF6736F1E1A6E1240D1826 /* Pods-toolsDemo.debug.xcconfig */,
+				A95FA3B2232375371E86F2B5 /* Pods-toolsDemo.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1929,6 +2022,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3E9AED581CE06751001F77D5 /* Build configuration list for PBXNativeTarget "toolsDemo" */;
 			buildPhases = (
+				73E4C041016CB87C1BC851C0 /* [CP] Check Pods Manifest.lock */,
 				3E9AED271CE06751001F77D5 /* Sources */,
 				3E9AED281CE06751001F77D5 /* Frameworks */,
 				3E9AED291CE06751001F77D5 /* Resources */,
@@ -2082,11 +2176,37 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		73E4C041016CB87C1BC851C0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-toolsDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3E9AED271CE06751001F77D5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6EE6906027B512C800828481 /* QPDFViewController.m in Sources */,
 				3EB539E21D1D175300840D38 /* UIAlertView+AFNetworking.m in Sources */,
 				3EB539D51D1D175300840D38 /* AFHTTPRequestOperation.m in Sources */,
 				6E8945EB240F97C5005948ED /* USQSegmentedView.m in Sources */,
@@ -2096,6 +2216,7 @@
 				3E428D111D02EA73000C404C /* NewsTwoCell.m in Sources */,
 				6E47BE87225DD28900A4D87C /* QEatEditView.m in Sources */,
 				3E428D141D02EA80000C404C /* NewsThreeCell.m in Sources */,
+				6E97F1EC27BB5C3C009EB07B /* PDFSearchCell.m in Sources */,
 				3EB539DA1D1D175300840D38 /* AFURLConnectionOperation.m in Sources */,
 				3EB53A1B1D1D175300840D38 /* SDWebImageDecoder.m in Sources */,
 				6E27877923FBCC9D00CFA171 /* QRulerCell.m in Sources */,
@@ -2116,6 +2237,7 @@
 				3ECB77A11CE32A740046BA95 /* WaterfallCell.m in Sources */,
 				3EB53A101D1D175300840D38 /* TAAbstractDotView.m in Sources */,
 				3E7971961D0ADBCB00E040A8 /* ChannelLabel.m in Sources */,
+				6E6D106F27BA575E00993DA0 /* PDFOutlineViewController.m in Sources */,
 				3EB53A011D1D175300840D38 /* MJRefreshStateHeader.m in Sources */,
 				3EB539E31D1D175300840D38 /* UIButton+AFNetworking.m in Sources */,
 				6E89D6932251D1EE00B1C650 /* QEatController.m in Sources */,
@@ -2134,6 +2256,7 @@
 				3E428D051D02D3E7000C404C /* Imgextra.m in Sources */,
 				3E61037A1CE093310055A3A5 /* QStarController.m in Sources */,
 				3E9AED941CE06827001F77D5 /* MainController.m in Sources */,
+				6E6D107827BA737700993DA0 /* PDFThumbnailViewController.m in Sources */,
 				3EB539DB1D1D175300840D38 /* AFURLRequestSerialization.m in Sources */,
 				6E27879D23FBCE3E00CFA171 /* MASViewAttribute.m in Sources */,
 				3EB53A001D1D175300840D38 /* MJRefreshNormalHeader.m in Sources */,
@@ -2149,6 +2272,7 @@
 				3EB53A161D1D175300840D38 /* UIView+SDExtension.m in Sources */,
 				3EB539F01D1D175300840D38 /* NSObject+MJKeyValue.m in Sources */,
 				6E375E1E2629766500EBD2DD /* SVRadialGradientLayer.m in Sources */,
+				6E6D107227BA578F00993DA0 /* QPDFReader.m in Sources */,
 				6EEA4258207EFE8B00BEFEC6 /* QAnimationView.m in Sources */,
 				3EB539EF1D1D175300840D38 /* NSObject+MJCoding.m in Sources */,
 				6E27879C23FBCE3E00CFA171 /* MASViewConstraint.m in Sources */,
@@ -2156,6 +2280,7 @@
 				3EB539D71D1D175300840D38 /* AFHTTPSessionManager.m in Sources */,
 				6E3581B22680AF4A00CF0D6F /* USQButton2.m in Sources */,
 				3EB539ED1D1D175300840D38 /* MJPropertyType.m in Sources */,
+				6E97F1E627BB5B19009EB07B /* PDFOutlineCell.m in Sources */,
 				3EB53A231D1D175300840D38 /* UIImage+WebP.m in Sources */,
 				3E9AEDA81CE0698A001F77D5 /* ContactViewController.m in Sources */,
 				6EDB2B4624A1A73B00FE9388 /* USMark.m in Sources */,
@@ -2180,6 +2305,7 @@
 				6E47BE8A225DE3FB00A4D87C /* QCoverView.m in Sources */,
 				6E27879623FBCE3E00CFA171 /* MASCompositeConstraint.m in Sources */,
 				3EB53A0A1D1D175300840D38 /* QLSNavigationController.m in Sources */,
+				6E97F1E927BB5B73009EB07B /* PDFThumbnailCell.m in Sources */,
 				6EFEDFD0268198FC00DCAA14 /* QStateModel.m in Sources */,
 				6E9EC67A26DE0C8700BE4FF6 /* QRuleSlider.m in Sources */,
 				6E3581AC2680980300CF0D6F /* TestVC.m in Sources */,
@@ -2211,6 +2337,7 @@
 				6E9EC67D26DE307400BE4FF6 /* QPlayLoopSlider.m in Sources */,
 				3EB53A0D1D1D175300840D38 /* QLSTabItem.m in Sources */,
 				3EB539EC1D1D175300840D38 /* MJPropertyKey.m in Sources */,
+				6E6D107527BA708400993DA0 /* PDFSearchViewController.m in Sources */,
 				6E239EA92583262D00118B6A /* QScrollView.m in Sources */,
 				3E428D081D02D9B0000C404C /* NewsModel.m in Sources */,
 				3ECB779E1CE32A4C0046BA95 /* WaterfallController.m in Sources */,
@@ -2289,6 +2416,7 @@
 				3EB53A051D1D175300840D38 /* UIScrollView+MJRefresh.m in Sources */,
 				6EDB2B4E24A1A7BF00FE9388 /* USPoint.m in Sources */,
 				3EB539FB1D1D175300840D38 /* MJRefreshAutoStateFooter.m in Sources */,
+				6E0D584F279EB1A5000D9692 /* USPickerView.m in Sources */,
 				3EC205511CF5C323001AF96C /* WaveView.m in Sources */,
 				3EB53A0B1D1D175300840D38 /* QLSTabBar.m in Sources */,
 				3EB539F41D1D175300840D38 /* MJRefreshAutoFooter.m in Sources */,
@@ -2378,7 +2506,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -2416,7 +2544,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
@@ -2427,6 +2555,7 @@
 		};
 		3E9AED591CE06751001F77D5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 60CF6736F1E1A6E1240D1826 /* Pods-toolsDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = toolsDemo/toolsDemo.entitlements;
@@ -2435,7 +2564,7 @@
 				DEVELOPMENT_TEAM = 7C448R8D4P;
 				GCC_PREFIX_HEADER = toolsDemo/others/toolsDemo.pch;
 				INFOPLIST_FILE = toolsDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = qls.toolsDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2446,6 +2575,7 @@
 		};
 		3E9AED5A1CE06751001F77D5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A95FA3B2232375371E86F2B5 /* Pods-toolsDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = toolsDemo/toolsDemo.entitlements;
@@ -2454,7 +2584,7 @@
 				DEVELOPMENT_TEAM = 7C448R8D4P;
 				GCC_PREFIX_HEADER = toolsDemo/others/toolsDemo.pch;
 				INFOPLIST_FILE = toolsDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = qls.toolsDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";

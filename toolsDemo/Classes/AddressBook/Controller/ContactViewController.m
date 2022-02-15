@@ -10,11 +10,12 @@
 #import "AddViewController.h"
 #import "EditViewController.h"
 
+
 #define kFilePath  [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0] stringByAppendingPathComponent:@"contacts.data"]
 
 @interface ContactViewController () <UIActionSheetDelegate, AddViewControllerDelegate, EditViewControllerDelegate>
 
-@property (nonatomic, strong) NSMutableArray* contacts;
+@property (nonatomic, strong) NSMutableArray<Contact*> *contacts;
 
 @end
 static NSString *const ID = @"contact_cell";

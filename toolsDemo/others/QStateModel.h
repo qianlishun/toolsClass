@@ -13,9 +13,13 @@ NS_ASSUME_NONNULL_BEGIN
 @interface QStateModel : NSObject
 + (instancetype)sharedInstance;
 
++ (void)createFolderPath:(NSString*)path;
+
 @property (nonatomic,copy) NSString *machine;
 
 @property (nonatomic,assign) UIEdgeInsets edgeInsets;
+
+@property(nonatomic, assign) NSDictionary *pdfSaveData;
 
 @end
 

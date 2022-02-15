@@ -11,6 +11,7 @@
 #import "OneController.h"
 #import "TwoController.h"
 #import "LoginViewController.h"
+#import "QPDFViewController.h"
 
 @interface MainController ()
 
@@ -58,9 +59,35 @@
                                          },
 
                                      ];
-
+    
+    if (@available(iOS 15.0, *)) {
+        [UITableView appearance].sectionHeaderTopPadding = 0;
+    }
 }
 
 
 
+- (BOOL)pushPDFVC:(NSURL *)url{
+    [url startAccessingSecurityScopedResource];
+    NSFileCoordinator *fileCoordiator = [[NSFileCoordinator alloc]initWithFilePresenter:nil];
+    NSFileAccessIntent *readingIntent = [NSFileAccessIntent readingIntentWithURL:url options:NSFileCoordinatorReadingWithoutChanges];
+    [fileCoordiator coordinateAccessWithIntents:@[readingIntent] queue:[NSOperationQueue mainQueue] byAccessor:^(NSError * _Nullable error) {
+       if(error){
+          NSLog(@"coordinateAccess %@", error);
+          return;
+       }
+        NSData *data = [NSData dataWithContentsOfURL:readingIntent.URL];
+
+        NSString *toPath = [customPDFPath stringByAppendingPathComponent:url.lastPathComponent];
+        
+        [[NSFileManager defaultManager]createFileAtPath:toPath contents:data attributes:@{}];
+        
+        QPDFViewController *vc = [QPDFViewController new];
+        [self.childViewControllers.firstObject pushViewController:vc animated:YES];
+
+        [vc openPDFWithPath:toPath];
+    }];
+    
+    return YES;
+}
 @end
