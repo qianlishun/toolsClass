@@ -37,7 +37,7 @@
                          @"ScanController",@"扫描二维码",
                          @"QMeasureController",@"Measure",
                          @"QFindLineStoryboard",@"血管处理测试",
-                         @"QTestStoryboard",@"Test",
+                         @"QTest2ViewController",@"Test",
                          @"QNewsHomeController",@"一个新闻界面",
                          @"ImagePlayController",@"图片无限轮播",
                          @"QImageBookController",@"覆盖式切换图片",

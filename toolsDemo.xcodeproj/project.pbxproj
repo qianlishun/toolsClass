@@ -216,6 +216,8 @@
 		6E97F1E627BB5B19009EB07B /* PDFOutlineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E97F1E527BB5B19009EB07B /* PDFOutlineCell.m */; };
 		6E97F1E927BB5B73009EB07B /* PDFThumbnailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E97F1E827BB5B73009EB07B /* PDFThumbnailCell.m */; };
 		6E97F1EC27BB5C3C009EB07B /* PDFSearchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E97F1EB27BB5C3C009EB07B /* PDFSearchCell.m */; };
+		6E97F1EF27BB9E5B009EB07B /* QTest2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E97F1EE27BB9E5B009EB07B /* QTest2ViewController.m */; };
+		6E97F1F127BB9EE9009EB07B /* textImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E97F1F027BB9EE9009EB07B /* textImage.png */; };
 		6E9EC67A26DE0C8700BE4FF6 /* QRuleSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E9EC67926DE0C8700BE4FF6 /* QRuleSlider.m */; };
 		6E9EC67D26DE307400BE4FF6 /* QPlayLoopSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E9EC67C26DE307400BE4FF6 /* QPlayLoopSlider.m */; };
 		6EA9F28F243F243700A7E5C2 /* test222.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6EA9F28E243F243700A7E5C2 /* test222.jpeg */; };
@@ -257,6 +259,7 @@
 		6EE7231A25779AE100B9A366 /* QFangzuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EE7231925779AE100B9A366 /* QFangzuViewController.m */; };
 		6EEA4255207EFE5D00BEFEC6 /* QImageBookController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EEA4254207EFE5D00BEFEC6 /* QImageBookController.m */; };
 		6EEA4258207EFE8B00BEFEC6 /* QAnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EEA4256207EFE8B00BEFEC6 /* QAnimationView.m */; };
+		6EEF30D627BE0AEA009943F5 /* PDFView+QExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EEF30D527BE0AEA009943F5 /* PDFView+QExtension.m */; };
 		6EF6909921E73C290080A2CB /* USGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EF6909821E73C290080A2CB /* USGestureRecognizer.m */; };
 		6EFEDFD0268198FC00DCAA14 /* QStateModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EFEDFCF268198FC00DCAA14 /* QStateModel.m */; };
 		6EFEDFD22681C52400DCAA14 /* freeze.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EFEDFD12681C52400DCAA14 /* freeze.png */; };
@@ -696,6 +699,9 @@
 		6E97F1E827BB5B73009EB07B /* PDFThumbnailCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PDFThumbnailCell.m; sourceTree = "<group>"; };
 		6E97F1EA27BB5C3C009EB07B /* PDFSearchCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PDFSearchCell.h; sourceTree = "<group>"; };
 		6E97F1EB27BB5C3C009EB07B /* PDFSearchCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PDFSearchCell.m; sourceTree = "<group>"; };
+		6E97F1ED27BB9E5B009EB07B /* QTest2ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QTest2ViewController.h; sourceTree = "<group>"; };
+		6E97F1EE27BB9E5B009EB07B /* QTest2ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QTest2ViewController.m; sourceTree = "<group>"; };
+		6E97F1F027BB9EE9009EB07B /* textImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = textImage.png; sourceTree = "<group>"; };
 		6E9EC67826DE0C8700BE4FF6 /* QRuleSlider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QRuleSlider.h; sourceTree = "<group>"; };
 		6E9EC67926DE0C8700BE4FF6 /* QRuleSlider.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QRuleSlider.m; sourceTree = "<group>"; };
 		6E9EC67B26DE307400BE4FF6 /* QPlayLoopSlider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QPlayLoopSlider.h; sourceTree = "<group>"; };
@@ -766,6 +772,8 @@
 		6EEA4254207EFE5D00BEFEC6 /* QImageBookController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QImageBookController.m; sourceTree = "<group>"; };
 		6EEA4256207EFE8B00BEFEC6 /* QAnimationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QAnimationView.m; sourceTree = "<group>"; };
 		6EEA4257207EFE8B00BEFEC6 /* QAnimationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QAnimationView.h; sourceTree = "<group>"; };
+		6EEF30D427BE0AEA009943F5 /* PDFView+QExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PDFView+QExtension.h"; sourceTree = "<group>"; };
+		6EEF30D527BE0AEA009943F5 /* PDFView+QExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "PDFView+QExtension.m"; sourceTree = "<group>"; };
 		6EF6909721E73C290080A2CB /* USGestureRecognizer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USGestureRecognizer.h; sourceTree = "<group>"; };
 		6EF6909821E73C290080A2CB /* USGestureRecognizer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USGestureRecognizer.m; sourceTree = "<group>"; };
 		6EFEDFCE268198FC00DCAA14 /* QStateModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QStateModel.h; sourceTree = "<group>"; };
@@ -1750,6 +1758,9 @@
 				6EBF16ED24124BFB002A3BB6 /* UIImage+AssetUrl.h */,
 				6EBF16EE24124BFC002A3BB6 /* UIImage+AssetUrl.m */,
 				6E8C37F52487B93200C64D67 /* IMG_0119.jpg */,
+				6E97F1ED27BB9E5B009EB07B /* QTest2ViewController.h */,
+				6E97F1EE27BB9E5B009EB07B /* QTest2ViewController.m */,
+				6E97F1F027BB9EE9009EB07B /* textImage.png */,
 			);
 			path = FindLine;
 			sourceTree = "<group>";
@@ -1986,6 +1997,7 @@
 		6EE6905D27B512AA00828481 /* PDFReader */ = {
 			isa = PBXGroup;
 			children = (
+				6EEF30D227BE0A82009943F5 /* Helper */,
 				6E97F1E327BB5AC5009EB07B /* PDFSearch */,
 				6E97F1E227BB5ABA009EB07B /* PDFThumbnail */,
 				6E97F1E127BB5AAA009EB07B /* PDFOutline */,
@@ -2004,6 +2016,15 @@
 				6EE7231925779AE100B9A366 /* QFangzuViewController.m */,
 			);
 			path = FangzuCalc;
+			sourceTree = "<group>";
+		};
+		6EEF30D227BE0A82009943F5 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				6EEF30D427BE0AEA009943F5 /* PDFView+QExtension.h */,
+				6EEF30D527BE0AEA009943F5 /* PDFView+QExtension.m */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 		F46C97C1ADC9D382B89921B8 /* Pods */ = {
@@ -2135,6 +2156,7 @@
 				6E8C37F62487B93200C64D67 /* IMG_0119.jpg in Resources */,
 				6EDB2B5624A1DD7300FE9388 /* m_point1.png in Resources */,
 				6E3581B92680B33700CF0D6F /* saveVideo.png in Resources */,
+				6E97F1F127BB9EE9009EB07B /* textImage.png in Resources */,
 				6EDB2B5C24A1DD9100FE9388 /* m_point2h.png in Resources */,
 				6E10BACC242B65DF003EB898 /* blineTest3.png in Resources */,
 				6EA9F28F243F243700A7E5C2 /* test222.jpeg in Resources */,
@@ -2213,6 +2235,7 @@
 				3EB53A241D1D175300840D38 /* UIImageView+HighlightedWebCache.m in Sources */,
 				3EB53A091D1D175300840D38 /* UINavigationItem+Custom.m in Sources */,
 				3E428CFC1D02D33A000C404C /* QNewsController.m in Sources */,
+				6E97F1EF27BB9E5B009EB07B /* QTest2ViewController.m in Sources */,
 				3E428D111D02EA73000C404C /* NewsTwoCell.m in Sources */,
 				6E47BE87225DD28900A4D87C /* QEatEditView.m in Sources */,
 				3E428D141D02EA80000C404C /* NewsThreeCell.m in Sources */,
@@ -2262,6 +2285,7 @@
 				3EB53A001D1D175300840D38 /* MJRefreshNormalHeader.m in Sources */,
 				3EB539E81D1D175300840D38 /* MJDictionaryCache.m in Sources */,
 				3EC2054E1CF5C2EE001AF96C /* QWaveController.m in Sources */,
+				6EEF30D627BE0AEA009943F5 /* PDFView+QExtension.m in Sources */,
 				6E47BE8D225DE74D00A4D87C /* QEatCollectionViewCell.m in Sources */,
 				6EF6909921E73C290080A2CB /* USGestureRecognizer.m in Sources */,
 				6E781B2324A33D300043C943 /* USScrawlGroup.m in Sources */,

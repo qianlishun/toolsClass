@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic,assign) UIEdgeInsets edgeInsets;
 
-@property(nonatomic, assign) NSDictionary *pdfSaveData;
+@property(nonatomic, strong) NSDictionary *pdfSaveData;
 
 @end
 

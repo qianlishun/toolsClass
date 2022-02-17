@@ -1,5 +1,5 @@
 //
-//  PDFSearchCell.h
+//  QTest2ViewController.h
 //  toolsDemo
 //
 //  Created by Qianlishun on 2022/2/15.
@@ -10,9 +10,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface PDFSearchCell : UITableViewCell
-@property(nonatomic, strong) UILabel *destinationLabel;
-@property(nonatomic, strong) UILabel *resultLabel;
+@interface QTest2ViewController : UIViewController
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -12,7 +12,7 @@
 #import "PDFOutlineViewController.h"
 #import "PDFThumbnailViewController.h"
 #import "PDFSearchViewController.h"
-
+#import "PDFView+QExtension.h"
 
 @interface QPDFReader()<PDFOutlineDelegate,PDFThumbnailDelegate,PDFSearchDelegate>
 
@@ -98,7 +98,7 @@
     self.pdfView.userInteractionEnabled = YES;
     self.pdfView.backgroundColor = [UIColor grayColor];
     [self.pdfView zoomIn:self];
-    
+    [self.pdfView setBounces:NO];
     
     UITapGestureRecognizer *singleTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(singleTapAction)];
     singleTapGesture.numberOfTapsRequired = 1;
@@ -294,7 +294,7 @@
     if(!_toolsView){
         _toolsView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 40, 90)];
         _toolsView.center = CGPointMake([UIScreen mainScreen].bounds.size.width - 40, [UIScreen mainScreen].bounds.size.height - [[[UIApplication sharedApplication] delegate] window].safeAreaInsets.bottom - 80);
-        _toolsView.backgroundColor = [UIColor whiteColor];
+        _toolsView.backgroundColor = [UIColor clearColor];
         
         UIButton *outlineBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         outlineBtn.frame = CGRectMake(0, 0, 40, 40);
@@ -322,6 +322,7 @@
     return _toolsView;
 }
 
+#pragma mark PDF Save
 - (NSMutableDictionary *)pdfSaveData{
     if(!_pdfSaveData){
         _pdfSaveData = [NSMutableDictionary dictionaryWithDictionary:[QStateModel sharedInstance].pdfSaveData];
@@ -341,4 +342,8 @@
     [self saveCurrentPDFData];
 }
 
+- (void)dealloc{
+    NSLog(@"%@ dealloc",NSStringFromClass([self class]));
+    [[NSNotificationCenter defaultCenter]removeObserver:self];
+}
 @end

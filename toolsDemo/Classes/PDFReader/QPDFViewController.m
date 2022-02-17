@@ -94,4 +94,7 @@
     [self.navigationController pushViewController:self.pdfReader animated:YES];
 }
 
+-(void)dealloc{
+    NSLog(@"%@ dealloc",NSStringFromClass([self class]));
+}
 @end
