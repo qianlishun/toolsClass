@@ -9,9 +9,11 @@
 #import "TwoController.h"
 #import "UIView+QLSFrame.h"
 #import <NetworkExtension/NetworkExtension.h>
+#import "UIColor+Common.h"
 #import "GCDAsyncSocket.h"
 #import "LocalNetworkView.h"
 #import "SerViceAPP.h"
+#import "USQControlButtons.h"
 
 typedef void (^STRINGBLOCK)(NSString *str);
 
@@ -107,13 +109,24 @@ static int count = 0;
     [super viewDidLoad];
 
     UIButton *button=[UIButton buttonWithType:UIButtonTypeCustom];
-    button.frame=CGRectMake(0, 0, 200, 60);
-    button.center=self.view.center;
-    button.backgroundColor=[UIColor colorWithRed:arc4random_uniform(255)/255.0 green:arc4random_uniform(255)/255.0 blue:arc4random_uniform(255)/255.0 alpha:1];
+    button.frame=CGRectMake(100, 100, 200, 60);
+//    button.backgroundColor=[UIColor colorWithRed:arc4random_uniform(255)/255.0 green:arc4random_uniform(255)/255.0 blue:arc4random_uniform(255)/255.0 alpha:1];
 
     [button setTitle:@"socket test" forState:UIControlStateNormal];
     [button addTarget:self action:@selector(socketTest) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button];
+    
+    [button setBackgroundImage:[UIImage imageNamed:@"icon_green_sel"] forState:UIControlStateNormal];
+    [button setBackgroundImage:[UIImage imageNamed:@"icon_black_cover"] forState:UIControlStateHighlighted];
+
+    
+    USQControlButtons *contol = [[USQControlButtons alloc]initWithValue:0 min:0 max:3 step:1 valueChange:^(float value) {
+        NSLog(@"%.f",value);
+    }];
+    
+    contol.frame = CGRectMake(100, 200, 200, 50);
+    
+    [self.view addSubview:contol];
     
 //    UITextView *textFiled = [[UITextView alloc]initWithFrame:CGRectMake(self.view.width/2, 100, 200, 30)];
 //    textFiled.backgroundColor = [UIColor lightGrayColor];

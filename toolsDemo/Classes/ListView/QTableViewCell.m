@@ -51,7 +51,7 @@ static CGFloat kCellHeight = 44;
 - (void)prepareForReuse{
     [super prepareForReuse];
     
-    for (UIView* v in self.theViews) {
+    for (UIView* v in self.contentView.subviews) {
         [v removeFromSuperview];
     }
     self.theViews = nil;
@@ -70,7 +70,7 @@ static CGFloat kCellHeight = 44;
         }
     }
     if(isNew){
-        for (UIView *v in _theViews) {
+        for (UIView *v in self.contentView.subviews) {
             [v removeFromSuperview];
         }
         _theViews = views;
@@ -90,7 +90,7 @@ static CGFloat kCellHeight = 44;
             [self setHeight:H];
             
             [v sizeToFit];
-            if(v.height>H)
+//            if(v.height>H)
                 v.height = H;
             
             if([v isKindOfClass:[UILabel class]]){

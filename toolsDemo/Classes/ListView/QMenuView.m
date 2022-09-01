@@ -63,7 +63,7 @@ static NSString *const kTableViewCellID = @"QTableView_cell";
             [self.viewSource addObject:array];
         }
     }
-    [self reloadTableView];
+    [self delayReloadTableView];
 }
 
 - (void)appendCell:(NSDictionary *)cell{

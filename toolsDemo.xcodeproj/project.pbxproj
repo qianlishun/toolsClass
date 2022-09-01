@@ -172,6 +172,7 @@
 		6E3581B72680B33700CF0D6F /* saveImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E3581B42680B33700CF0D6F /* saveImage.png */; };
 		6E3581B82680B33700CF0D6F /* measure.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E3581B52680B33700CF0D6F /* measure.png */; };
 		6E3581B92680B33700CF0D6F /* saveVideo.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E3581B62680B33700CF0D6F /* saveVideo.png */; };
+		6E3713B028C085F8007C78C2 /* UINavigationController+FDFullscreenPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E3713AE28C085F8007C78C2 /* UINavigationController+FDFullscreenPopGesture.m */; };
 		6E37422125B1B28F00072630 /* SelPlaybackControls.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E37421825B1B28F00072630 /* SelPlaybackControls.m */; };
 		6E37422225B1B28F00072630 /* SelVideoPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E37421925B1B28F00072630 /* SelVideoPlayer.m */; };
 		6E37422325B1B28F00072630 /* SelPlayerConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E37421E25B1B28F00072630 /* SelPlayerConfiguration.m */; };
@@ -220,6 +221,8 @@
 		6E97F1F127BB9EE9009EB07B /* textImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E97F1F027BB9EE9009EB07B /* textImage.png */; };
 		6E9EC67A26DE0C8700BE4FF6 /* QRuleSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E9EC67926DE0C8700BE4FF6 /* QRuleSlider.m */; };
 		6E9EC67D26DE307400BE4FF6 /* QPlayLoopSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E9EC67C26DE307400BE4FF6 /* QPlayLoopSlider.m */; };
+		6EA0EBD2280430A90014BF8E /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA0EBD1280430A90014BF8E /* iCarousel.m */; };
+		6EA9AED5285B426B003E4C2C /* USQControlButtons.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA9AED4285B426B003E4C2C /* USQControlButtons.m */; };
 		6EA9F28F243F243700A7E5C2 /* test222.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6EA9F28E243F243700A7E5C2 /* test222.jpeg */; };
 		6EAAED1323C2D44D00256846 /* QTestViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6EAAED1223C2D44D00256846 /* QTestViewController.mm */; };
 		6EAAED1523C2D48700256846 /* QTestStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EAAED1423C2D48700256846 /* QTestStoryboard.storyboard */; };
@@ -622,6 +625,8 @@
 		6E3581B42680B33700CF0D6F /* saveImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = saveImage.png; sourceTree = "<group>"; };
 		6E3581B52680B33700CF0D6F /* measure.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = measure.png; sourceTree = "<group>"; };
 		6E3581B62680B33700CF0D6F /* saveVideo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = saveVideo.png; sourceTree = "<group>"; };
+		6E3713AE28C085F8007C78C2 /* UINavigationController+FDFullscreenPopGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+FDFullscreenPopGesture.m"; sourceTree = "<group>"; };
+		6E3713AF28C085F8007C78C2 /* UINavigationController+FDFullscreenPopGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+FDFullscreenPopGesture.h"; sourceTree = "<group>"; };
 		6E37421825B1B28F00072630 /* SelPlaybackControls.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelPlaybackControls.m; sourceTree = "<group>"; };
 		6E37421925B1B28F00072630 /* SelVideoPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelVideoPlayer.m; sourceTree = "<group>"; };
 		6E37421A25B1B28F00072630 /* SelVideoSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelVideoSlider.h; sourceTree = "<group>"; };
@@ -706,6 +711,10 @@
 		6E9EC67926DE0C8700BE4FF6 /* QRuleSlider.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QRuleSlider.m; sourceTree = "<group>"; };
 		6E9EC67B26DE307400BE4FF6 /* QPlayLoopSlider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QPlayLoopSlider.h; sourceTree = "<group>"; };
 		6E9EC67C26DE307400BE4FF6 /* QPlayLoopSlider.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QPlayLoopSlider.m; sourceTree = "<group>"; };
+		6EA0EBD0280430A90014BF8E /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCarousel.h; sourceTree = "<group>"; };
+		6EA0EBD1280430A90014BF8E /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCarousel.m; sourceTree = "<group>"; };
+		6EA9AED3285B426B003E4C2C /* USQControlButtons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USQControlButtons.h; sourceTree = "<group>"; };
+		6EA9AED4285B426B003E4C2C /* USQControlButtons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USQControlButtons.m; sourceTree = "<group>"; };
 		6EA9F28E243F243700A7E5C2 /* test222.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test222.jpeg; sourceTree = "<group>"; };
 		6EAAED1123C2D44D00256846 /* QTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QTestViewController.h; sourceTree = "<group>"; };
 		6EAAED1223C2D44D00256846 /* QTestViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = QTestViewController.mm; sourceTree = "<group>"; };
@@ -1324,6 +1333,7 @@
 			children = (
 				3EB5393F1D1D175300840D38 /* MJDictionaryCache.h */,
 				3EB539401D1D175300840D38 /* MJDictionaryCache.m */,
+				3EB539511D1D175300840D38 /* NSObject+MJKeyValue.m */,
 				3EB539411D1D175300840D38 /* MJExtension.h */,
 				3EB539421D1D175300840D38 /* MJExtensionConst.h */,
 				3EB539431D1D175300840D38 /* MJExtensionConst.m */,
@@ -1340,7 +1350,6 @@
 				3EB5394E1D1D175300840D38 /* NSObject+MJCoding.h */,
 				3EB5394F1D1D175300840D38 /* NSObject+MJCoding.m */,
 				3EB539501D1D175300840D38 /* NSObject+MJKeyValue.h */,
-				3EB539511D1D175300840D38 /* NSObject+MJKeyValue.m */,
 				3EB539521D1D175300840D38 /* NSObject+MJProperty.h */,
 				3EB539531D1D175300840D38 /* NSObject+MJProperty.m */,
 				3EB539541D1D175300840D38 /* NSString+MJExtension.h */,
@@ -1473,6 +1482,8 @@
 			children = (
 				3EB539881D1D175300840D38 /* UIBarButtonItem+QLS.h */,
 				3EB539891D1D175300840D38 /* UIBarButtonItem+QLS.m */,
+				6E3713AF28C085F8007C78C2 /* UINavigationController+FDFullscreenPopGesture.h */,
+				6E3713AE28C085F8007C78C2 /* UINavigationController+FDFullscreenPopGesture.m */,
 				3EB5398A1D1D175300840D38 /* UINavigationItem+Custom.h */,
 				3EB5398B1D1D175300840D38 /* UINavigationItem+Custom.m */,
 			);
@@ -1703,6 +1714,8 @@
 				6E27877223FBCC9D00CFA171 /* QRulerView.m */,
 				6E27877123FBCC9C00CFA171 /* UIColor+HexColor.h */,
 				6E27876E23FBCC9C00CFA171 /* UIColor+HexColor.m */,
+				6EA0EBD0280430A90014BF8E /* iCarousel.h */,
+				6EA0EBD1280430A90014BF8E /* iCarousel.m */,
 			);
 			path = QRuler;
 			sourceTree = "<group>";
@@ -1895,6 +1908,8 @@
 				6E3581B02680AF4A00CF0D6F /* USQButton2.m */,
 				6E8945E7240F97C4005948ED /* USQSegmentedView.h */,
 				6E8945E8240F97C4005948ED /* USQSegmentedView.m */,
+				6EA9AED3285B426B003E4C2C /* USQControlButtons.h */,
+				6EA9AED4285B426B003E4C2C /* USQControlButtons.m */,
 				6E27876D23FBCC9400CFA171 /* QRuler */,
 				6EAAED1623C2DE0500256846 /* QSlider.h */,
 				6EAAED1723C2DE0500256846 /* QSlider.m */,
@@ -2231,6 +2246,7 @@
 				6EE6906027B512C800828481 /* QPDFViewController.m in Sources */,
 				3EB539E21D1D175300840D38 /* UIAlertView+AFNetworking.m in Sources */,
 				3EB539D51D1D175300840D38 /* AFHTTPRequestOperation.m in Sources */,
+				6EA9AED5285B426B003E4C2C /* USQControlButtons.m in Sources */,
 				6E8945EB240F97C5005948ED /* USQSegmentedView.m in Sources */,
 				3EB53A241D1D175300840D38 /* UIImageView+HighlightedWebCache.m in Sources */,
 				3EB53A091D1D175300840D38 /* UINavigationItem+Custom.m in Sources */,
@@ -2258,6 +2274,7 @@
 				6EDB2B4B24A1A77B00FE9388 /* USPointView.m in Sources */,
 				3EB53A131D1D175300840D38 /* TAPageControl.m in Sources */,
 				3ECB77A11CE32A740046BA95 /* WaterfallCell.m in Sources */,
+				6EA0EBD2280430A90014BF8E /* iCarousel.m in Sources */,
 				3EB53A101D1D175300840D38 /* TAAbstractDotView.m in Sources */,
 				3E7971961D0ADBCB00E040A8 /* ChannelLabel.m in Sources */,
 				6E6D106F27BA575E00993DA0 /* PDFOutlineViewController.m in Sources */,
@@ -2277,6 +2294,7 @@
 				6EAAED1323C2D44D00256846 /* QTestViewController.mm in Sources */,
 				3E428D171D02EA90000C404C /* NewsFourCell.m in Sources */,
 				3E428D051D02D3E7000C404C /* Imgextra.m in Sources */,
+				6E3713B028C085F8007C78C2 /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
 				3E61037A1CE093310055A3A5 /* QStarController.m in Sources */,
 				3E9AED941CE06827001F77D5 /* MainController.m in Sources */,
 				6E6D107827BA737700993DA0 /* PDFThumbnailViewController.m in Sources */,

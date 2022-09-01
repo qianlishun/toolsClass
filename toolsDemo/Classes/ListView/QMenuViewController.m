@@ -91,7 +91,7 @@
         @{names[2]:@[label3,textField3]},
         @{names[3]:@[label4,_insertBtn]}
                                 ]];
-    
+
     NSString *append = @"Append";
     [self.menuView appendCell:@{append:@[textField4]}];
     

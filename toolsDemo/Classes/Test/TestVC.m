@@ -34,8 +34,9 @@ typedef enum : NSUInteger {
 #import "UIImage+AssetUrl.h"
 #import "QPlayLoopSlider.h"
 #import "USPickerView.h"
+#import "iCarousel.h"
 
-@interface TestVC ()
+@interface TestVC ()<iCarouselDelegate,iCarouselDataSource>
 @property (nonatomic,assign) SCAN_MODE scanMode;
 @property (nonatomic,strong) USRingView *ringView;
 
@@ -52,6 +53,17 @@ typedef enum : NSUInteger {
 
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
+    
+    iCarousel *carousel = [[iCarousel alloc]initWithFrame:CGRectMake(100, 100, 300, 80)];
+    carousel.scrollSpeed = carousel.scrollSpeed*0.1;
+    carousel.singleScroll = NO;
+    [self.view addSubview:carousel];
+    carousel.backgroundColor = [UIColor colorWithRGBA:@[@35,@35,@35]];
+    [carousel setMaskColor:self.view.backgroundColor];
+    carousel.type = iCarouselTypeCylinder;
+    carousel.bounces = NO;
+    carousel.delegate = self;
+    carousel.dataSource = self;
    
     QRuleSlider *slider = [[QRuleSlider alloc]initWithFrame:CGRectMake(0, 0, 80, 200)];
 //    slider.backgroundColor = [UIColor grayColor];
@@ -102,7 +114,7 @@ typedef enum : NSUInteger {
     
     
     USPickerView *pickerView = [[USPickerView alloc]initWithFrame:CGRectMake(0, 0, 300, 80)];
-    [pickerView setCount: 100];
+    [pickerView setCount: 20];
     [self.view addSubview:pickerView];
     pickerView.center = self.view.center;
     
@@ -277,6 +289,58 @@ typedef enum : NSUInteger {
     self.scanMode = mode;
     
     NSLog(@"mode: %lu",(unsigned long)mode);
+}
+
+#pragma mark - iCarousel delegate & datasource
+- (NSInteger)numberOfItemsInCarousel:(iCarousel *)carousel{
+    return 100;
+}
+
+- (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSInteger)index reusingView:(UIView *)view{
+    
+    if(!view)
+        view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 5, carousel.height)];
+    
+    view.backgroundColor = [UIColor lightGrayColor];
+    
+    return view;
+}
+
+- (CGFloat)carousel:(__unused iCarousel *)carousel valueForOption:(iCarouselOption)option withDefault:(CGFloat)value{
+    switch (option) {
+        case iCarouselOptionVisibleItems:
+            return 7;
+        case iCarouselOptionWrap:
+            return NO;
+        case iCarouselOptionSpacing:
+            return 10;
+        default:
+            break;
+    }
+    return value;
+}
+
+#pragma mark iCarousel taps
+//static bool isDragging = false;
+
+- (void)carousel:(iCarousel *)carousel didSelectItemAtIndex:(NSInteger)index{
+//    if(isDragging)
+//        return;
+
+}
+
+- (void)carouselWillBeginDragging:(iCarousel *)carousel{
+//    isDragging = true;
+}
+
+- (void)carouselDidEndScrollingAnimation:(iCarousel *)carousel{
+//    if(!isDragging)
+//        return;
+//
+//    isDragging = false;
+}
+
+- (void)carouselDidScroll:(iCarousel *)carousel{
 }
 
 - (void)viewDidLoad {

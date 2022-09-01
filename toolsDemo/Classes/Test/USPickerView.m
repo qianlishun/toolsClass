@@ -69,31 +69,31 @@
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
 //    _index = row;
-    NSLog(@"%ld",row);
+    NSLog(@"didSelectRow %ld",row);
 }
 
 - (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view{
     
     NSLog(@"viewForRow %ld",row);
     
-    UIView  *itemView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, pickerView.width, pickerView.height/9.0)];
+    UIView  *itemView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, pickerView.height, pickerView.height/9.0)];
     itemView.backgroundColor = [UIColor whiteColor];
-    itemView.tag = 1000;
-//        view.clipsToBounds = YES;
-//        CAShapeLayer *layer = [CAShapeLayer layer];
-//        layer.strokeColor = [UIColor lightGrayColor].CGColor;
-//        layer.lineWidth = 1.0;
-//        [view.layer addSublayer:layer];
+    itemView.tag = row;
+    itemView.clipsToBounds = YES;
+       
+//    float scale = [self.scaleList[row] floatValue];
+    float width = itemView.width;
+
+    CAShapeLayer *layer = [CAShapeLayer layer];
+    layer.name = [NSString stringWithFormat:@"%ld",row];
+    [itemView.layer addSublayer:layer];
+    layer.frame = itemView.bounds;
+    layer.strokeColor = [UIColor orangeColor].CGColor;
+    layer.lineWidth = 1.0;
+
     
-    float scale = [self.scaleList[row] floatValue];
-    float width = pickerView.width;
-//
-//    UIBezierPath *path = [UIBezierPath bezierPath];
-//    [path moveToPoint:CGPointMake( (1-scale)/2 * width, view.height/2-0.5)];
-//    [path addLineToPoint:CGPointMake(scale*width, view.height/2-0.5)];
-//    ((CAShapeLayer*)view.layer.sublayers.lastObject).path = path.CGPath;
-    itemView.width = scale * width;
-    NSLog(@"%ld %.2f",row, scale);
+//    itemView.width = scale * width;
+//    NSLog(@"%ld %.2f",row, scale);
     
     NSInteger index = [pickerView selectedRowInComponent:0];
     if(_index != index){
@@ -109,8 +109,14 @@
                 self.scaleList[rowIndex] = [NSNumber numberWithFloat:scale];
                 
                 UIView *v = [pickerView viewForRow:rowIndex forComponent:0];
-                v.width = scale * width;
-                NSLog(@"tag %ld",v.tag);
+                CGFloat itemWidth = scale * width;
+                UIBezierPath *path = [UIBezierPath bezierPath];
+                [path moveToPoint:CGPointMake( width/2.0 - itemWidth/2.0, itemView.height/2-0.5)];
+                [path addLineToPoint:CGPointMake( width/2.0 + itemWidth/2.0, itemView.height/2-0.5)];
+                CAShapeLayer *slayer = (CAShapeLayer*)v.layer.sublayers.lastObject;
+                slayer.path = path.CGPath;
+                
+                NSLog(@"tag %ld index %ld layer %@ %.2f",(long)v.tag,rowIndex,slayer.name,itemWidth);
             }
         }
     }

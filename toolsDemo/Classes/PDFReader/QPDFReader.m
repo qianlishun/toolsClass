@@ -7,8 +7,6 @@
 //
 
 #import "QPDFReader.h"
-#import "QStateModel.h"
-#import "QLSNavigationController.h"
 #import "PDFOutlineViewController.h"
 #import "PDFThumbnailViewController.h"
 #import "PDFSearchViewController.h"
@@ -131,7 +129,7 @@
         
         [self presentViewController:[[UINavigationController alloc] initWithRootViewController:outlineVC] animated:YES completion:nil];
     }else{
-        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Attention" message:@"This pdf do not have outline!" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Attention" message:NSLocalizedString(@"This pdf do not have outline!", nil) preferredStyle:UIAlertControllerStyleAlert];
         UIAlertAction *action = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
         [alertController addAction:action];
         [self presentViewController:alertController animated:YES completion:nil];
@@ -298,22 +296,22 @@
         
         UIButton *outlineBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         outlineBtn.frame = CGRectMake(0, 0, 40, 40);
-        if (@available(iOS 13.0, *)) {
-            [outlineBtn setImage:[UIImage systemImageNamed:@"list.bullet"] forState:UIControlStateNormal];
-        } else {
-            [outlineBtn setTitle:@"目录" forState:UIControlStateNormal];
-        }
+//        if (@available(iOS 13.0, *)) {
+//            [outlineBtn setImage:[UIImage systemImageNamed:@"list.bullet"] forState:UIControlStateNormal];
+//        } else {
+            [outlineBtn setImage:[UIImage imageNamed:@"list_bullet"] forState:UIControlStateNormal];
+//        }
         [outlineBtn addTarget:self action:@selector(onOutline:) forControlEvents:UIControlEventTouchUpInside];
         
         [_toolsView addSubview:outlineBtn];
         
         UIButton *thumbBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         thumbBtn.frame = CGRectMake(0, 45, 40, 40);
-        if (@available(iOS 13.0, *)) {
-            [thumbBtn setImage:[UIImage systemImageNamed:@"rectangle.grid.2x2"] forState:UIControlStateNormal];
-        } else {
-            [thumbBtn setTitle:@"缩略图" forState:UIControlStateNormal];
-        }
+//        if (@available(iOS 13.0, *)) {
+//            [thumbBtn setImage:[UIImage systemImageNamed:@"rectangle.grid.2x2"] forState:UIControlStateNormal];
+//        } else {
+            [thumbBtn setImage:[UIImage imageNamed:@"rectangle_grid_2x2"] forState:UIControlStateNormal];
+//        }
         [thumbBtn addTarget:self action:@selector(onThumb:) forControlEvents:UIControlEventTouchUpInside];
         
         [_toolsView addSubview:thumbBtn];
@@ -325,7 +323,8 @@
 #pragma mark PDF Save
 - (NSMutableDictionary *)pdfSaveData{
     if(!_pdfSaveData){
-        _pdfSaveData = [NSMutableDictionary dictionaryWithDictionary:[QStateModel sharedInstance].pdfSaveData];
+        NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+        _pdfSaveData = [ud objectForKey:@"QPDF_SAVEDATA"];
     }
     return _pdfSaveData;
 }
@@ -335,7 +334,8 @@
     NSString *key = self.document.documentURL.lastPathComponent;
     
     [self.pdfSaveData setObject:[NSNumber numberWithInteger:index] forKey:key];
-    [QStateModel sharedInstance].pdfSaveData = self.pdfSaveData.copy;
+    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+    [ud setObject:self.pdfSaveData forKey:@"QPDF_SAVEDATA"];
 }
 
 - (void)appDidEnterBackground:(NSNotification*)noti{
