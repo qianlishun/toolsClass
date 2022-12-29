@@ -59,6 +59,8 @@
     self.textView.hidden = YES;
     self.textView.backgroundColor = [UIColor lightGrayColor];
     self.textView.font = [UIFont systemFontOfSize:14];
+    
+    [self viewWillTransitionToSize:[UIScreen mainScreen].bounds.size withTransitionCoordinator:self.transitionCoordinator];
 }
 
 - (void)scanClick{
@@ -88,7 +90,7 @@
     [self.output setMetadataObjectsDelegate:self queue:dispatch_get_main_queue()];
 
     // 设置元数据类型  二维码 QRCode
-    [self.output setMetadataObjectTypes:@[AVMetadataObjectTypeQRCode]];
+    [self.output setMetadataObjectTypes:@[AVMetadataObjectTypeEAN13Code, AVMetadataObjectTypeEAN8Code, AVMetadataObjectTypeCode128Code,AVMetadataObjectTypeQRCode,AVMetadataObjectTypeAztecCode,AVMetadataObjectTypeDataMatrixCode]];
 
     // 4.特殊的 layer  (展示输入设备所采集的信息)
     self.preView = [[PreView alloc]initWithFrame:self.view.bounds];
@@ -96,7 +98,7 @@
 
     [self.view addSubview:self.preView];
 
-    UIButton *cancelBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 60, 24)];
+    UIButton *cancelBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 80, 36)];
     cancelBtn.center = CGPointMake(self.view.center.x, self.view.bounds.size.height * 0.8);
     [cancelBtn setTitle:@"返回" forState: UIControlStateNormal];
     [cancelBtn setBackgroundColor: [UIColor colorWithRed:arc4random_uniform (256)/255.0 green:arc4random_uniform(256)/255.0 blue:arc4random_uniform(256)/255.0 alpha:1.0]];
@@ -104,9 +106,9 @@
 
     [self.view addSubview:cancelBtn];
 
-    // 启动会话
-    [self.session startRunning];
-    
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        [self.session startRunning];
+    });
 }
 
 - (void)cancelClick:(UIButton *)sender{
@@ -136,7 +138,7 @@
     if([self.textView.text hasPrefix:@"http://"] || [self.textView.text hasPrefix:@"https://"] || [self.textView.text hasPrefix:@"sms://"]||[self.textView.text hasPrefix:@"tel://"]){
 
         NSURL *url = [NSURL URLWithString:self.textView.text];
-        [[UIApplication sharedApplication]openURL:url];
+        [[UIApplication sharedApplication]openURL:url options:@{}completionHandler:nil];
     }
     
     self.textView.hidden = NO;

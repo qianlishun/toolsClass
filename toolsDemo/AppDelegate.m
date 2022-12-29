@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 #import "MainController.h"
 #import "QPDFViewController.h"
-
+#import <IQKeyboardManager/IQKeyboardManager.h>
 @interface AppDelegate ()
 
 @end
@@ -28,6 +28,13 @@
 
     //设置为主控制器并可见
     [self.window makeKeyAndVisible];
+
+    IQKeyboardManager *kbManager = [IQKeyboardManager sharedManager];
+    kbManager.enable = YES;
+    kbManager.shouldResignOnTouchOutside = YES;
+    kbManager.shouldToolbarUsesTextFieldTintColor = YES;
+    kbManager.enableAutoToolbar = YES;
+    kbManager.toolbarManageBehaviour = IQAutoToolbarBySubviews;
 
     return YES;
 }

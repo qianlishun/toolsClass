@@ -146,6 +146,7 @@
 		3EFFF6971D0ABDDE0042ABF4 /* QNewsHomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EFFF6961D0ABDDE0042ABF4 /* QNewsHomeController.m */; };
 		6E0D584F279EB1A5000D9692 /* USPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E0D584E279EB1A5000D9692 /* USPickerView.m */; };
 		6E10BACC242B65DF003EB898 /* blineTest3.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E10BACB242B65DE003EB898 /* blineTest3.png */; };
+		6E156F7A295D2F100049B4A9 /* QCIFilterCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E156F79295D2F100049B4A9 /* QCIFilterCell.m */; };
 		6E239E9A2583243B00118B6A /* QMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E239E992583243B00118B6A /* QMenuView.m */; };
 		6E239EA92583262D00118B6A /* QScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E239EA82583262D00118B6A /* QScrollView.m */; };
 		6E239EB225832B4600118B6A /* QTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E239EB125832B4600118B6A /* QTableView.m */; };
@@ -571,6 +572,8 @@
 		6E0D584D279EB1A5000D9692 /* USPickerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = USPickerView.h; sourceTree = "<group>"; };
 		6E0D584E279EB1A5000D9692 /* USPickerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = USPickerView.m; sourceTree = "<group>"; };
 		6E10BACB242B65DE003EB898 /* blineTest3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blineTest3.png; sourceTree = "<group>"; };
+		6E156F78295D2F100049B4A9 /* QCIFilterCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QCIFilterCell.h; sourceTree = "<group>"; };
+		6E156F79295D2F100049B4A9 /* QCIFilterCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QCIFilterCell.m; sourceTree = "<group>"; };
 		6E239E982583243B00118B6A /* QMenuView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QMenuView.h; sourceTree = "<group>"; };
 		6E239E992583243B00118B6A /* QMenuView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QMenuView.m; sourceTree = "<group>"; };
 		6E239EA72583262D00118B6A /* QScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QScrollView.h; sourceTree = "<group>"; };
@@ -959,6 +962,8 @@
 				3E8D84EE1D1A34CC000570C3 /* SetQRCodeController.m */,
 				3E8D84F01D1A3713000570C3 /* ScanController.h */,
 				3E8D84F11D1A3713000570C3 /* ScanController.m */,
+				6E156F78295D2F100049B4A9 /* QCIFilterCell.h */,
+				6E156F79295D2F100049B4A9 /* QCIFilterCell.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -2062,6 +2067,7 @@
 				3E9AED271CE06751001F77D5 /* Sources */,
 				3E9AED281CE06751001F77D5 /* Frameworks */,
 				3E9AED291CE06751001F77D5 /* Resources */,
+				EFD0C328791A2A4D54D17248 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -2236,6 +2242,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		EFD0C328791A2A4D54D17248 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-toolsDemo/Pods-toolsDemo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-toolsDemo/Pods-toolsDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -2280,6 +2304,7 @@
 				6E6D106F27BA575E00993DA0 /* PDFOutlineViewController.m in Sources */,
 				3EB53A011D1D175300840D38 /* MJRefreshStateHeader.m in Sources */,
 				3EB539E31D1D175300840D38 /* UIButton+AFNetworking.m in Sources */,
+				6E156F7A295D2F100049B4A9 /* QCIFilterCell.m in Sources */,
 				6E89D6932251D1EE00B1C650 /* QEatController.m in Sources */,
 				3EB539FD1D1D175300840D38 /* MJRefreshBackNormalFooter.m in Sources */,
 				3EB53A121D1D175300840D38 /* TADotView.m in Sources */,
